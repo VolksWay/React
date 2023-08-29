@@ -6,7 +6,8 @@ function Privacidade() {
     return (
         <>
 
-            <div className="politica_menu">
+        <main id="privacidade">
+        <div className="politica_menu">
                 <p>data da última atualização:</p>
                 <p>09/05/2023</p>
                 <ul>
@@ -121,6 +122,8 @@ function Privacidade() {
                     </p>
                 </ul>
             </div>
+        </main>
+         
 
 
         </>
