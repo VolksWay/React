@@ -1,0 +1,645 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--poppins300);
+}
+
+:root {
+    --blue_card: #00B1EB;
+    --dark_blue: #12264B;
+    --yellow: #FFD100;
+    --camada_geometrica: #8497B1;
+    --cor-branco: #FFFFFF;
+    --cor-primaria: #12264B;
+    --cor-secundaria: #FFD100;
+    --cor-terciaria: #00B0FF;
+    --cor-quartenaria: #195F8C;
+    --cor-cinza-escuro: #252936;
+    --cor-preto: #000000;
+    --fonte-primaria: 'Poppins';
+    --fonte-tamanho: 18px;
+}
+
+.container {
+    width: 90%;
+    height: 100%;
+    max-width: 1920px;
+    margin: auto;
+}
+
+.direction_column {
+    display: flex;
+    flex-direction: column;
+}
+
+.direction_row {
+    flex-direction: row;
+}
+
+.justify_center {
+    display: flex;
+    justify-content: center;
+}
+
+.align_center {
+    display: flex;
+    align-items: center;
+}
+
+.space_between {
+    justify-content: space-between;
+}
+
+.space_evenly {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.space_around {
+    justify-content: space-around;
+}
+
+
+/* Header */
+header {
+    background-color: var(--cor-primaria);
+    border-bottom: 3px solid var(--cor-secundaria);
+    /* padding: 10px; */
+    height: 130px;
+}
+
+/* header a {
+    font-family: var(--fonte-primaria);
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--cor-branco);
+    padding: 10px;
+} */
+
+.nav_header_conteudo, 
+header a {
+    font-family: var(--fonte-primaria);
+    text-decoration: none;
+    font-size: 24px;
+    color: var(--cor-branco);
+    padding: 10px;
+}
+
+
+
+header nav {
+    width: 47vw;
+}
+
+header img{
+    width: 120px;
+    min-width: 120px;
+}
+
+
+.menu_barras {
+    display: none;
+}
+
+.links>div a {
+    display: none;
+    color: var(--cor-branco);
+    font-weight: 400;
+    font-size: 40px;
+    backdrop-filter: blur(25px);
+}
+
+.links>div span {
+    color: var(--cor-secundaria);
+    font-size: 40px;
+    font-weight: 400;
+    backdrop-filter: blur(25px);
+}
+
+
+main {
+    display: flex;
+    background: linear-gradient(50deg, #ffffff 70%, var(--camada_geometrica) 30%);
+    height: 600px;
+    flex-direction: column;
+
+}
+
+/*==================================voltar*/
+.div_voltar {
+    /*  background-color: #b19f84; */
+    height: 50px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 26px;
+}
+
+.seta_voltar {
+    width: 45px;
+    height: 45px;
+    color: var(--dark_blue);
+}
+
+.aVoltar {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    text-decoration: none;
+    color: var(--dark_blue);
+
+}
+
+.conteudo {
+
+    align-items: column;
+}
+
+.tres_opcoes {
+    width: 684px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 65px;
+    margin-bottom: 60px;
+}
+
+.quemEVoce {
+    display: flex;
+    /*  background-color: #ddb16f; */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+    color: #12264B;
+    width: 300px;
+    margin-left: 65px;
+
+}
+
+.seDestaca {
+    /*  background-color: cornflowerblue; */
+    margin-left: 65px;
+    margin-top: 10px;
+    width: 600px;
+}
+
+.se_destaca {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: #12264B;
+}
+
+.perguntaOpcao {
+    margin-left: 65px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.pergunta_opcao {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+
+
+
+    color: #12264B;
+}
+
+/*===============================mototosta*/
+.motorista {
+    display: flex;
+    align-items: center;
+    width: 148px;
+    height: 160px;
+    border-radius: 30px;
+    background-color: var(--blue_card);
+    flex-direction: column;
+    padding: 7px;
+}
+
+.img_motorista {
+    display: flex;
+    align-items: center;
+    height: 130px;
+    width: 130px;
+}
+
+.a_motorista {
+    display: flex;
+    align-items: center;
+    color: var(--dark_blue);
+    font-weight: bold;
+    text-decoration: none;
+    font-family: var(--fonte-primaria);
+}
+
+/*===============================admFrota*/
+.adm_de_frota {
+    display: flex;
+    align-items: center;
+    width: 148px;
+    height: 160px;
+    border-radius: 30px;
+    background-color: var(--blue_card);
+    flex-direction: column;
+    padding: 7px;
+}
+
+.img_adm_de_frota {
+    height: 104px;
+    width: 130px;
+}
+
+.a_adm_de_frota {
+    display: flex;
+    align-items: center;
+    color: var(--dark_blue);
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    font-family: var(--fonte-primaria);
+}
+
+/*===============================proprietario*/
+.proprietario {
+    display: flex;
+    align-items: center;
+    width: 148px;
+    height: 160px;
+    border-radius: 30px;
+    background-color: var(--blue_card);
+    flex-direction: column;
+    padding: 7px;
+}
+
+.img_proprietario {
+    height: 130px;
+    width: 130px;
+}
+
+.a_proprietario {
+    display: flex;
+    align-items: center;
+    color: var(--dark_blue);
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    font-family: var(--fonte-primaria);
+}
+
+/**/
+/*==============================================footer*/
+
+    .container_80 {
+        width: 80%;
+        height: 100%;
+        max-width: 1920px;
+        margin: auto;
+    }
+
+    .texto_privacidade {
+        font-size: 16px;
+        color: var(--cor-primaria);
+        font-weight: 400;
+        font-family: var(--fonte-primaria);
+    }
+
+    .box_footer {
+        background-color: var(--cor-primaria);
+        width: 100%;
+        height: 20px;
+    }
+
+    .texto_privacidade {
+        font-size: 16px;
+        color: var(--cor-primaria);
+        font-weight: 400;
+        font-family: var(--fonte-primaria);
+    }
+
+
+
+section {
+    /*     background-color:rgb(155, 245, 245); */
+    display: flex;
+    justify-content: left;
+}
+
+.btn_proximo {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 303px;
+    height: 57px;
+    color: var(--cor-preto);
+    background: #FFD100;
+    border-radius: 30px;
+    margin-left: 65px;
+    margin-top: -20px;
+}
+
+.btnProximo {
+    background: #FFD100;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: var(--fonte-primaria);
+    color: var(--cor-preto);
+    text-transform: capitalize;
+}
+
+.imgIlustracao {
+    /* background-color:cadetblue; */
+    margin-right: 121px;
+}
+
+.ilustracao {
+    height: 462px;
+    width: 381px;
+    margin-left: 62px;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 1700px) {
+    header a {
+        font-size: 20px;
+    }
+
+    .imgs_social_medias {
+        width: 17%;
+    }
+
+}
+
+/*main*/
+
+@media screen and (max-width: 1300px) {
+    header a {
+        font-size: 18px;
+    }
+
+    .imgIlustracao {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 1100px) {
+    header a {
+        font-size: 18px;
+    }
+
+    header nav {
+        width: 70vw;
+    }
+
+    .imgs_social_medias {
+        width: 20%;
+    }
+
+    .imgs_social_medias img {
+        width: 28%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    header nav {
+        width: 70vw;
+    }
+
+    .img_footer {
+        margin-left: -16%;
+        width: unset;
+        height: unset;
+    }
+
+    footer span {
+        font-size: 16px;
+    }
+
+    .footer_text {
+        font-size: 16px;
+    }
+
+    .alinhamento_footer {
+        flex-wrap: wrap;
+    }
+
+    footer {
+        height: 100%;
+    }
+
+    .nav_mobile {
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+        margin-top: 4%;
+    }
+
+    .nav_desktop {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+
+    .menu_barras svg {
+        height: 13vh;
+        width: 4vw;
+        fill: var(--cor-branco);
+    }
+
+    .menu_barras {
+        display: block;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .posicionamento_header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 50px 0 0;
+    }
+
+    .posicionamento_header nav {
+        display: none;
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        background-color: #12264B;
+        flex-direction: column;
+        z-index: 1;
+        border: 1px solid var(--branco);
+    }
+
+    .primeira_nav {
+        width: 25vw;
+        padding-right: 5%;
+    }
+
+    .imgs_social_medias {
+        width: 30%;
+        padding-right: 3%;
+    }
+
+    .imgs_social_medias img {
+        width: 29%;
+    }
+
+    .links {
+        justify-content: initial;
+        padding: 0% 5% 0% 5%;
+    }
+
+    .navegacao_header {
+        margin-bottom: 3%;
+        margin-top: 1%;
+    }
+
+    .links>div a {
+        display: block;
+        width: unset;
+    }
+
+    .links>div {
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+    }
+
+    .container_80 {
+        display: none;
+    }
+
+    .seDestaca {
+        width: 375px;
+        height: 132px;
+    }
+
+    .quemEVoce {
+        display: flex;
+        font-size: 28px;
+    }
+
+    .seta_voltar {
+        width: 19px;
+        height: 22px;
+    }
+
+    .pergunta_opcao {
+        font-size: 13px;
+    }
+
+    .tres_opcoes {
+        gap: 10px;
+        width: 50%;
+    }
+
+    .motorista {
+        width: 70%;
+    }
+
+    .adm_de_frota {
+        width: 70%;
+    }
+
+    .proprietario {
+        width: 70%;
+    }
+
+    main {
+        height: 646px;
+    }
+}
+
+ @media screen and (max-width: 550px) {
+    .tres_opcoes {
+        flex-direction: column;
+    }
+
+    main {
+        height: 1000px;
+    }
+
+} 
+
+ @media screen and (max-width: 460px) {
+    main {
+        height: 1214px;
+    }
+
+    .conteudo {
+        width: 310px;
+        height: 1080px;
+    }
+
+    .quemEVoce {
+        width: 135px;
+    font-size: 23px;
+}
+
+    .seDestaca {
+        width: 269px;
+        height: 249px;
+    }
+
+    .pergunta_opcao {
+        margin-top: 2px;
+        margin-bottom: 21px;
+        font-weight: 800;
+        font-size: 15px;
+    }
+
+    .btn_proximo {
+        width: 224px;
+    }
+
+    .tres_opcoes {
+        align-items: baseline;
+        width: 77%;
+    }
+
+    section {
+        height: 1063px;
+       /*  width: 320px; */
+    }
+} 
+
+@media screen and (max-width: 320px) {
+    .quemEVoce {
+        width: 122px;
+        font-size: 17px;
+    }
+
+    .conteudo {
+        width: 300px;
+        height: 1063px;
+    }
+
+    .seDestaca {
+        width: 230px;
+        height: 238px;
+    }
+
+    .se_destaca {
+        font-size: 10px;
+    }
+}
