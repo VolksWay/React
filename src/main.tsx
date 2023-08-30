@@ -10,18 +10,15 @@ import CadastroVeiculo from './pages/CadastroVeiculo/index.tsx'
 import Login from './pages/Login/index.tsx'
 import Privacidade from './pages/Privacidade/index.tsx'
 import Produtos from './pages/Produtos/index.tsx'
+import BotaoVerMais from './components/BotaoVerMais/index.tsx'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Home />
-    <CadastroAdmFrota />
-    <CadastroEmpresa />
-    <CadastroGeral />
-    <CadastroOfertas />
-    <CadastroTipoUsuario />
-    <CadastroVeiculo />
-    <Login />
-    <Privacidade />
-    <Produtos />
-  </React.StrictMode>,
+    <BrowserRouter>
+      <Routes>{/*Indica uma lista de rotas*/}
+        <Route path='#' element={<Produtos />} /> {/*Indica o caminho do componente e o nome da rota dele*/}
+    </Routes>
+  </BrowserRouter>
+  </React.StrictMode >,
 )
