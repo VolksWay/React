@@ -10,20 +10,23 @@ import CadastroVeiculo from './pages/CadastroVeiculo/index'
 import Login from './pages/Login/index'
 import Privacidade from './pages/Privacidade/index'
 import Produtos from './pages/Produtos/index'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
- 
- 
-   
-    <CadastroAdmFrota />
-    <CadastroEmpresa />
-    <CadastroGeral />
-    <CadastroOfertas />
-    <CadastroTipoUsuario />
-    <CadastroVeiculo />
-    <Login />
-    <Privacidade />
-    <Produtos />
-  </React.StrictMode>,
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/cadastro/adm_frota' element={<CadastroAdmFrota />} />
+        <Route path='/cadastro/empresa' element={<CadastroEmpresa />} />
+        <Route path='/cadastro/geral' element={<CadastroGeral />} />
+        <Route path='/cadastro/ofertas' element={<CadastroOfertas />} />
+        <Route path='/cadastro/usuario' element={<CadastroTipoUsuario />} />
+        <Route path='/cadastro/veiculo' element={<CadastroVeiculo />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/privacidade' element={<Privacidade />} />
+        <Route path='/produtos' element={<Produtos />} />
+    </Routes>
+  </BrowserRouter>
+  </React.StrictMode >,
 )
