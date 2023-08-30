@@ -4,21 +4,21 @@ import { Link } from "react-router-dom";
 
 function seta_voltar() {
     return (
-        <>
-            <div ClassName="div_voltar">
+        <div>
+            <div className="div_voltar">
                 <a href="../home/index.html#">
                     <img
-                        ClassName="seta_voltar"
+                        className="seta_voltar"
                         src="../cadastroTipoUsuario/img/img_setaVoltar-semFundo.png"
                         alt=""
                     />
                 </a>
-                <a href="../home/index.html#" ClassName="aVoltar">
+                <a href="../home/index.html#" className="aVoltar">
                     Voltar
                 </a>
             </div>
 
-        </>
+        </div>
     )
 }
 
