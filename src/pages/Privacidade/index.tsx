@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 
 function Privacidade() {
     return (
-        <></>
+        <>
+            <p>Teste</p>
+        </>
     )
 }
 
