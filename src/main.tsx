@@ -13,15 +13,15 @@ import Produtos from './pages/Produtos/index.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Home />
-    <CadastroAdmFrota />
+    {/*<Home />
+     <CadastroAdmFrota />
+    <CadastroVeiculo />
     <CadastroEmpresa />
     <CadastroGeral />
-    <CadastroOfertas />
+    <CadastroOfertas />*/}
     <CadastroTipoUsuario />
-    <CadastroVeiculo />
-    <Login />
+    {/* <Login />
     <Privacidade />
-    <Produtos />
+    <Produtos /> */}
   </React.StrictMode>,
 )

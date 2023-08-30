@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 
 function Login() {
     return (
-        <></>
+        <>
+            <p>Teste</p>
+        </>
     )
 }
 

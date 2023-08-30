@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 
 function Produtos() {
     return (
-        <></>
+        <>
+            <p>Teste</p>
+        </>
     )
 }
 
