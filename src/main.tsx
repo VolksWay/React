@@ -13,7 +13,9 @@ import Produtos from './pages/Produtos/index.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Home />
+ 
+ 
+   
     <CadastroAdmFrota />
     <CadastroEmpresa />
     <CadastroGeral />
@@ -24,4 +26,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Privacidade />
     <Produtos />
   </React.StrictMode>,
+ 
+
+</React.StrictMode>
+
 )
+
+
