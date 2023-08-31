@@ -97,68 +97,6 @@ header a {
     justify-content: space-around;
 }
 
-
-/* Header - organização */
-header {
-    background-color: var(--cor-primaria);
-    border-bottom: 3px solid var(--cor-secundaria);
-    padding: 10px;
-}
-
-/* header a {
-    font-family: var(--fonte-primaria);
-    text-decoration: none;
-    font-size: 24px;
-    color: var(--cor-branco);
-} */
-
-#produtos .nav_header_conteudo,
-header a {
-    font-family: var(--fonte-primaria);
-    text-decoration: none;
-    font-size: 24px;
-    color: var(--cor-branco);
-    padding: 10px;
-}
-
-#produtos header nav {
-    width: 47vw;
-}
-
-#produtos header img {
-    width: 120px;
-    min-width: 120px;
-}
-
-
-#produtos .menu_barras {
-    display: none;
-}
-
-#produtos .links>div a {
-    display: none;
-    color: var(--cor-branco);
-    font-weight: 400;
-    font-size: 40px;
-    backdrop-filter: blur(25px);
-}
-
-#produtos .links>div span {
-    color: var(--cor-secundaria);
-    font-size: 40px;
-    font-weight: 400;
-    backdrop-filter: blur(25px);
-}
-
-
-#produtos h1 {
-    width: 1em;
-    position: absolute;
-    left: -999em;
-    overflow: hidden;
-}
-
-
 /*______________________SEÇAO BANNER______________*/
 
 #produtos .produtos_banner {
@@ -176,6 +114,13 @@ header a {
     display: flex;
     height: calc(100vh - 150px);
 
+}
+
+#produtos h1 {
+    position: absolute;
+    left: -999em;
+    width: 1em;
+    overflow: hidden;
 }
 
 #produtos .slider {
@@ -268,6 +213,7 @@ header a {
 #produtos .produtos_banner_conteudo h2 {
     font-size: 50px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    color: white;
 
 }
 
@@ -275,6 +221,7 @@ header a {
     margin-top: 40px;
     font-size: 16px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    color: white;
 
 }
 
@@ -417,10 +364,10 @@ header a {
 
 
 #produtos .prod_card_ofertas1,
-.prod_card_ofertas2,
-.prod_card_ofertas3,
-.prod_card_ofertas4,
-.prod_card_ofertas5 {
+#produtos .prod_card_ofertas2,
+#produtos .prod_card_ofertas3,
+#produtos .prod_card_ofertas4,
+#produtos .prod_card_ofertas5 {
     background-color: #195F8C;
     width: 350px;
     height: 150px;
@@ -437,34 +384,35 @@ header a {
 }
 
 #produtos .prod_card_ofertas1 h3,
-.prod_card_ofertas2 h3,
-.prod_card_ofertas3 h3,
-.prod_card_ofertas4 h3,
-.prod_card_ofertas5 h3 {
+#produtos .prod_card_ofertas2 h3,
+#produtos .prod_card_ofertas3 h3,
+#produtos .prod_card_ofertas4 h3,
+#produtos .prod_card_ofertas5 h3 {
     font-size: 16px;
     text-transform: capitalize;
     margin-top: 10px;
     margin-left: 10px;
-
+    color: white;
 }
 
 #produtos .prod_card_ofertas1 h4,
-.prod_card_ofertas2 h4,
-.prod_card_ofertas3 h4,
-.prod_card_ofertas4 h4,
-.prod_card_ofertas5 h4 {
+#produtos .prod_card_ofertas2 h4,
+#produtos .prod_card_ofertas3 h4,
+#produtos .prod_card_ofertas4 h4,
+#produtos .prod_card_ofertas5 h4 {
     font-size: 12px;
     text-transform: capitalize;
     margin-left: 10px;
     font-weight: lighter;
+    color: white;
 
 }
 
 #produtos .prod_card_ofertas1 img,
-.prod_card_ofertas2 img,
-.prod_card_ofertas3 img,
-.prod_card_ofertas4 img,
-.prod_card_ofertas5 img {
+#produtos .prod_card_ofertas2 img,
+#produtos .prod_card_ofertas3 img,
+#produtos .prod_card_ofertas4 img,
+#produtos .prod_card_ofertas5 img {
     width: 250px;
     /* position: absolute; */
     margin-top: 30px;
@@ -473,10 +421,10 @@ header a {
 }
 
 #produtos .prod_card_ofertas1 span,
-.prod_card_ofertas2 span,
-.prod_card_ofertas3 span,
-.prod_card_ofertas4 span,
-.prod_card_ofertas5 span {
+#produtos .prod_card_ofertas2 span,
+#produtos .prod_card_ofertas3 span,
+#produtos .prod_card_ofertas4 span,
+#produtos .prod_card_ofertas5 span {
     font-size: 16px;
     color: var(--dark_blue);
     font-weight: 900;
@@ -486,10 +434,10 @@ header a {
 }
 
 #produtos .card_ofertas1 h5,
-.card_ofertas2 h5,
-.prod_card_ofertas3 h5,
-.prod_card_ofertas4 h5,
-.prod_card_ofertas5 h5 {
+#produtos .card_ofertas2 h5,
+#produtos .prod_card_ofertas3 h5,
+#produtos .prod_card_ofertas4 h5,
+#produtos .prod_card_ofertas5 h5 {
     font-size: 12px;
     color: #000000;
     margin: 2px auto;
@@ -519,10 +467,10 @@ header a {
 }
 
 #produtos .prod_card_ofertas1 h6,
-.prod_card_ofertas2 h6,
-.prod_card_ofertas3 h6,
-.prod_card_ofertas4 h6,
-.prod_card_ofertas5 h6 {
+#produtos .prod_card_ofertas2 h6,
+#produtos .prod_card_ofertas3 h6,
+#produtos .prod_card_ofertas4 h6,
+#produtos .prod_card_ofertas5 h6 {
     color: rgba(0, 0, 0, 0.50);
     font-size: 12px;
     text-transform: capitalize;
@@ -578,15 +526,15 @@ header a {
 
 
 #produtos .prod_card_promo1 img,
-.prod_card_promo2 img,
-.prod_card_promo3 img,
-.prod_card_promo4 img,
-.prod_card_promo5 img,
-.prod_card_promo6 img,
-.prod_card_promo7 img,
-.prod_card_promo8 img,
-.prod_card_promo9 img,
-.prod_card_promo10 img {
+#produtos .prod_card_promo2 img,
+#produtos .prod_card_promo3 img,
+#produtos .prod_card_promo4 img,
+#produtos .prod_card_promo5 img,
+#produtos .prod_card_promo6 img,
+#produtos .prod_card_promo7 img,
+#produtos .prod_card_promo8 img,
+#produtos .prod_card_promo9 img,
+#produtos .prod_card_promo10 img {
     width: 200px;
     border-radius: 20px 20px 0px 0px;
     position: relative;
@@ -1347,7 +1295,7 @@ footer .divfooter4 .in {
             } */
 
             #produtos .prod_card_promo3,
-            .prod_card_promo4 {
+            #produtos .prod_card_promo4 {
                 display: none;
             }
 
