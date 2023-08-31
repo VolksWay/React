@@ -11,7 +11,7 @@ import Login from './pages/Login/'
 // import Privacidade from './pages/Privacidade/index.tsx'
 // import Produtos from './pages/Produtos/'
 // import BotaoVerMais from './components/BotaoVerMais/index.tsx'
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
