@@ -1,4 +1,15 @@
 import "./style.css"
+import Lupa from "../../assets/images/lupa.png"
+import PencilDraw from "../../assets/images/Pencil Drawing.svg"
+import Visivel from "../../assets/images/visivel.svg"
+import Invisivel from "../../assets/images/invisivel.svg"
+import Refresh from "../../assets/images/Refresh.svg"
+import Play from "../../assets/images/play.png"
+import Play1 from "../../assets/images/play_1.png"
+import Play2 from "../../assets/images/play_2.png"
+import Play3 from "../../assets/images/play_3.png"
+import Logo from "../../assets/images/logo.png"
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -6,11 +17,11 @@ function CadastroOfertas() {
 
 
     return (
-        <main>
+        <main id="main_cadastro_ofertas">
             <header>
                 <div className="logo">
                     <Link to="../home/index.html">
-                        <img src="../home/img/logo_voksway.png" alt="Logo da VolksWay" />
+                        <img src={Logo} alt="Logo da VolksWay" />
                     </Link>
                 </div>
                 <div>
@@ -25,7 +36,7 @@ function CadastroOfertas() {
                         <div className="cad_ofertas_pesquisa">
                             <input type="text" placeholder="Nome ou código" />
                             <Link to="">
-                                <img src="./img/lupa.svg" alt="" />
+                                <img src={Lupa} alt="" />
                             </Link>
                         </div>
                         <div className="cad_ofertas_btn">
@@ -55,13 +66,13 @@ function CadastroOfertas() {
             <section className="cad_ofertas_AtuPaginas">
                 <div className="cad_ofertas_passa_pagina">
                     <Link to="#">
-                        <img src="./img/Refresh.svg" alt="" />
+                        <img src={Refresh} alt="" />
                     </Link>
                     <Link to="#">
-                        <img src="./img/play.png" alt="" />
+                        <img src={Play} alt="" />
                     </Link>
                     <Link to="#">
-                        <img src="./img/play_3.png" alt="" />
+                        <img src={Play3} alt="" />
                     </Link>
                     <Link to="">1</Link>
                     <Link to="">2</Link>
@@ -70,10 +81,10 @@ function CadastroOfertas() {
                     <Link to="">5</Link>
                     <Link to="">...</Link>
                     <Link to="#">
-                        <img src="./img/play_1.png" alt="" />
+                        <img src={Play1} alt="" />
                     </Link>
                     <Link to="#">
-                        <img src="./img/play_2.png" alt="" />
+                        <img src={Play2} alt="" />
                     </Link>
                 </div>
                 <div>
