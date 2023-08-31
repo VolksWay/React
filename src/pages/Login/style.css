@@ -20,6 +20,10 @@
 
 }
 
+#login .checkboxPolitica{
+    margin: 10px;
+}
+
 /* Header */
 * {
     margin: 0;

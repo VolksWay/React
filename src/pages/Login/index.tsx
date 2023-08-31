@@ -33,6 +33,16 @@ function Login() {
                                 Entrar
                             </a>
                         </div>
+                        <div>
+                            <input type="checkbox" id="" className="" />
+                            <span>
+                                "Li e estou de acordo com a"{" "}
+                                <a className="" href="politicadeprivacidade">
+                                    Política de Privacidade
+                                </a>{" "}
+                            </span>
+                        </div>
+
                         {/*  <div class="alinhamento_texto_opcao">
               <hr>
               <hr>
