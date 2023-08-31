@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function CadastroGeral() {
     return (
         <main id="main_cadastro_geral">
-            <Link to={"cadastro/empresa"} className="voltar">
+            <Link to={"/cadastro/empresa"} className="voltar">
                 <div className="div_voltar">
                     <img className="seta_voltar" src={Voltar} alt="" />
                     <span className="spanVoltar">Voltar</span>
