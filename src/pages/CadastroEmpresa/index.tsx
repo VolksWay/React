@@ -1,18 +1,17 @@
 import "./style.css"
 import Voltar from "../../assets/img/img_setaVoltar-semFundo.png"
 import ImgCadastroVeiculo from "../../assets/img/img_cadastroEmpresa.svg"
-/* import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; */
+import { Link } from "react-router-dom";
 
 function CadastroEmpresa() {
     return (
         <main id="main_cadastro_empresa">
-            <a href="../cadastroVeiculo/cadastroVeiculo.html#">
+            <Link to={"/cadastro/veiculo"}>
                 <div className="div_voltar">
                     <img className="seta_voltar" src={Voltar} alt="" />
                     <a className="aVoltar" href="">Voltar</a>
                 </div>
-            </a>
+            </Link>
 
             <section className="section">
                 <div className="conteudo">
@@ -43,7 +42,7 @@ function CadastroEmpresa() {
                     </div>
 
                     <div className="btn_proximo">
-                        <a className="btnProximo" href="../cadastropessoal/index.html#">Próximo</a>
+                        <Link to={"/cadastro/geral"} className="btnProximo">Próximo</Link>
                     </div>
                 </div>
 
