@@ -196,13 +196,20 @@
     justify-content: left;
 }
 
+#main_cadastro_geral .habilitado {
+    background-color: #FFD100;
+}
+
+#main_cadastro_geral .desabilitado {
+    background-color: #ffd1008c;
+}
+
 #main_cadastro_geral .btn_proximo {
     justify-content: center;
     align-items: center;
     display: flex;
     width: 303px;
     height: 57px;
-    background: #FFD100;
     border-radius: 30px;
     margin-left: 65px;
     margin-top: 1px;
