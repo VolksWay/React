@@ -12,17 +12,10 @@
 
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-<<<<<<< HEAD
-    
-    /* Bundler mode */
-    "moduleResolution": "Node",
-    //"allowImportingTsExtensions": true,
-=======
 
     /* Bundler mode */
     "moduleResolution": "Node",
     // "allowImportingTsExtensions": true,
->>>>>>> origin/produtos
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
