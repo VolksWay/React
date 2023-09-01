@@ -18,7 +18,7 @@
     --poppins500: 'Poppins', sans-serif;
 
 }
-/* #BotaoVerMais */
+/* #BotaoVerMais 0*/
 .produtos_btn_banner {
     background-color: var(--yellow);
     color: var(--dark_blue);

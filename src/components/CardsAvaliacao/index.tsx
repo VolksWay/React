@@ -4,7 +4,7 @@ import "./style.css"
 import caminhoneiro from "../../assets/img/caminhoneiro_home.png"
 
 function CardsAvaliacao() {
-    return (
+    return (<div id="CardsAvaliacao">
         <section className="container_80">
             <div className="secao_faz_diferenca space_evenly align_center direction_column">
                 <div className="direction_column align_center justify_center">
@@ -102,8 +102,10 @@ function CardsAvaliacao() {
                 </div>
             </div>
         </section>
+        </div>
 
     )
+    //
 
 }
 export default CardsAvaliacao;

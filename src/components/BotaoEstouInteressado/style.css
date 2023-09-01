@@ -1,4 +1,23 @@
-.prod_card_ofertas5 .prod_btn_card{
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--poppins300);
+}
+
+:root {
+    --dark_blue: #12264B;
+    --light_blue: #00B1EB;
+    --yellow: #FFD100;
+    --grey: #EDEDED;
+    --dark_blue2: #252936;
+
+    --poppins300: 'Poppins', sans-serif;
+    --poppins500: 'Poppins', sans-serif;
+
+}
+
+#BotaoEstouInteressado .prod_btn_card{
     background-color: var(--light_blue);
 
     filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.25));

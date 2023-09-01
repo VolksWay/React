@@ -3,14 +3,14 @@ import "./style.css"
 
 function BotaoEstouInteressado() {
     return (
-        <>
+        <div id="BotaoEstouInteressado">
         <Link className="prod_btn_card" to="#"> estou interessado</Link>
 
            {/*  <a className="prod_btn_card" href="#" alt="botao estou interessado">
                 estou interessado
             </a> */}
 
-        </>
+        </div>
     )
 
 }
