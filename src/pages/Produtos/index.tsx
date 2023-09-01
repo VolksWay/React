@@ -45,7 +45,7 @@ function Produtos() {
                                 </a>
                             </div>
                         </div>
-                        <div className="banner2">
+                        {/* <div className="banner2">
                             <img id="slide-2" src={imgBanner} />
                             <div className="produtos_banner_conteudo">
                                 <h2>a semana de ofertas já começou!!!</h2>
@@ -76,7 +76,7 @@ function Produtos() {
                                     ver mais
                                 </a>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="slider-nav">
                         <a href="#slide-1" />
