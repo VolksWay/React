@@ -1,14 +1,13 @@
 import "./style.css"
 import Lupa from "../../assets/images/lupa.png"
-import PencilDraw from "../../assets/images/Pencil Drawing.svg"
-import Visivel from "../../assets/images/visivel.svg"
-import Invisivel from "../../assets/images/invisivel.svg"
 import Refresh from "../../assets/images/Refresh.svg"
 import Play from "../../assets/images/play.png"
 import Play1 from "../../assets/images/play_1.png"
 import Play2 from "../../assets/images/play_2.png"
 import Play3 from "../../assets/images/play_3.png"
 import Logo from "../../assets/images/logo.png"
+
+import  Linhas  from "../../components/LinhaCadOfertas";
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -58,6 +57,9 @@ function CadastroOfertas() {
                                 <td>Canal</td>
                                 <td>Visível</td>
                             </tr>
+
+                                    <Linhas/>
+
 
                         </tbody>
                     </table>
