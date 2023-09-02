@@ -19,9 +19,9 @@ function VerMais() {
                   <Link  to="/" className=" produtos_btn_banner"  >ver mais</Link>
                   </div> */}
 
-            <main id="verMais">
+            <div id="verMais">
                     <Link  to="/" className=" produtos_btn_banner"  >Ver Mais</Link>
-            </main>
+            </div>
 
 
 

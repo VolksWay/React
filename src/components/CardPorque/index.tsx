@@ -13,7 +13,7 @@ function CardPorque() {
             <div
                 className="direction_column align_center space_evenly secao_por_que"
                 id="por_que"
-            >
+            >np
                 <h2 className="por_que_titulo">Por que escolher a VolksWay?</h2>
                 <div className="por_que_cards direction_column align_center space_between width_100">
                     <div className="direction_row space_between align_center width_100">

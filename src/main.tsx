@@ -10,9 +10,9 @@ import ReactDOM from 'react-dom/client'
 // import Login from './pages/Login/index'
 // import Privacidade from './pages/Privacidade/index'
 // import Produtos from './pages/Produtos/index'
+// import VerMais from './components/VerMais';
 
-import VerMais from './components/VerMais';
-
+import BotaoCadastrar from './components/BotaoCadastrar';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -31,7 +31,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/login' element={<Login />} />
         <Route path='/privacidade' element={<Privacidade />} />
         <Route path='/produtos' element={<Produtos />} /> */}
-        <Route path='/' element={<VerMais />} />
+        {/* <Route path='/' element={<VerMais />} /> */}
+        <Route path='/' element={<BotaoCadastrar />} /> 
     </Routes>
   </BrowserRouter>
   </React.StrictMode >,
