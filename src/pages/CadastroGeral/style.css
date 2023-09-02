@@ -95,7 +95,7 @@
     color: var(--dark_blue);
 }
 
-#main_cadastro_geral .voltar{
+#main_cadastro_geral .voltar {
     text-decoration: none;
 }
 
@@ -104,7 +104,7 @@
     display: flex;
     width: 700px;
     height: 450px;
-   /*  align-items: column; */
+    /*  align-items: column; */
 }
 
 #main_cadastro_geral .inputs {
@@ -204,6 +204,15 @@
     background-color: #ffd1008c;
 }
 
+#main_cadastro_geral .erro_input {
+    font-family: var(--fonte-primaria);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: red;
+}
+
 #main_cadastro_geral .btn_proximo {
     justify-content: center;
     align-items: center;
@@ -225,7 +234,7 @@
 #main_cadastro_geral .imgIlustracao {
     height: 500px;
     width: 500px;
- /*    background-color: cadetblue; */
+    /*    background-color: cadetblue; */
 }
 
 #main_cadastro_geral .ilustracao {
@@ -291,15 +300,18 @@
 @media screen and (max-width: 750px) {
     #main_cadastro_geral .seu_cadastro {
         width: 669px;
-        font-size:x-large;
+        font-size: x-large;
     }
+
     #main_cadastro_geral .seta_voltar {
         width: 20px;
         height: 20px;
     }
-    #main_cadastro_geral .spanVoltar{
+
+    #main_cadastro_geral .spanVoltar {
         font-size: 16px;
     }
+
     #main_cadastro_geral .btn_proximo {
         width: 206px;
 
@@ -311,56 +323,69 @@
         display: none;
     }
 }
+
 @media screen and (max-width: 730px) {
     #main_cadastro_geral .seu_cadastro {
         width: 320px;
     }
-    #main_cadastro_geral .conteudo{
+
+    #main_cadastro_geral .conteudo {
         width: 320px;
         height: 475px;
 
     }
+
     #main_cadastro_geral .seDestaca {
         width: 320px;
-    }  
+    }
 }
-@media screen and (max-width: 470px){
-    #main_cadastro_geral .nome{
+
+@media screen and (max-width: 470px) {
+    #main_cadastro_geral .nome {
         width: 320px;
     }
+
     #main_cadastro_geral .nome_input {
         width: 320px;
     }
-    #main_cadastro_geral .inputs{
+
+    #main_cadastro_geral .inputs {
         width: 320px;
     }
-}    
+}
 
-@media screen and (max-width: 400px){
-    #main_cadastro_geral .seu_cadastro{
+@media screen and (max-width: 400px) {
+    #main_cadastro_geral .seu_cadastro {
         width: 250px;
     }
-    #main_cadastro_geral .se_destaca{
+
+    #main_cadastro_geral .se_destaca {
         width: 250px;
     }
-    #main_cadastro_geral  .seDestaca{
+
+    #main_cadastro_geral .seDestaca {
         width: 250px;
     }
-    #main_cadastro_geral .nome{
+
+    #main_cadastro_geral .nome {
         width: 250px;
     }
-    #main_cadastro_geral .nome_input{
+
+    #main_cadastro_geral .nome_input {
         width: 250px;
     }
-    #main_cadastro_geral .inputs{
+
+    #main_cadastro_geral .inputs {
         width: 250px;
     }
 }
-@media screen and (max-width: 330px){
-    #main_cadastro_geral .conteudo{
+
+@media screen and (max-width: 330px) {
+    #main_cadastro_geral .conteudo {
         align-items: center;
     }
-    #main_cadastro_geral .nome_input{
+
+    #main_cadastro_geral .nome_input {
         width: 230px;
     }
 

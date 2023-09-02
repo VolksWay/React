@@ -16,11 +16,19 @@ function CadastroEmpresa() {
         input.value = cnpjMask(input.value)
     }
 
-    const cnpjMask = (value: any) => {
-        if (!value) return ""
-        value = value.replace(/\D/g,"")
-        value = value.replace(/^(\d{2})\.(\d{3})(\d)/, "$1.$2.$3")
-        return value
+    function cnpjMask(value: any) {
+        if (!value) return "";
+        
+        // Remove todos os caracteres não numéricos
+        value = value.replace(/\D/g, "");
+    
+        // Aplica a máscara
+        value = value.replace(/(\d{2})(\d)/, "$1.$2");
+        value = value.replace(/(\d{3})(\d)/, "$1.$2");
+        value = value.replace(/(\d{3})(\d)/, "$1/$2");
+        value = value.replace(/(\d{4})(\d{1,2})$/, "$1-$2");
+    
+        return value;
     }
 
     return (
@@ -52,7 +60,7 @@ function CadastroEmpresa() {
 
                             <div className="nome">
                                 <label className="nomeInput">CNPJ</label> <br />
-                                <input onChange={(event) => { setCNPJ(event.target.value); handleCNPJ(event) }} className="nome_input" type="text" />
+                                <input onChange={(event) => { setCNPJ(event.target.value); handleCNPJ(event) }} maxLength={18} className="nome_input" type="text" />
                             </div>
 
                             <div className="nome">
@@ -61,12 +69,14 @@ function CadastroEmpresa() {
                             </div>
                         </div>
 
-                        {validarCNPJ(cnpj) === true && <div className="btn_proximo">
+                        {validarCNPJ(cnpj) === true && 
+                        <div className="btn_proximo habilitado">
                             <Link to={"/cadastro/geral"} className="btnProximo">Próximo</Link>
                         </div>
                         }
 
-                        {validarCNPJ(cnpj) === false && <div className="btn_proximo">
+                        {validarCNPJ(cnpj) === false && 
+                        <div className="btn_proximo desabilitado">
                             <Link to={"/cadastro/empresa"} className="btnProximo">Próximo</Link>
                         </div>
                         }
