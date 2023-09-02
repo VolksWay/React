@@ -5,15 +5,69 @@ import "./style.css"
 import imgBanner from "../../assets/img/banner_produto.png";
 
 //hooks
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useSwipeable } from "react-swipeable";
-// import { useEffect, useState } from "react";
+
+
+import { Swiper, SwiperSlide } from "swiper/react"
+
+
+
+import { register } from "swiper/element/bundle";
+
+register();
+import 'swiper/css.min.css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 
 function Banner() {
+
+    const [imgBanner, setImgBanner] = useState<string>("");
+    const [titulo, setTitulo] = useState<string>("");
+    const [descricao, setDescricao] = useState<string>("");
+    const [link, setLink] = useState<string>("");
+
+
+
+    //array de imagens
+    const data = [
+        { id: "1", image: imgBanner },
+        { id: "2", image: imgBanner },
+        { id: "3", image: imgBanner },
+
+    ]
+
+
+
+
+
     return (
         <>
-            <main id="banner">
+            <Swiper>
+                {data.map((item) => (
+                    <SwiperSlide key={item.id}>
+                        <img
+                            src={item.image}
+                            className="slider-wrapper"
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>
+
+
+
+
+
+
+
+
+
+
+
+
+            {/* <div id="banner">
 
                 <div className="slider-wrapper produtos_posicionamento">
                     <div className="slider">
@@ -41,7 +95,7 @@ function Banner() {
                     </div>
                 </div>
 
-            </main>
+            </div> */}
 
         </>
     )
