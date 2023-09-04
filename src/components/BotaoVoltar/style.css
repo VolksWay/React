@@ -1,0 +1,33 @@
+
+:root {
+    --darkreader-neutral-background: #212222;
+    --darkreader-neutral-text: #eae3d9;
+    --darkreader-selection-background: #165aaa;
+    --darkreader-selection-text: #fbf5ec;
+
+}
+
+.cXLjEX {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 8px;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+#BotaoVoltar  {
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: alias;
+    color: rgb(0, 30, 80);
+}
+
+#BotaoVoltar :hover, #BotaoVoltar :focus {
+    color: rgb(0, 64, 197);
+}
+
+.lkyGqx {
+    position: relative;
+    top: 0.11em;
+}
