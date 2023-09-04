@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Righteous&family=Titillium+Web:wght@400;600&display=swap');
 
 * {
@@ -18,6 +19,8 @@
     --fonte-tamanho: 18px;
 }
 
+=======
+>>>>>>> develop
 #privacidade .container {
     width: 90%;
     height: 100%;
@@ -30,8 +33,11 @@
     margin: 60px;
     gap: 70px;
     font-family: var(--fonte-primaria);
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> develop
 }
 
 #privacidade .politica_menu {
