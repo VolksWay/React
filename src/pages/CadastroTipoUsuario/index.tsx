@@ -1,6 +1,10 @@
 import "./style.css"
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Voltar from "../../assets/img/img_setaVoltar-semFundo.png"
+import Motorista from "../../assets/img/img_cadastroMotorista_semFundo.png"
+import AdmFrota from "../../assets/img/img_cadastroAdmDeFrota_semFundo.png"
+import Proprietario from "../../assets/img/img_cadastroProprietario_semFundo.png"
+import IlustracaoPessoas from "../../assets/img/img_ilustracaoPessoasComBalao_semFundo.png"
 
 function CadastroTipoUsuario() {
     return (
