@@ -1,5 +1,5 @@
 import "./style.css"
-import { useEffect, useState } from "react";
+/* import { useEffect, useState } from "react"; */
 import { Link } from "react-router-dom";
 import imgLogin from "../../assets/images/img_login.png"
 
@@ -22,16 +22,15 @@ function Login() {
                             <input type="checkbox" name="" id="lembre_me" />
                             <label htmlFor="">Lembre-me</label>
                         </div>
-                        <a
+                        <Link to={"/cadastro/usuario"}
                             className="link_nao_cadastro"
-                            href="../cadastroTipoUsuario/index.html#"
                         >
                             Não possui cadastro?
-                        </a>
+                        </Link>
                         <div className="alinhamento_campos_Entrar">
-                            <a type="button" href="../produtos/produtosEServicos.html">
+                            <Link type="button" to={"/"}>
                                 Entrar
-                            </a>
+                            </Link>
                         </div>
                         {/*  <div class="alinhamento_texto_opcao">
               <hr>

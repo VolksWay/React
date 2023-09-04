@@ -1,31 +1,5 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--font1);
-}
-
-:root {
-    /* Cores */
-    --azulEscuro: #060821;
-    --amarelo: #FFD100;
-    --branco: #ffffff;
-    --azulClaro: #00B1EB;
-    --vermelho: #DF0B0B;
-    --cor-branco: #FFFFFF;
-    --cor-primaria: #12264B;
-    --cor-secundaria: #FFD100;
-    --cor-terciaria: #00B0FF;
-    --cor-quartenaria: #195F8C;
-    --cor-cinza-escuro: #252936;
-    --cor-preto: #000000;
-
-    
-    /* Fontes */
-    --fonte-primaria: 'Poppins', sans-serif;
-    --fonte-tamanho: 18px;
-    --font1: 'Poppins', sans-serif;
-
+    font-family: var(--fonte-primaria);
 }
 
 #main_cadastro_ofertas header {
@@ -57,7 +31,7 @@
 #main_cadastro_ofertas aside {
     width: 99px;
     height: calc(vh - 113px);
-    background-color: var(--azulClaro);
+    background-color: var(--blue_card);
 
 }
 
@@ -105,11 +79,11 @@
     height: 36px;
     border-radius: 30px;
     border: none;
-    color: var(--branco);
+    color: var(--cor-branco);
 }
 
 #main_cadastro_ofertas .cad_ofertas_btn :nth-child(1) {
-    background: var(--amarelo);
+    background: var(--cor-secundaria);
     color: var(--azulEscuro);
     width: 140px;
 }
@@ -120,7 +94,7 @@
 }
 
 #main_cadastro_ofertas .cad_ofertas_btn :nth-child(3) {
-    background: var(--azulClaro);
+    background: var(--blue_card);
     width: 100px;
 }
 
@@ -252,7 +226,7 @@
     justify-content: center;
 }
 #main_cadastro_ofertas .cad_ofertas_input {
-    background-color: var(--branco);
+    background-color: var(--cor-branco);
     width: 80%;
     height: 440px;
     padding: 20px;
@@ -335,10 +309,10 @@
     margin: 10px 10px 0 10px;
 }
 #main_cadastro_ofertas .btns :nth-child(1){
-    background: var(--azulClaro);
+    background: var(--blue_card);
 }
 #main_cadastro_ofertas .btns :nth-child(2){
-    background: var(--amarelo);
+    background: var(--cor-secundaria);
     color: var(--azulEscu);
 }
 

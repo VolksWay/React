@@ -7,7 +7,7 @@ import Play2 from "../../assets/images/play_2.png"
 import Play3 from "../../assets/images/play_3.png"
 import Logo from "../../assets/images/logo.png"
 
-import  Linhas  from "../../components/LinhaCadOfertas";
+import Linhas from "../../components/LinhaCadOfertas";
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -58,7 +58,7 @@ function CadastroOfertas() {
                                 <td>Visível</td>
                             </tr>
 
-                                    <Linhas/>
+                            <Linhas />
 
 
                         </tbody>
