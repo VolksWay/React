@@ -5,6 +5,7 @@ import QuemSomos from "../../assets/img/img_quemSomos.svg"
 import Depoimento from "../../assets/img/caminhoneiro_home.png"
 import MaisVendidos from "../../assets/img/caminhao_home.png"
 import './style.css'
+import { Link } from "react-router-dom"
 
 function Home() {
   return (
@@ -16,7 +17,7 @@ function Home() {
               <div className="direction_row space_evenly home_banner_alinhamento">
                 <div className="home_container_entrar justify_center direction_column">
                   <span className="amarelo">Acabou de chegar</span>
-                  <a href="../login/index.html#">Entrar</a>
+                  <Link to={'/login'} style={{ textDecoration: 'none' }}>Entrar</Link>
                 </div>
                 <img
                   className="home_img_banner"
@@ -25,8 +26,7 @@ function Home() {
                 />
                 <div className="home_info_banner direction_column">
                   <span className="home_texto_banner">
-                    "Aposte nas{" "}
-                    <span className="home_branco_banner">novidades</span> e renove a
+                    "Aposte nas<span className="home_branco_banner"> novidades</span> e renove a
                     sua <span className="home_branco_banner">frota</span>"
                   </span>
                   <img
@@ -41,23 +41,23 @@ function Home() {
               <div className="direction_row space_between home_banner_opcoes">
                 <div
                   className="home_circulo amarelo_background dot"
-                  /* onclick="currentSlide(1)" */
+                /* onclick="currentSlide(1)" */
                 />
                 <div
                   className="home_circulo branco_background dot"
-                  /* onclick="currentSlide(2)" */
+                /* onclick="currentSlide(2)" */
                 />
                 <div
                   className="home_circulo branco_background dot"
-                  /* onclick="currentSlide(3)" */
+                /* onclick="currentSlide(3)" */
                 />
                 <div
                   className="home_circulo branco_background dot"
-                  /* onclick="currentSlide(4)" */
+                /* onclick="currentSlide(4)" */
                 />
                 <div
                   className="home_circulo branco_background dot"
-                  /* onclick="currentSlide(5)" */
+                /* onclick="currentSlide(5)" */
                 />
               </div>
             </div>
@@ -281,7 +281,7 @@ function Home() {
           <div className="home_card_desconto direction_row space_around align_center">
             <div className="home_card_conteudo">
               <span>Descontos</span>
-              <span className="home_card_desconto_texto">de até</span>
+              <span className="home_card_desconto_texto"> de até</span>
             </div>
             <hr />
             <span>30%</span>
@@ -289,7 +289,7 @@ function Home() {
           <div className="home_card_desconto antepenultimo direction_row space_around align_center">
             <div className="home_card_conteudo">
               <span>Peças</span>
-              <span className="home_card_desconto_texto">de até R$1000</span>
+              <span className="home_card_desconto_texto"> de até R$1000</span>
             </div>
             <hr />
             <span>10%</span>
@@ -297,7 +297,7 @@ function Home() {
           <div className="home_card_desconto penultimo direction_row space_around align_center">
             <div className="home_card_conteudo">
               <span>Veículos</span>
-              <span className="home_card_desconto_texto">de até R$500.000</span>
+              <span className="home_card_desconto_texto"> de até R$500.000</span>
             </div>
             <hr />
             <span>20%</span>
@@ -305,9 +305,7 @@ function Home() {
           <div className="home_card_desconto ultimo direction_row space_around align_center">
             <div className="home_card_conteudo">
               <span>Veículos</span>
-              <span className="home_card_desconto_texto">
-                a partir de R$800.000
-              </span>
+              <span className="home_card_desconto_texto"> a partir de R$800.000</span>
             </div>
             <hr />
             <span>30%</span>
@@ -327,7 +325,7 @@ function Home() {
                   Encontre o seu caminhão perfeito! Além das melhores peças do
                   mercado.
                 </p>
-                <a href="">Ver mais</a>
+                <Link to={'/'} style={{ textDecoration: 'none' }}>Ver mais</Link>
               </div>
             </div>
             <div className="home_card_saiba none_600px space_evenly">
@@ -336,7 +334,7 @@ function Home() {
                   Encontre o seu caminhão perfeito! Além das melhores peças do
                   mercado.
                 </p>
-                <a href="">Ver mais</a>
+                <Link to={'/'} style={{ textDecoration: 'none' }}>Ver mais</Link>
               </div>
             </div>
             <div className="home_card_saiba none_900px space_evenly">
@@ -345,7 +343,7 @@ function Home() {
                   Encontre o seu caminhão perfeito! Além das melhores peças do
                   mercado.
                 </p>
-                <a href="">Ver mais</a>
+                <Link to={'/'} style={{ textDecoration: 'none' }}>Ver mais</Link>
               </div>
             </div>
             <div className="home_card_saiba ultimo space_evenly">
@@ -354,7 +352,7 @@ function Home() {
                   Encontre o seu caminhão perfeito! Além das melhores peças do
                   mercado.
                 </p>
-                <a href="">Ver mais</a>
+                <Link to={'/'} style={{ textDecoration: 'none' }}>Ver mais</Link>
               </div>
             </div>
           </div>
@@ -1021,12 +1019,9 @@ function Home() {
               <div className="por_que_circulos" />
               <div className="por_que_circulos ativo_circulo" />
             </div>
-            <a
-              href="../cadastroTipoUsuario/index.html"
+            <Link to={'/cadastro/usuario'} style={{ textDecoration: 'none' }}
               className="align_center justify_center btn_cadastrar"
-            >
-              Venha se cadastrar
-            </a>
+            >Venha se cadastrar</Link>
           </div>
         </div>
       </section>
@@ -1165,7 +1160,7 @@ function Home() {
         <div className="secao_faz_diferenca space_evenly align_center direction_column">
           <div className="direction_column align_center justify_center">
             <h2>
-              A VolksWay faz a <span className="azul">diferença!</span>
+              A VolksWay faz a <span className="azul diferenca">diferença!</span>
             </h2>
             <p>
               Aqui nós importamos e agregamos na vida de milhares de pessoas, venha
@@ -1267,7 +1262,7 @@ function Home() {
             <div className="space_evenly direction_column">
               <h2>
                 Seleção de caminhões e ônibus mais
-                <span className="azul">Vendidos!!</span>
+                <span className="azul mais_vendidos"> Vendidos!!</span>
               </h2>
               <span className="home_selecao_nao_encontrou uppercase">
                 não encontrou nada de interessante?
@@ -1277,12 +1272,11 @@ function Home() {
                 encontrar o veículo perfeito!!
               </p>
             </div>
-            <a
-              href="../cadastroTipoUsuario/index.html#"
+            <Link to={'/cadastro/usuario'} style={{ textDecoration: 'none' }}
               className="align_center justify_center"
             >
               Cadastre-se
-            </a>
+            </Link>
           </div>
           <img
             className="img_selecao"
