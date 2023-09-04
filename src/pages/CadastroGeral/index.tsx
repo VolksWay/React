@@ -120,11 +120,11 @@ function CadastroGeral() {
                                 <input onChange={(event) => { setTelefone(event.target.value); handlePhone(event) }} type="tel" maxLength={15} className="nome_input" />
                                 <p className="erro_input">{errors.telefone?.message}</p>
                             </div>
-                            
+
                             <div className="nome">
                                 <label className="nomeInput">Data de nascimento</label> <br />
                                 <input className="nome_input" type="date" />
-                               {/*  <p className="erro_input">{errors.senha?.message}</p> */}
+                                {/*  <p className="erro_input">{errors.senha?.message}</p> */}
                             </div>
 
                             <div className="nome">

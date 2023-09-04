@@ -1,25 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Righteous&family=Titillium+Web:wght@400;600&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--poppins300);
-}
-
-:root {
-    --dark_blue: #12264B;
-    --light_blue: #00B1EB;
-    --yellow: #FFD100;
-    --grey: #EDEDED;
-    --dark_blue2: #252936;
-
-    --poppins300: 'Poppins', sans-serif;
-    --poppins500: 'Poppins', sans-serif;
-
-}
-
-
 #produtos .produtos_posicionamento {
 
     height: 100%;
@@ -28,12 +6,12 @@
 }
 
 /* header {
-    background-color: var(--dark_blue);
+    background-color: var(--cor-primaria);
     display: flex;
     height: 110px;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 4px solid var(--yellow);
+    border-bottom: 4px solid var(--cor-secundaria);
 }
 
 header img {
@@ -179,7 +157,7 @@ header a {
 
 #produtos .slider-nav a:hover {
     opacity: 1;
-    background-color: var(--light_blue);
+    background-color: var(--blue_card);
 }
 
 
@@ -226,8 +204,8 @@ header a {
 }
 
 #produtos .produtos_banner_conteudo .produtos_btn_banner {
-    background-color: var(--yellow);
-    color: var(--dark_blue);
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
     text-decoration: none;
     text-transform: capitalize;
     font-size: 16px;
@@ -266,7 +244,7 @@ header a {
 
 
 .produtos_ativo {
-    background-color: var(--light_blue);
+    background-color: var(--blue_card);
 } */
 
 
@@ -306,20 +284,20 @@ header a {
 
 #produtos .produtos_ofertas_h2::before {
     content: "ofertas";
-    color: var(--dark_blue);
+    color: var(--cor-primaria);
 }
 
 #produtos .produtos_ofertas_h2::after {
     content: "especiais";
-    color: var(--light_blue);
+    color: var(--blue_card);
 }
 
 /* .ofertas_h2 .h2_ofertas {
-    color: var(--dark_blue);
+    color: var(--cor-primaria);
 }
 
 .ofertas_h2 .h2_especiais {
-    color: var(--light_blue);
+    color: var(--blue_card);
 } */
 
 /*OFERTAS*/
@@ -426,7 +404,7 @@ header a {
 #produtos .prod_card_ofertas4 span,
 #produtos .prod_card_ofertas5 span {
     font-size: 16px;
-    color: var(--dark_blue);
+    color: var(--cor-primaria);
     font-weight: 900;
     font-size: 18px;
     margin: 8px auto;
@@ -449,7 +427,7 @@ header a {
 #produtos .prod_card_ofertas3 .prod_btn_card,
 #produtos .prod_card_ofertas4 .prod_btn_card,
 #produtos .prod_card_ofertas5 .prod_btn_card {
-    background-color: var(--light_blue);
+    background-color: var(--blue_card);
 
     filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.25));
 
@@ -496,7 +474,7 @@ header a {
 
 
     font-size: 40px;
-    color: var(--yellow);
+    color: var(--cor-secundaria);
     text-transform: capitalize;
 
 }
@@ -516,7 +494,7 @@ header a {
 }
 
 #produtos .prod_promocoes>div {
-    background-color: var(--dark_blue);
+    background-color: var(--cor-primaria);
     height: 530px;
     margin-top: -190px;
     display: flex;
@@ -542,7 +520,7 @@ header a {
 }
 
 #produtos .prod_card_azul {
-    background-color: var(--dark_blue2);
+    background-color: var(--cor-cinza-escuro);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     width: 210px;
@@ -570,7 +548,7 @@ header a {
     margin-top: -5px;
     margin-bottom: 10px;
     padding: 3px 10px;
-    color: var(--dark_blue);
+    color: var(--cor-primaria);
     z-index: 1;
 }
 
@@ -590,7 +568,7 @@ header a {
 }
 
 #produtos .prod_card_azul span {
-    color: var(--yellow);
+    color: var(--cor-secundaria);
     font-size: 16px;
     font-weight: lighter;
     text-transform: capitalize;
@@ -617,12 +595,12 @@ header a {
 
 #produtos .prod_noticias_h2::before {
     content: "noticias";
-    color: var(--dark_blue);
+    color: var(--cor-primaria);
 }
 
 #produtos .prod_noticias_h2::after {
     content: "recentes";
-    color: var(--light_blue);
+    color: var(--blue_card);
 }
 
 
@@ -679,14 +657,14 @@ header a {
 }
 
 #produtos .prod_card_branco h3 {
-    color: var(--dark_blue);
+    color: var(--cor-primaria);
     font-size: 14px;
     margin: 10px 20px;
     font-weight: 900;
 }
 
 #produtos .prod_card_branco p {
-    color: var(--dark_blue);
+    color: var(--cor-primaria);
     font-size: 12px;
     margin-left: 20px;
     font-weight: 500;
@@ -694,7 +672,7 @@ header a {
 }
 
 #produtos .prod_card_branco .prod_btn_noticias {
-    background-color: var(--yellow);
+    background-color: var(--cor-secundaria);
     box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
     font-size: 12px;
 
@@ -707,7 +685,7 @@ header a {
     text-align: center;
     text-transform: capitalize;
     text-decoration: none;
-    color: var(--dark_blue);
+    color: var(--cor-primaria);
 
 }
 
@@ -715,7 +693,7 @@ header a {
 /*__________________FOOTER - SABRINA___________________________*/
 
 /* footer {
-    background-color: var(--dark_blue);
+    background-color: var(--cor-primaria);
     height: 260px;
     margin-top: 100px;
 
@@ -964,7 +942,7 @@ footer .divfooter4 .in {
             top: 50px;
             flex-direction: column;
             z-index: 1;
-            background-color: var(--dark_blue);
+            background-color: var(--cor-primaria);
             width: 240px;
             padding: 30px 30px;
             text-decoration: underline;
@@ -972,7 +950,7 @@ footer .divfooter4 .in {
             gap: 10px;
             backdrop-filter: blur(10px);
             border-radius: 20px 0px 20px 20px;
-            border: 2px solid var(--light_blue);
+            border: 2px solid var(--blue_card);
         } 
 
 
@@ -1308,7 +1286,7 @@ footer .divfooter4 .in {
                 flex-direction: column;
                 align-items: center;
 
-                background-color: var(--dark_blue);
+                background-color: var(--cor-primaria);
                 width: 320px;
             }
 
