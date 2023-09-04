@@ -34,15 +34,17 @@
     margin-right: 40%;
     /*jogando os links para a direita*/
 }
-
-#BotaoCadastrar .botao_cadastre {
-    background-color: var(--cor-secundaria);
+ .btn_cadastrar {
+    background-color: #ffd100;
+    /* background-color: var(--cor-secundaria); */
     border-radius: 27px;
     font-family: var(--fonte-primaria);
     font-weight: 700;
     font-size: 1em;
     text-align: center;
-    color: var(--cor-primaria);
+    color: #12264b;
+    /* color: var(--cor-primaria); */
     padding: 0.7% 1.8%;
     min-width: 160px;
+    text-decoration: none;
 }
