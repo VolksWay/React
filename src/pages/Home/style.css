@@ -40,23 +40,6 @@
 .read-the-docs {
   color: #888;
 } */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --cor-branco: #FFFFFF;
-  --cor-primaria: #12264B;
-  --cor-secundaria: #FFD100;
-  --cor-terciaria: #00B0FF;
-  --cor-quartenaria: #195F8C;
-  --cor-cinza-escuro: #252936;
-  --cor-preto: #000000;
-  --fonte-primaria: 'Poppins', sans-serif;
-  --fonte-tamanho: 18px;
-}
 
 #main_home .container {
   width: 90%;
@@ -151,6 +134,11 @@
 }
 
 #main_home .home_branco_banner {
+  font-family: var(--fonte-primaria);
+  font-style: italic;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 60px;
   color: var(--cor-branco);
 }
 
@@ -279,6 +267,11 @@
 
 #main_home .home_titulo_saiba>span {
   color: var(--cor-terciaria);
+  width: 662px;
+  height: 60px;
+  font-family: var(--fonte-primaria);
+  font-weight: 700;
+  font-size: 40px;
 }
 
 #main_home .home_card_saiba {
@@ -535,7 +528,7 @@
   height: 96vh;
 }
 
-#main_home .secao_faz_diferenca h2 {
+#main_home .secao_faz_diferenca h2, #main_home .diferenca {
   font-size: 40px;
   font-weight: 700;
 }
@@ -570,6 +563,13 @@
 
 #main_home .home_selecao_card h2 {
   color: var(--cor-primaria);
+  font-size: 40px;
+  font-family: var(--fonte-primaria);
+  font-weight: 700;
+  width: 109%;
+}
+
+#main_home .mais_vendidos{
   font-size: 40px;
   font-family: var(--fonte-primaria);
   font-weight: 700;
@@ -616,6 +616,9 @@
   #main_home .home_texto_banner {
     font-size: 33px;
   }
+  #main_home .home_branco_banner {
+    font-size: 33px;
+  }
 
   #main_home .home_card_conteudo {
     width: 38%;
@@ -652,7 +655,7 @@
     width: 100%;
   }
 
-  #main_home .home_selecao_card h2 {
+  #main_home .home_selecao_card h2, #main_home .mais_vendidos {
     font-size: 33px;
   }
 
@@ -680,7 +683,7 @@
     font-size: 22px;
   }
 
-  #main_home .home_selecao_card h2 {
+  #main_home .home_selecao_card h2, #main_home .mais_vendidos {
     font-size: 29px;
   }
 
@@ -726,6 +729,10 @@
   #main_home .home_texto_banner {
     font-size: 27px;
   }
+  
+  #main_home .home_branco_banner {
+    font-size: 27px;
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -763,6 +770,10 @@
   }
 
   #main_home .home_texto_banner {
+    line-height: 46px;
+  }
+
+  #main_home .home_branco_banner {
     line-height: 46px;
   }
 
@@ -814,7 +825,7 @@
     width: 31%;
   }
 
-  #main_home .home_selecao_card h2 {
+  #main_home .home_selecao_card h2, #main_home .mais_vendidos {
     font-size: 25px;
   }
 
@@ -839,6 +850,11 @@
   }
 
   #main_home .home_texto_banner {
+    font-size: 25px;
+    line-height: 40px;
+  }
+
+  #main_home .home_branco_banner {
     font-size: 25px;
     line-height: 40px;
   }
@@ -1032,7 +1048,7 @@
     width: 6.5vw;
   }
 
-  #main_home .home_selecao_card h2 {
+  #main_home .home_selecao_card h2, #main_home .mais_vendidos {
     font-size: 20px;
   }
 
@@ -1041,6 +1057,11 @@
   }
 
   #main_home .home_texto_banner {
+    font-size: 23px;
+    line-height: 33px;
+  }
+  
+  #main_home .home_branco_banner {
     font-size: 23px;
     line-height: 33px;
   }
@@ -1085,6 +1106,12 @@
   }
 
   #main_home .home_titulo_saiba {
+    font-size: 33px;
+    text-align: center;
+    width: unset;
+  }
+  
+  #main_home .home_titulo_saiba>span {
     font-size: 33px;
     text-align: center;
     width: unset;
@@ -1177,6 +1204,13 @@
     text-align: center;
     width: unset;
   }
+  
+  #main_home .home_titulo_saiba>span {
+    font-size: 30px;
+    margin-top: 3%;
+    text-align: center;
+    width: unset;
+  }
 
   #main_home .home_saiba_mais>div:nth-child(1) {
     justify-content: space-evenly;
@@ -1187,7 +1221,7 @@
     width: 100%;
   }
 
-  #main_home .home_selecao_card h2 {
+  #main_home .home_selecao_card h2, #main_home .mais_vendidos {
     font-size: 19px;
   }
 }
@@ -1282,8 +1316,18 @@
     font-size: 26px;
     margin-top: 6%;
   }
+  
+  #main_home .home_titulo_saiba>span {
+    font-size: 26px;
+    margin-top: 6%;
+  }
 
   #main_home .home_texto_banner {
+    font-size: 17px;
+    line-height: 22px;
+  }
+
+  #main_home .home_branco_banner {
     font-size: 17px;
     line-height: 22px;
   }
@@ -1311,6 +1355,10 @@
   #main_home .home_titulo_saiba {
     font-size: 27px;
   }
+  
+  #main_home .home_titulo_saiba>span {
+    font-size: 27px;
+  }
 
   #main_home .home_quem_somos>div>div {
     height: 77%;
@@ -1330,6 +1378,11 @@
   }
 
   #main_home .home_titulo_saiba {
+    font-size: 25px;
+    margin-top: 0%;
+  }
+  
+  #main_home .home_titulo_saiba>span {
     font-size: 25px;
     margin-top: 0%;
   }
@@ -1388,6 +1441,11 @@
   }
 
   #main_home .home_titulo_saiba {
+    font-size: 22px;
+    margin-top: 0%;
+  }
+  
+  #main_home .home_titulo_saiba>span {
     font-size: 22px;
     margin-top: 0%;
   }
@@ -1465,7 +1523,7 @@
     width: 23%;
   }
 
-  #main_home .secao_faz_diferenca h2 {
+  #main_home .secao_faz_diferenca h2, #main_home .diferenca {
     font-size: 23px;
   }
 
@@ -1479,7 +1537,7 @@
 }
 
 @media screen and (max-width: 400px) {
-  #main_home .home_selecao_card h2 {
+  #main_home .home_selecao_card h2, #main_home .mais_vendidos {
     font-size: 17px;
   }
 
@@ -1534,6 +1592,11 @@
   }
 
   #main_home .home_texto_banner {
+    font-size: 16px;
+    line-height: 15px;
+  }
+
+  #main_home .home_branco_banner {
     font-size: 16px;
     line-height: 15px;
   }
