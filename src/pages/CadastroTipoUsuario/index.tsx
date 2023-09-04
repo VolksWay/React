@@ -1,5 +1,4 @@
 import "./style.css"
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Voltar from "../../assets/images/img_setaVoltar-semFundo.png"
 import Motorista from "../../assets/images/img_cadastroMotorista_semFundo.png"
@@ -10,18 +9,18 @@ import IlustracaoPessoas from "../../assets/images/img_ilustracaoPessoasComBalao
 function CadastroTipoUsuario() {
     return (
         <main id="main_cadastro_tipo_usuario">
-            <a href="../home/index.html#"></a>
+            <Link to={"/"}></Link>
             <div className="div_voltar">
-                <a href="../home/index.html#">
+                <Link to={"/"}>
                     <img
                         className="seta_voltar"
                         src={Voltar}
                         alt=""
                     />
-                </a>
-                <a href="../home/index.html#" className="aVoltar">
+                </Link>
+                <Link to={"/"} className="aVoltar">
                     Voltar
-                </a>
+                </Link>
             </div>
             <section className="section">
                 <div className="conteudo">
@@ -75,12 +74,12 @@ function CadastroTipoUsuario() {
                         </div>
                     </div>
                     <div className="btn_proximo">
-                        <a
+                        <Link
                             className="btnProximo"
-                            href="../cadastroVeiculo/cadastroVeiculo.html#"
+                            to={"/cadastro/veiculo"}
                         >
                             Próximo
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className="imgIlustracao">

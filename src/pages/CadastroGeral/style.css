@@ -1,26 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(-var(--fonte-primaria)00);
-}
-
-:root {
-    --blue_card: #00B1EB;
-    --dark_blue: #12264B;
-    --yellow: #FFD100;
-    --camada_geometrica: #8497B1;
-    --cor-branco: #FFFFFF;
-    --cor-primaria: #12264B;
-    --cor-secundaria: #FFD100;
-    --cor-terciaria: #00B0FF;
-    --cor-quartenaria: #195F8C;
-    --cor-cinza-escuro: #252936;
-    --cor-preto: #000000;
-    --fonte-primaria: 'poppins', sans-serif;
-    --fonte-tamanho: 18px;
-}
-
 #main_cadastro_geral {
     display: flex;
     background: linear-gradient(50deg, #ffffff 70%, var(--camada_geometrica) 30%);
@@ -82,7 +59,7 @@
 #main_cadastro_geral .seta_voltar {
     width: 45px;
     height: 45px;
-    color: var(--dark_blue);
+    color: var(--cor-primaria);
 }
 
 #main_cadastro_geral .spanVoltar {
@@ -92,10 +69,10 @@
     font-size: 24px;
     line-height: 36px;
     margin-left: 20%;
-    color: var(--dark_blue);
+    color: var(--cor-primaria);
 }
 
-#main_cadastro_geral .voltar{
+#main_cadastro_geral .voltar {
     text-decoration: none;
 }
 
@@ -104,7 +81,7 @@
     display: flex;
     width: 700px;
     height: 450px;
-   /*  align-items: column; */
+    /*  align-items: column; */
 }
 
 #main_cadastro_geral .inputs {
@@ -196,13 +173,29 @@
     justify-content: left;
 }
 
+#main_cadastro_geral .habilitado {
+    background-color: #FFD100;
+}
+
+#main_cadastro_geral .desabilitado {
+    background-color: #ffd1008c;
+}
+
+#main_cadastro_geral .erro_input {
+    font-family: var(--fonte-primaria);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: red;
+}
+
 #main_cadastro_geral .btn_proximo {
     justify-content: center;
     align-items: center;
     display: flex;
     width: 303px;
     height: 57px;
-    background: #FFD100;
     border-radius: 30px;
     margin-left: 65px;
     margin-top: 1px;
@@ -218,7 +211,7 @@
 #main_cadastro_geral .imgIlustracao {
     height: 500px;
     width: 500px;
- /*    background-color: cadetblue; */
+    /*    background-color: cadetblue; */
 }
 
 #main_cadastro_geral .ilustracao {
@@ -284,15 +277,18 @@
 @media screen and (max-width: 750px) {
     #main_cadastro_geral .seu_cadastro {
         width: 669px;
-        font-size:x-large;
+        font-size: x-large;
     }
+
     #main_cadastro_geral .seta_voltar {
         width: 20px;
         height: 20px;
     }
-    #main_cadastro_geral .spanVoltar{
+
+    #main_cadastro_geral .spanVoltar {
         font-size: 16px;
     }
+
     #main_cadastro_geral .btn_proximo {
         width: 206px;
 
@@ -304,56 +300,69 @@
         display: none;
     }
 }
+
 @media screen and (max-width: 730px) {
     #main_cadastro_geral .seu_cadastro {
         width: 320px;
     }
-    #main_cadastro_geral .conteudo{
+
+    #main_cadastro_geral .conteudo {
         width: 320px;
         height: 475px;
 
     }
+
     #main_cadastro_geral .seDestaca {
         width: 320px;
-    }  
+    }
 }
-@media screen and (max-width: 470px){
-    #main_cadastro_geral .nome{
+
+@media screen and (max-width: 470px) {
+    #main_cadastro_geral .nome {
         width: 320px;
     }
+
     #main_cadastro_geral .nome_input {
         width: 320px;
     }
-    #main_cadastro_geral .inputs{
+
+    #main_cadastro_geral .inputs {
         width: 320px;
     }
-}    
+}
 
-@media screen and (max-width: 400px){
-    #main_cadastro_geral .seu_cadastro{
+@media screen and (max-width: 400px) {
+    #main_cadastro_geral .seu_cadastro {
         width: 250px;
     }
-    #main_cadastro_geral .se_destaca{
+
+    #main_cadastro_geral .se_destaca {
         width: 250px;
     }
-    #main_cadastro_geral  .seDestaca{
+
+    #main_cadastro_geral .seDestaca {
         width: 250px;
     }
-    #main_cadastro_geral .nome{
+
+    #main_cadastro_geral .nome {
         width: 250px;
     }
-    #main_cadastro_geral .nome_input{
+
+    #main_cadastro_geral .nome_input {
         width: 250px;
     }
-    #main_cadastro_geral .inputs{
+
+    #main_cadastro_geral .inputs {
         width: 250px;
     }
 }
-@media screen and (max-width: 330px){
-    #main_cadastro_geral .conteudo{
+
+@media screen and (max-width: 330px) {
+    #main_cadastro_geral .conteudo {
         align-items: center;
     }
-    #main_cadastro_geral .nome_input{
+
+    #main_cadastro_geral .nome_input {
         width: 230px;
     }
 
