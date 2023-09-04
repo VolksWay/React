@@ -1,8 +1,8 @@
 import "./style.css"
-import Voltar from "../../assets/images/arrow-left-solid 1.png"
-import FundoVeiculo from "../../assets/images/Group 2452.png"
-/* import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; */
+import Voltar from "../../assets/img/arrow-left-solid 1.png"
+import FundoVeiculo from "../../assets/img/Group 2452.png"
+ import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"; 
 
 function CadastroVeiculo() {
     return (
