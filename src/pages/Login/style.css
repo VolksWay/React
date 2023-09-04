@@ -1,44 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Righteous&family=Titillium+Web:wght@400;600&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    --font1: 'Poppins', sans-serif;
-    color: #12264B;
-    font-size: 18px;
-    font-family: Poppins;
-    text-decoration-line: none;
-
-}
-
-:root {
-    --cor1: #00B1EB;
-    --cor2: #12264B;
-    --cor3: #EDEDED;
-
-    --font1: 'Poppins', sans-serif;
-
-}
-
-/* Header */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --cor-branco: #FFFFFF;
-    --cor-primaria: #12264B;
-    --cor-secundaria: #FFD100;
-    --cor-terciaria: #00B0FF;
-    --cor-quartenaria: #195F8C;
-    --cor-cinza-escuro: #252936;
-    --cor-preto: #000000;
-    --fonte-primaria: 'Poppins', sans-serif;
-    --fonte-tamanho: 18px;
-}
-
 #login main {
     /* background-color: blue; */
     height: 78vh;
@@ -96,15 +55,14 @@
 #login .alinhamento_campos_login label {
     font-size: 24px;
     margin-bottom: -3px;
-    color: #252936;
-
+    color: var(--cor-primaria)
 }
 
 #login .alinhamento_campos_Entrar {
     display: contents;
     border-radius: 300px;
     border: none;
-    font-family: 'Poppins';
+    font-family: var(--fonte-primaria);
     align-items: center;
     font-size: 34px;
     /* margin-bottom: 337px; */
@@ -117,20 +75,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Poppins';
+    font-family: var(--fonte-primaria);
     height: 57px;
     width: 203px;
     border-radius: 30px;
     border: none;
-    background-color: #00B1EB;
+    background-color: var(--blue_card);
     color: var(--cor-branco);
     font-weight: bolder;
-
+    text-decoration: none
 }
 
 #login .botao_entrar {
     display: flex;
-    background-color: #00B1EB;
+    background-color: var(--blue_card);
 }
 
 
@@ -145,7 +103,7 @@
 }
 
 #login .link_nao_cadastro {
-    color: var(--cor2);
+    color: var(--cor-primaria);
     border-radius: 8px;
     text-decoration: none;
 }
@@ -286,7 +244,7 @@
         top: 0;
         height: 100vh;
         width: 100%;
-        background-color: #12264B;
+        background-color: var(--cor-primaria);
         flex-direction: column;
         z-index: 1;
         border: 1px solid var(--branco);
