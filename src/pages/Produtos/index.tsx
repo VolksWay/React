@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./style.css"
 // import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -428,6 +427,8 @@ function Produtos() {
                         </div>
                     </div>
                 </section>
+
+                <Link to={CardNoticiasRecentes}></Link>
             </main>
 
 
