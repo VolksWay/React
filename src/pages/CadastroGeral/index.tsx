@@ -7,8 +7,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
+
 const schema = z.object({
-    nome: z.string().min(4, "Por favor, digite seu nome completo"),
+    nomeCompleto: z.string().min(4, "Por favor, digite seu nome completo"),
     telefone: z.string().min(4, "Por favor, digite um telefone válido"),
     /*  dataNascimento: z.date(), */
     email: z.string().min(6, "Por favor, digite um email válido").max(25).email({
@@ -16,7 +17,7 @@ const schema = z.object({
     }),
     cpf: z.string().min(14, "Por favor, informe um CPF válido"),
     senha: z.string().min(6, 'A senha precisa ter no mínimo 6 caracteres'),
-    confirmarSenha: z.string()
+    confirmarSenha: z.string().min(6, 'A senha precisa ter no mínimo 6 caracteres'),
 })
 
 type FormProps = z.infer<typeof schema>
@@ -32,7 +33,7 @@ function CadastroGeral() {
         /*   dataNascimento: new Date(), */
         resolver: zodResolver(schema),
         defaultValues: {
-            nome: "",
+            nomeCompleto: "",
             telefone: "",
             email: "",
             cpf: "",
@@ -41,12 +42,10 @@ function CadastroGeral() {
         }
     });
 
+    console.log(watch())
+
     const handleForm = (data: FormProps) => {
         console.log({ data })
-    }
-
-    function validarEmail(email: string) {
-        return /\S+@\S+\.\S+/.test(email);
     }
 
     const handlePhone = (event: any) => {
@@ -76,10 +75,6 @@ function CadastroGeral() {
         return value
     }
 
-    function validarCPF(cpf: any) {
-        return /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/.test(cpf);
-    }
-
     return (
         <main id="main_cadastro_geral">
             <Link to={"/cadastro/empresa"} className="voltar">
@@ -105,19 +100,19 @@ function CadastroGeral() {
 
                             <div className="nome">
                                 <label className="nomeInput">Nome</label> <br />
-                                <input className="nome_input" type="text" />
-                                <p className="erro_input">{errors.nome?.message}</p>
+                                <input {...register("nomeCompleto")} className="nome_input" type="text" />
+                                <p className="erro_input">{errors.nomeCompleto?.message}</p>
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">CPF</label> <br />
-                                <input onChange={(event) => { setCPF(event.target.value); handleCPF(event) }} maxLength={14} className="nome_input" type="text" />
+                                <input {...register("cpf")} onChange={(event) => { setCPF(event.target.value); handleCPF(event) }} maxLength={14} className="nome_input" type="text" />
                                 <p className="erro_input">{errors.cpf?.message}</p>
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">Telefone</label> <br />
-                                <input onChange={(event) => { setTelefone(event.target.value); handlePhone(event) }} type="tel" maxLength={15} className="nome_input" />
+                                <input {...register("telefone")} onChange={(event) => { setTelefone(event.target.value); handlePhone(event) }} type="tel" maxLength={15} className="nome_input" />
                                 <p className="erro_input">{errors.telefone?.message}</p>
                             </div>
 
@@ -129,8 +124,8 @@ function CadastroGeral() {
 
                             <div className="nome">
                                 <label className="nomeInput">Email</label> <br />
-                                <input onChange={(event) => setEmail(event.target.value)} type="text" minLength={6} className="nome_input" />
-                                <p className="erro_input">{errors.senha?.message}</p>
+                                <input {...register("email")} onChange={(event) => setEmail(event.target.value)} type="text" minLength={6} className="nome_input" />
+                                <p className="erro_input">{errors.email?.message}</p>
                             </div>
 
                             <div className="nome">
@@ -145,7 +140,7 @@ function CadastroGeral() {
 
                             <div className="nome">
                                 <label className="nomeInput">Confirmar senha</label> <br />
-                                <input className="nome_input" type="text" />
+                                <input {...register("confirmarSenha")} className="nome_input" type="text" />
                                 <p className="erro_input">{errors.confirmarSenha?.message}</p>
                             </div>
 
