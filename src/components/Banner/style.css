@@ -207,3 +207,21 @@
 }
 
 
+#banner .container{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+#banner .title{
+    text-align: center;
+    margin: 24px 0
+}
+
+#banner .slide-item{
+    width: 100%;
+    height: calc(100vh - 150px);
+    object-fit: cover;
+
+}
+
