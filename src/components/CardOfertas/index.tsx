@@ -1,5 +1,3 @@
-import "./style.css"
-
 //estilizacao
 import "./style.css"
 
@@ -7,12 +5,44 @@ import "./style.css"
 import imgCardOfertas from "../../assets/img/caminhao_banner_home.png";
 
 //hooks
-// import { Link } from "react-router-dom";
-// import { useSwipeable } from "react-swipeable";
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { register } from 'swiper/element/bundle'
+import { EffectFade, Navigation, Pagination } from "swiper";
+
+
+
+register();
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/effect-fade';
 
 
 function CardOfertas() {
+
+     // const [imgBanner, setImgBanner] = useState<string>("");
+     const [titulo, setTitulo] = useState<string>("");
+     const [descricao, setDescricao] = useState<string>("");
+     const [link, setLink] = useState<string>("");
+ 
+
+
+    const data = [
+        { id: "1", image: imgCardOfertas },
+        { id: "2", image: imgCardOfertas },
+        { id: "3", image: imgCardOfertas },
+
+    ]
+
+
+
+
     return (
         <>
             <div id="cardOfertas">

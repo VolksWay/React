@@ -15,6 +15,7 @@ import Banner from './components/Banner'
 // import CardOfertas from './components/CardOfertas';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Produtos from './pages/Produtos';
 
 
 //import swiper
@@ -38,8 +39,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/privacidade' element={<Privacidade />} />
         <Route path='/produtos' element={<Produtos />} /> */}
         {/* <Route path='/card-ofertas' element={<CardOfertas />} /> */}
-        <Route path='/banner' element={<Banner />} />
-    </Routes>
-  </BrowserRouter>
+        <Route path='/produtos' element={<Produtos />} />
+        {/* <Route path='/banner' element={<Banner />} /> */}
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode >,
 )

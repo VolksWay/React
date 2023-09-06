@@ -14,6 +14,15 @@ import cardNoticias3 from "../../assets/img/card3_noticias.png"
 import cardNoticias4 from "../../assets/img/card4_noticias.png"
 import cardNoticias5 from "../../assets/img/card5_noticias.png"
 import cardNoticias6 from "../../assets/img/card6_noticias.png"
+import axios from "axios";
+import Parse from 'parse/dist/parse.min.js';
+import { useEffect, useState } from "react";
+import Banner from "../../components/Banner";
+const PARSE_APPLICATION_ID = '1QJ5n2ix95flGl0Rt7b1l4CfbqXuYQcj7VU0oKGd';
+const PARSE_JAVASCRIPT_KEY = 'R3yYjaaJbXJNHSCT6NqVjxXZBqZjllwQzTuGUyvi';
+const PARSE_REST_API = 'aTuaHYnGDCCvEXeN4j3eyLfGxBbNnqH7zL5UAfxA';
+const MASTER_KEY = "F4vFzZm6HASmvFNv9TihqyVvEIPJhxs5uXY9Sebu"
+Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 
 
 
@@ -21,6 +30,41 @@ import cardNoticias6 from "../../assets/img/card6_noticias.png"
 
 
 function Produtos() {
+    const [conteudoBanner, setConteudoBanner] = useState<any[]>([]);
+
+    function listarBanner() {
+        // event.preventDefault();
+        console.log("teste");
+
+        // /* console.log(cpf) */
+        axios.get(`https://parseapi.back4app.com/parse/classes/banner`,
+            {
+                headers: {
+                    'X-Parse-Application-Id': PARSE_APPLICATION_ID,
+                    'X-Parse-REST-API-Key': PARSE_REST_API,
+                    'X-Parse-Master-Key': MASTER_KEY,
+                }
+            }).then((resposta) => {
+                if (resposta.status === 200) {
+                    // Se a resposta for 201, a solicitação foi bem-sucedida
+                    //200 pegar / 201 criar
+                    //setMensagemAguarde("Enviado")
+                    console.log(resposta)
+                    setConteudoBanner(resposta.data.results)
+                }
+            })
+            .catch((erro) => {
+                console.log(erro); // Trata erros de solicitação
+            });
+    }
+
+    useEffect(() => {
+        //executa ação
+        listarBanner();
+
+    }, []);
+
+    console.log(conteudoBanner)
     return (
         <main id="produtos">
             <h1>Pagina Produtos Volksway</h1>
@@ -29,6 +73,24 @@ function Produtos() {
             <div className="slider-wrapper produtos_posicionamento ">
                 <div className="slider">
                     <div className="banner1">
+                        <div className="produtos_banner_conteudo">
+                            {
+                                conteudoBanner.map((conteudo: any, indice: number) => {
+                                    return <li key={indice}>
+                                        <Banner
+                                            titulo={conteudo.titulo}
+                                            imagem={conteudo.imagem.url}
+                                            descricao={conteudo.descricao} />
+                                    </li>
+                                })
+                            }
+                        </div>
+                    </div>
+
+                </div>
+
+
+                {/* <div className="banner1">
                         <img id="slide-1" src={imgBanner} />
                         <div className="produtos_banner_conteudo">
                             <h2>a semana de ofertas já começou!!!</h2>
@@ -72,13 +134,12 @@ function Produtos() {
                                 ver mais
                             </Link>
                         </div>
-                    </div>
-                </div>
-                <div className="slider-nav">
-                    <a href="#slide-1" />
-                    <a href="#slide-2" />
-                    <a href="#slide-3" />
-                </div>
+                    </div> */}
+            </div>
+            <div className="slider-nav">
+                <a href="#slide-1" />
+                <a href="#slide-2" />
+                <a href="#slide-3" />
             </div>
             {/*   <div class="produtos_circulos produtos_posicionamento">
           <div class="produtos_circle produtos_ativo"></div>
@@ -182,6 +243,18 @@ function Produtos() {
                     />
                 </a>
             </section>
+            <section>
+                {
+                    conteudoBanner.map((conteudo: any, indice: number) => {
+                        return <div key={indice}>
+                            <Banner
+                                titulo={conteudo.titulo}
+                                image={conteudo.image}
+                                descricao={conteudo.descricao} />
+                        </div>
+                    })
+                }</section>
+
             <section className="prod_promocoes produtos_posicionamento">
                 <h2>promoções</h2>
                 <p>
@@ -431,7 +504,7 @@ function Produtos() {
                     </div>
                 </div>
             </section>
-        </main>
+        </main >
     )
 }
 

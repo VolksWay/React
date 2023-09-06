@@ -19,6 +19,30 @@
 
 }
 
+/* ESTILIZACAO CARROSEL - SWIPER*/
+
+#banner .container{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+#banner .title{
+    text-align: center;
+    margin: 24px 0
+}
+
+#banner .slide-item{
+    width: 100%;
+    height: calc(100vh - 150px);
+    object-fit: cover;
+
+}
+
+
+
+
+/* ESTILIZACAO BANNER */
 
 #banner .produtos_posicionamento {
 
@@ -116,7 +140,7 @@
 
 
     width: 700px;
-    height: 200px;
+    height: 400px;
     z-index: 1;
 
 }
@@ -206,22 +230,4 @@
     background-color: var(--light_blue);
 }
 
-
-#banner .container{
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
-#banner .title{
-    text-align: center;
-    margin: 24px 0
-}
-
-#banner .slide-item{
-    width: 100%;
-    height: calc(100vh - 150px);
-    object-fit: cover;
-
-}
 
