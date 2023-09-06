@@ -6,6 +6,13 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import axios from "axios";
+import Parse from 'parse/dist/parse.min.js';
+const PARSE_APPLICATION_ID = '1QJ5n2ix95flGl0Rt7b1l4CfbqXuYQcj7VU0oKGd';
+const PARSE_JAVASCRIPT_KEY = 'R3yYjaaJbXJNHSCT6NqVjxXZBqZjllwQzTuGUyvi';
+const PARSE_REST_API = 'aTuaHYnGDCCvEXeN4j3eyLfGxBbNnqH7zL5UAfxA';
+const MASTER_KEY = "F4vFzZm6HASmvFNv9TihqyVvEIPJhxs5uXY9Sebu"
+Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 
 
 const schema = z.object({
@@ -42,7 +49,25 @@ function CadastroGeral() {
         }
     });
 
-    console.log(watch())
+    function cadastrarUsuario(event: any) {
+        event.preventDefault();
+
+        axios.get(`https://parseapi.back4app.com/parse/classes/produtos`,
+            {
+                headers: {
+                    'X-Parse-Application-Id': PARSE_APPLICATION_ID,
+                    'X-Parse-REST-API-Key': PARSE_REST_API,
+                    'X-Parse-Master-Key': MASTER_KEY,
+                }
+            }) .then((resposta) => {
+                if (resposta.status === 200) {
+                    console.log(resposta)
+                }
+            })
+            .catch((erro) => {
+                console.log(erro); // Trata erros de solicitação
+            });
+    }
 
     const handleForm = (data: FormProps) => {
         console.log({ data })
@@ -85,6 +110,9 @@ function CadastroGeral() {
             </Link>
 
             <section className="section">
+                <form action="" onSubmit={cadastrarUsuario}>
+                    <button type="submit">Teste</button>
+                </form>
                 <form action="" onSubmit={handleSubmit(handleForm)}>
                     <div className="conteudo">
                         <div className="seuCadastro">
@@ -147,7 +175,7 @@ function CadastroGeral() {
 
                         </div>
 
-                        <div className="btn_proximo "><button className="btnProximo habilitado">cadastrar</button></div>
+                        <div className="btn_proximo "><button className="btnProximo habilitado" type="submit">cadastrar</button></div>
                         {/*  {(validarEmail(email) === true) && validarCPF(cpf) === true && telefone.length === 15 && <div className="btn_proximo habilitado"><Link className="btnProximo" to={"/login"}>cadastrar</Link></div>}
 
                         {(validarEmail(email) === false || validarCPF(cpf) === false || telefone.length < 15) && <div className="btn_proximo desabilitado"><a className="btnProximo">cadastrar</a></div>} */}

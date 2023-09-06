@@ -138,6 +138,7 @@
     background-color: var(--blue_card);
     flex-direction: column;
     padding: 7px;
+    cursor: pointer;
 }
 
 #main_cadastro_tipo_usuario .img_motorista {
@@ -166,6 +167,7 @@
     background-color: var(--blue_card);
     flex-direction: column;
     padding: 7px;
+    cursor: pointer;
 }
 
 #main_cadastro_tipo_usuario .img_adm_de_frota {
@@ -193,6 +195,7 @@
     background-color: var(--blue_card);
     flex-direction: column;
     padding: 7px;
+    cursor: pointer;
 }
 
 #main_cadastro_tipo_usuario .img_proprietario {

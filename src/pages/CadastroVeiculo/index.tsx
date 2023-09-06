@@ -2,12 +2,17 @@ import "./style.css"
 import Voltar from "../../assets/img/arrow-left-solid 1.png"
 import FundoVeiculo from "../../assets/img/Group 2452.png"
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+interface Usuario {
+    placa: string,
+    codigoChassi: string,
+    marca: string,
+    tipoUsuario: any,
+}
 
 function CadastroVeiculo() {
-    const [placa, setPlaca] = useState<string>("");
-    const [codigoChassi, setCodigoChassi] = useState<string>("");
-    const [marca, setMarca] = useState<string>("");
+    const [usuario, setUsuario] = useState<Usuario>(Object)
 
     const placaMask = (value: any) => {
         if (!value) return '';
@@ -25,7 +30,7 @@ function CadastroVeiculo() {
         let input = event.target
         input.value = placaMask(input.value)
     }
-    
+
     const handleCodigoChassi = (event: any) => {
         let input = event.target
         input.value = codigoChassiMask(input.value)
@@ -49,6 +54,18 @@ function CadastroVeiculo() {
 
         return formattedVIN;
     }
+
+    async function lerUrl() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const tipoUsuario = urlParams.get('tipoUsuario');
+        setUsuario({...usuario, tipoUsuario: tipoUsuario})
+        return console.log(tipoUsuario)
+    }
+
+    useEffect(() => {
+        lerUrl();
+    }, []);
 
     return (
         <main id="main_cadastro_veiculo">
@@ -74,17 +91,17 @@ function CadastroVeiculo() {
                     <div className="formulario_CadVeiculo">
                         <div>
                             <p>Código do Chassi</p>
-                            <input onChange={(event) => { setCodigoChassi(event.target.value); handleCodigoChassi(event) }} className="cadVeiculo1" />
+                            <input onChange={(event) => { setUsuario({ ...usuario, codigoChassi: event.target.value }); handleCodigoChassi(event) }} className="cadVeiculo1" />
                         </div>
                         <div>
                             <p>Placa</p>
-                            <input onChange={(event) => { setPlaca(event.target.value); handlePlaca(event) }} maxLength={8} className="cadVeiculo1" />
+                            <input onChange={(event) => { setUsuario({ ...usuario, placa: event.target.value }); handlePlaca(event) }} maxLength={8} className="cadVeiculo1" />
                         </div>
                         <div>
                             <p>Marca</p>
-                            <input className="cadVeiculo1" />
+                            <input className="cadVeiculo1" onChange={(event) => setUsuario({ ...usuario, marca: event.target.value })}/>
                         </div>
-                        <Link to={"/cadastro/empresa"}>
+                        <Link to={`/cadastro/empresa?${usuario}`}>
                             <button className="cadVeiculo2">Próximo</button>
                         </Link>
                     </div>

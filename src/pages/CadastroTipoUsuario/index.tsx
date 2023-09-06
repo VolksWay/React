@@ -5,8 +5,11 @@ import Motorista from "../../assets/img/img_cadastroMotorista_semFundo.png"
 import AdmFrota from "../../assets/img/img_cadastroAdmDeFrota_semFundo.png"
 import Proprietario from "../../assets/img/img_cadastroProprietario_semFundo.png"
 import IlustracaoPessoas from "../../assets/img/img_ilustracaoPessoasComBalao_semFundo.png"
+import { useState } from "react";
 
 function CadastroTipoUsuario() {
+    const [tipoUsuario, setTipousuario] = useState<string>("");
+
     return (
         <main id="main_cadastro_tipo_usuario">
             <Link to={"/"}></Link>
@@ -29,7 +32,7 @@ function CadastroTipoUsuario() {
                     </div>
                     <div className="seDestaca">
                         <span className="se_destaca">
-                            a Volks Way se destaca por sua plataforma de promoções e eventos
+                            A Volks Way se destaca por sua plataforma de promoções e eventos
                             exclusivos para motoristas, administradores de frota e proprietários
                             de caminhões. Nossa plataforma permite que esses profissionais
                             participem de eventos, concursos e promoções exclusivas, além de
@@ -42,42 +45,41 @@ function CadastroTipoUsuario() {
                         </p>
                     </div>
                     <div className="tres_opcoes">
-                        <div className="motorista">
+                        <div onClick={() => setTipousuario("Motorista")} className="motorista">
                             <img
                                 className="img_motorista"
                                 src={Motorista}
                                 alt=""
                             />
-                            <a className="a_motorista" href="">
+                            <span className="a_motorista">
                                 Motorista
-                            </a>
+                            </span>
                         </div>
-                        <div className="adm_de_frota">
+                        <div onClick={() => setTipousuario("AdmFrota")} className="adm_de_frota">
                             <img
                                 className="img_adm_de_frota"
                                 src={AdmFrota}
                                 alt=""
                             />
-                            <a className="a_adm_de_frota" href="">
+                            <span className="a_adm_de_frota">
                                 Administrador de frota
-                            </a>
+                            </span>
                         </div>
-                        <div className="proprietario">
+                        <div onClick={() => setTipousuario("Proprietario")} className="proprietario">
                             <img
                                 className="img_proprietario"
                                 src={Proprietario}
                                 alt=""
                             />
-                            <a className="a_proprietario" href="">
+                            <span className="a_proprietario">
                                 Proprietário de veículos
-                            </a>
+                            </span>
                         </div>
                     </div>
                     <div className="btn_proximo">
                         <Link
                             className="btnProximo"
-                            to={"/cadastro/veiculo"}
-                        >
+                            to={`/cadastro/veiculo?tipoUsuario=${tipoUsuario}`}>
                             Próximo
                         </Link>
                     </div>

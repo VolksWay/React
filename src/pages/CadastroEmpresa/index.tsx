@@ -4,8 +4,17 @@ import ImgCadastroVeiculo from "../../assets/img/img_cadastroEmpresa.svg"
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
+/* interface Usuario {
+    placa: string,
+    codigoChassi: string,
+    marca: string,
+    tipoUsuario: any,
+} */
+
+
 function CadastroEmpresa() {
     const [cnpj, setCNPJ] = useState<string>("");
+    /* const [usuario, setUsuario] = useState<string>(""); */
 
     function validarCNPJ(cnpj: string) {
         return /[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}/.test(cnpj);
@@ -30,6 +39,14 @@ function CadastroEmpresa() {
     
         return value;
     }
+
+    /* async function lerUrl() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const tipoUsuario = urlParams.get('tipoUsuario');
+        setUsuario({...usuario, tipoUsuario: tipoUsuario})
+        return console.log(tipoUsuario)
+    } */
 
     return (
         <main id="main_cadastro_empresa">
