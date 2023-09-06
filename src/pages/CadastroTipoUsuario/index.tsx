@@ -1,10 +1,10 @@
 import "./style.css"
 import { Link } from "react-router-dom";
-import Voltar from "../../assets/images/img_setaVoltar-semFundo.png"
-import Motorista from "../../assets/images/img_cadastroMotorista_semFundo.png"
-import AdmFrota from "../../assets/images/img_cadastroAdmDeFrota_semFundo.png"
-import Proprietario from "../../assets/images/img_cadastroProprietario_semFundo.png"
-import IlustracaoPessoas from "../../assets/images/img_ilustracaoPessoasComBalao_semFundo.png"
+/* import Motorista from "../../assets/img/img_img.png"
+import AdmFrota from "../../assets/img/img_cadastroAdmDeFrota_semFundo.png"
+import Proprietario from "../../assets/img/img_cadastroProprietario_semFundo.png"
+import IlustracaoPessoas from "../../assets/img/img_ilustracaoPessoasComBalao_semFundo.png" */
+/* import {  } from "../../assets/img/play_1.png"; */
 
 function CadastroTipoUsuario() {
     return (

@@ -1,11 +1,8 @@
 import "./style.css"
-<<<<<<< HEAD
+
 /* import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; */
-import Voltar from "../../assets/images/img_setaVoltar-semFundo.png"
-import ImgCadastroGeral from "../../assets/images/cadastro_pessoal.svg"
-=======
-import Voltar from "../../assets/img/img_setaVoltar-semFundo.png"
+
 import ImgCadastroGeral from "../../assets/img/cadastro_pessoal.svg"
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -26,7 +23,7 @@ const schema = z.object({
 })
 
 type FormProps = z.infer<typeof schema>
->>>>>>> develop
+
 
 function CadastroGeral() {
     const [email, setEmail] = useState<string>("");

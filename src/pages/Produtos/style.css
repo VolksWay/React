@@ -78,7 +78,6 @@ header a {
 /*______________________SEÇAO BANNER______________*/
 
 #produtos .produtos_banner {
-    /* background-image: url(./img/banner_produto.png);*/
 
     background-size: cover;
     display: flex;

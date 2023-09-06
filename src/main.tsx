@@ -11,6 +11,7 @@ import CadastroVeiculo from './pages/CadastroVeiculo/index'
 import Login from './pages/Login/index'
 import Privacidade from './pages/Privacidade/index'
 import Produtos from './pages/Produtos/index'
+import CardNoticiasRecentes from "./components/CardNoticiasRecentes/index";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -27,6 +28,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/login' element={<Login />} />
         <Route path='/privacidade' element={<Privacidade />} />
         <Route path='/produtos' element={<Produtos />} />
+        <Route path="/CardNoticiasRecentes" element={<CardNoticiasRecentes/>}/>
     </Routes>
   </BrowserRouter>
   </React.StrictMode >,

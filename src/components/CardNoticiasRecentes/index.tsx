@@ -1,4 +1,8 @@
 import "./style.css"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
 
 import cardNoticias1 from "../../assets/img/card1_noticias.png"
 import cardNoticias2 from "../../assets/img/card2_noticias.png"
@@ -10,8 +14,10 @@ import cardNoticias6 from "../../assets/img/card6_noticias.png"
 
 function CardNoticiasRecentes() {
     return (
-        <>
-
+        <section id="CardNoticiasRecentes" >
+            <div className="prod_noticias_h2 produtos_posicionamento">
+                    <h2 />
+            </div>
             <section className="prod_noticias_recentes">
                 <div className="prod_card_noticias">
                     <img src={cardNoticias1} alt="" />
@@ -75,7 +81,7 @@ function CardNoticiasRecentes() {
                     </div>
                 </div>
             </section>
-            <section className="prod_noticias_recentes2">
+            <section id="CardNoticiasRecentes" className="prod_noticias_recentes2">
                 <div className="prod_card_noticias">
                     <img src={cardNoticias4} alt="" />
                     <div className="prod_card_branco">
@@ -141,7 +147,9 @@ function CardNoticiasRecentes() {
                     </div>
                 </div>
             </section>
-        </>
+
+        
+        </section>
     );
 }
 

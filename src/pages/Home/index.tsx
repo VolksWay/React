@@ -1,6 +1,6 @@
 /* import { useState } from 'react' */
 import CaminhaoBanner from "../../assets/img/caminhao_banner_home.png"
-import SetaBanner from "../../assets/img/seta_banner_home.svg"
+/* import SetaBanner from "../../assets/img/seta_banner_home.svg" */
 import QuemSomos from "../../assets/img/img_quemSomos.svg"
 import Depoimento from "../../assets/img/caminhoneiro_home.png"
 import MaisVendidos from "../../assets/img/caminhao_home.png"
