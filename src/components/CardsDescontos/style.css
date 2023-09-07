@@ -87,7 +87,7 @@
 
 /* HOME */
 .home_banner {
-    background-image: url("./img/background_banner_home.png");
+    /* background-image: url("./img/background_banner_home.png"); */
     height: 60vh;
     width: 100%;
     background-position: center;
@@ -240,6 +240,7 @@
 .home_titulo_saiba {
     width: 662px;
     height: 60px;
+    /* height: 55px; */
     font-family: var(--fonte-primaria);
     font-weight: 700;
     font-size: 40px;
@@ -251,9 +252,12 @@
 }
 
 .home_card_saiba {
-    height: 61.5vh;
-    width: 23.7%;
-    background: url("./img/img_home_card_saiba_mais.svg");
+    /* height: 61.5vh; */
+    height: 75vh;
+    /* width: 23.7%; */
+    width: 30%;
+    /* background: url("./img/img_home_card_saiba_mais.svg"); */
+    background: url("../../assets/img/caminhao_card.png");
     border-radius: 20px;
     background-position: center;
     background-size: cover;
@@ -364,15 +368,15 @@
     overflow: scroll;
     overflow-y: hidden;
     scroll-behavior: smooth;
-    /* height: 424px; */
-    /* margin-bottom: -237px; */
+    /* height: 424px;
+    margin-bottom: -237px; */
     scroll-snap-align: start;
 
 }
 
 .carrossel::-webkit-scrollbar {
     width: 0.1em;
-    background-color: transparent;
+    background-color:transparent;
 }
 
 .carrossel::-webkit-scrollbar-thumb {
