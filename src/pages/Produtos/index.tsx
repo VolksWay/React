@@ -49,8 +49,8 @@ function Produtos() {
                     // Se a resposta for 201, a solicitação foi bem-sucedida
                     //200 pegar / 201 criar
                     //setMensagemAguarde("Enviado")
-                    console.log(resposta)
                     setConteudoBanner(resposta.data.results)
+                    console.log("entrouuu",resposta.data.results)
                 }
             })
             .catch((erro) => {
@@ -64,14 +64,11 @@ function Produtos() {
 
     }, []);
 
-    console.log(conteudoBanner)
     return (
         <main id="produtos">
-            <h1>Pagina Produtos Volksway</h1>
-            {/*   <section class="produtos_posicionamento">
-    <div class="produtos_banner produtos_posicionamento"> */}
-            <div className="slider-wrapper produtos_posicionamento ">
-                <div className="slider">
+            {/* <h1>Pagina Produtos Volksway</h1> */}
+            {/* <div className="slider-wrapper produtos_posicionamento "> */}
+            {/* <div className="slider">
                     <div className="banner1">
                         <div className="produtos_banner_conteudo">
                             {
@@ -87,10 +84,35 @@ function Produtos() {
                         </div>
                     </div>
 
-                </div>
+                </div> */}
+            <div className="container">
+
+                {/* <h1 className="teste">teste</h1> */}
+
+                <Banner conteudo={conteudoBanner} />
 
 
-                {/* <div className="banner1">
+
+            </div>
+            {/* 
+                <section>
+                {
+                    conteudoBanner.map((conteudo: any, indice: number) => {
+                        return <div key={indice}>
+                            <Banner
+                                titulo={conteudo.titulo}
+                                image={conteudo.image.url}
+                                descricao={conteudo.descricao} />
+                        </div>
+                    })
+                }</section> */}
+
+
+
+
+
+
+            {/* <div className="banner1">
                         <img id="slide-1" src={imgBanner} />
                         <div className="produtos_banner_conteudo">
                             <h2>a semana de ofertas já começou!!!</h2>
@@ -135,12 +157,12 @@ function Produtos() {
                             </Link>
                         </div>
                     </div> */}
-            </div>
+            {/* </div>
             <div className="slider-nav">
                 <a href="#slide-1" />
                 <a href="#slide-2" />
                 <a href="#slide-3" />
-            </div>
+            </div> */}
             {/*   <div class="produtos_circulos produtos_posicionamento">
           <div class="produtos_circle produtos_ativo"></div>
           <div class="produtos_circle"></div>
@@ -243,17 +265,6 @@ function Produtos() {
                     />
                 </a>
             </section>
-            <section>
-                {
-                    conteudoBanner.map((conteudo: any, indice: number) => {
-                        return <div key={indice}>
-                            <Banner
-                                titulo={conteudo.titulo}
-                                image={conteudo.image}
-                                descricao={conteudo.descricao} />
-                        </div>
-                    })
-                }</section>
 
             <section className="prod_promocoes produtos_posicionamento">
                 <h2>promoções</h2>

@@ -1,3 +1,10 @@
+#produtos .container{
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+
 #produtos .produtos_posicionamento {
 
     height: 100%;

@@ -39,6 +39,9 @@ Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 
 function Banner(props: any) {
 
+    console.log(props.conteudo);
+    
+
     // const swiperRef = useRef<SwiperRef>(null);
 
     // const swiperApi = swiperRef.current?.swiper;
@@ -48,8 +51,78 @@ function Banner(props: any) {
     // const [descricao, setDescricao] = useState<string>("");
     // const [link, setLink] = useState<string>("");
 
+    // const [conteudoBanner, setConteudoBanner] = useState<any[]>([]);
+
+
+
+
+    // function listarBanner() {
+    //     // event.preventDefault();
+    //     console.log("teste");
+
+    //     // /* console.log(cpf) */
+    //     axios.get(`https://parseapi.back4app.com/parse/classes/banner`,
+    //         {
+    //             headers: {
+    //                 'X-Parse-Application-Id': PARSE_APPLICATION_ID,
+    //                 'X-Parse-REST-API-Key': PARSE_REST_API,
+    //                 'X-Parse-Master-Key': MASTER_KEY,
+    //             }
+    //         }).then((resposta) => {
+    //             if (resposta.status === 200) {
+    //                 // Se a resposta for 201, a solicitação foi bem-sucedida
+    //                 //200 pegar / 201 criar
+    //                 //setMensagemAguarde("Enviado")
+    //                 console.log(resposta)
+    //                 setConteudoBanner(resposta.data.results)
+    //             }
+    //         })
+    //         .catch((erro) => {
+    //             console.log(erro); // Trata erros de solicitação
+    //         });
+    // }
+
+    // useEffect(() => {
+    //     //executa ação
+    //     listarBanner();
+
+    // }, []);
+
+
+
+
+
     return (
         <>
+
+            {/* <main id="produtos">
+            <h1>Pagina Produtos Volksway</h1>
+            <div className="slider-wrapper produtos_posicionamento ">
+                <div className="slider">
+                    <div className="banner1">
+                        <div className="produtos_banner_conteudo">
+                            {
+                                conteudoBanner.map((conteudo: any, indice: number) => {
+                                    return <li key={indice}>
+                                        <Banner
+                                            titulo={conteudo.titulo}
+                                            imagem={conteudo.imagem.url}
+                                            descricao={conteudo.descricao} />
+                                    </li>
+                                })
+                            }
+                        </div>
+                    </div>
+
+                </div>
+            </div>   
+</main>
+ */}
+
+
+
+
+
 
 
             {/* TESTE COM PROPS */}
@@ -63,20 +136,24 @@ function Banner(props: any) {
                         navigation
                     >
 
-                        <SwiperSlide>
-                            <img
-                                src={props.imagem}
-                                className="slide-item"
-                            />
+                        {
+                            props.conteudo.map((banner: any) => (
+                                <SwiperSlide key={banner.objectId}>
+                                    <img
+                                        src={banner.imagem.url}
+                                        className="slide-item"
+                                    />
 
-                            <div className="produtos_banner_conteudo">
-                                <h2>{props.titulo}</h2>
-                                <p>{props.descricao}
-                                </p>
-                                <a className="produtos_btn_banner" href="">ver mais</a>
-                            </div>
+                                    <div className="produtos_banner_conteudo">
+                                        <h2>{banner.titulo}</h2>
+                                        <p>{banner.descricao}
+                                        </p>
+                                        <a className="produtos_btn_banner" href="">ver mais</a>
+                                    </div>
+                                </SwiperSlide>
+                            ))
+                        }
 
-                        </SwiperSlide>
                     </Swiper>
                 </div>
             </div>

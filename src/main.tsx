@@ -39,8 +39,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/privacidade' element={<Privacidade />} />
         <Route path='/produtos' element={<Produtos />} /> */}
         {/* <Route path='/card-ofertas' element={<CardOfertas />} /> */}
+        {/* <Route path='/produtos' element={<Produtos />} /> */}
         <Route path='/produtos' element={<Produtos />} />
-        {/* <Route path='/banner' element={<Banner />} /> */}
+        <Route path='/banner' element={<Banner />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode >,
