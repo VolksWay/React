@@ -59,7 +59,7 @@ function CadastroVeiculo() {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const tipoUsuario = urlParams.get('tipoUsuario');
-        setUsuario({...usuario, tipoUsuario: tipoUsuario})
+        setUsuario({ ...usuario, tipoUsuario: tipoUsuario })
         return console.log(tipoUsuario)
     }
 
@@ -99,9 +99,10 @@ function CadastroVeiculo() {
                         </div>
                         <div>
                             <p>Marca</p>
-                            <input className="cadVeiculo1" onChange={(event) => setUsuario({ ...usuario, marca: event.target.value })}/>
+                            <input className="cadVeiculo1" onChange={(event) => setUsuario({ ...usuario, marca: event.target.value })} />
                         </div>
-                        <Link to={`/cadastro/empresa?${usuario}`}>
+
+                        <Link to={`/cadastro/empresa?tipoUsuario=${usuario.tipoUsuario}&placa=${usuario.placa}&marca=${usuario.marca}&codigoChassi=${usuario.codigoChassi}`}>
                             <button className="cadVeiculo2">Próximo</button>
                         </Link>
                     </div>

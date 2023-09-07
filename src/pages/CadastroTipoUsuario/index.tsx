@@ -45,44 +45,109 @@ function CadastroTipoUsuario() {
                         </p>
                     </div>
                     <div className="tres_opcoes">
-                        <div onClick={() => setTipousuario("Motorista")} className="motorista">
-                            <img
-                                className="img_motorista"
-                                src={Motorista}
-                                alt=""
-                            />
-                            <span className="a_motorista">
-                                Motorista
-                            </span>
-                        </div>
-                        <div onClick={() => setTipousuario("AdmFrota")} className="adm_de_frota">
-                            <img
-                                className="img_adm_de_frota"
-                                src={AdmFrota}
-                                alt=""
-                            />
-                            <span className="a_adm_de_frota">
-                                Administrador de frota
-                            </span>
-                        </div>
-                        <div onClick={() => setTipousuario("Proprietario")} className="proprietario">
-                            <img
-                                className="img_proprietario"
-                                src={Proprietario}
-                                alt=""
-                            />
-                            <span className="a_proprietario">
-                                Proprietário de veículos
-                            </span>
-                        </div>
+                        {tipoUsuario !== "Motorista" &&
+                            <div onClick={() => setTipousuario("Motorista")} className="motorista">
+                                <img
+                                    className="img_motorista"
+                                    src={Motorista}
+                                    alt=""
+                                />
+                                <span className="a_motorista">
+                                    Motorista
+                                </span>
+                            </div>
+                        }
+
+                        {tipoUsuario === "Motorista" &&
+                            <div onClick={() => setTipousuario("Motorista")} className="motorista background_amarelo">
+                                <img
+                                    className="img_motorista"
+                                    src={Motorista}
+                                    alt=""
+                                />
+                                <span className="a_motorista">
+                                    Motorista
+                                </span>
+                            </div>
+                        }
+
+                        {tipoUsuario !== "AdmFrota" &&
+                            <div onClick={() => setTipousuario("AdmFrota")} className="adm_de_frota">
+                                <img
+                                    className="img_adm_de_frota"
+                                    src={AdmFrota}
+                                    alt=""
+                                />
+                                <span className="a_adm_de_frota">
+                                    Administrador de frota
+                                </span>
+                            </div>
+                        }
+
+                        {tipoUsuario === "AdmFrota" &&
+                            <div onClick={() => setTipousuario("AdmFrota")} className="adm_de_frota background_amarelo">
+                                <img
+                                    className="img_adm_de_frota"
+                                    src={AdmFrota}
+                                    alt=""
+                                />
+                                <span className="a_adm_de_frota">
+                                    Administrador de frota
+                                </span>
+                            </div>
+                        }
+
+                        {tipoUsuario !== "Proprietário" &&
+                            <div onClick={() => setTipousuario("Proprietário")} className="proprietario">
+                                <img
+                                    className="img_proprietario"
+                                    src={Proprietario}
+                                    alt=""
+                                />
+                                <span className="a_proprietario">
+                                    Proprietário de veículos
+                                </span>
+                            </div>
+                        }
+
+                        {tipoUsuario === "Proprietário" &&
+                            <div onClick={() => setTipousuario("Proprietário")} className="proprietario background_amarelo">
+                                <img
+                                    className="img_proprietario"
+                                    src={Proprietario}
+                                    alt=""
+                                />
+                                <span className="a_proprietario">
+                                    Proprietário de veículos
+                                </span>
+                            </div>
+                        }
                     </div>
-                    <div className="btn_proximo">
-                        <Link
-                            className="btnProximo"
-                            to={`/cadastro/veiculo?tipoUsuario=${tipoUsuario}`}>
-                            Próximo
-                        </Link>
-                    </div>
+                    {tipoUsuario === "Motorista" &&
+                        <div className="btn_proximo">
+                            <Link
+                                className="btnProximo"
+                                to={`/cadastro/veiculo?tipoUsuario=${tipoUsuario}`}>
+                                Próximo
+                            </Link>
+                        </div>
+                    }
+                    {tipoUsuario !== "" && tipoUsuario !== "Motorista" &&
+                        <div className="btn_proximo">
+                            <Link
+                                className="btnProximo"
+                                to={`/cadastro/empresa?tipoUsuario=${tipoUsuario}`}>
+                                Próximo
+                            </Link>
+                        </div>
+                    }
+                    {tipoUsuario === "" &&
+                        <div className="btn_proximo desabilitado">
+                            <a className="btnProximo desabilitado">
+                                Próximo
+                            </a>
+                        </div>
+                    }
                 </div>
                 <div className="imgIlustracao">
                     <img

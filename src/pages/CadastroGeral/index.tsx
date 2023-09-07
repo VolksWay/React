@@ -2,7 +2,7 @@ import "./style.css"
 import Voltar from "../../assets/img/img_setaVoltar-semFundo.png"
 import ImgCadastroGeral from "../../assets/img/cadastro_pessoal.svg"
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -14,6 +14,21 @@ const PARSE_REST_API = 'aTuaHYnGDCCvEXeN4j3eyLfGxBbNnqH7zL5UAfxA';
 const MASTER_KEY = "F4vFzZm6HASmvFNv9TihqyVvEIPJhxs5uXY9Sebu"
 Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 
+interface Usuario {
+    placa: string,
+    codigoChassi: string,
+    marca: string,
+    tipoUsuario: string,
+    nomeEmpresa: string,
+    cnpj: string,
+    cidade: string,
+    nomeCompleto: string,
+    telefone: string,
+    email: string,
+    cpf: string,
+    senha: string
+    dataNascimento: string
+}
 
 const schema = z.object({
     nomeCompleto: z.string().min(4, "Por favor, digite seu nome completo"),
@@ -30,9 +45,7 @@ const schema = z.object({
 type FormProps = z.infer<typeof schema>
 
 function CadastroGeral() {
-    const [email, setEmail] = useState<string>("");
-    const [telefone, setTelefone] = useState<string>("");
-    const [cpf, setCPF] = useState<string>("");
+    const [usuario, setUsuario] = useState<Usuario>(Object)
     const { handleSubmit, register, watch, formState: { errors } } = useForm<FormProps>({
         mode: "all",
         reValidateMode: 'onChange',
@@ -52,14 +65,41 @@ function CadastroGeral() {
     function cadastrarUsuario(event: any) {
         event.preventDefault();
 
-        axios.get(`https://parseapi.back4app.com/parse/classes/produtos`,
+        var partesData = usuario.dataNascimento.split('-');
+
+        // Extraia o dia, mês e ano da data
+        var dia = partesData[2];
+        var mes = partesData[1];
+        var ano = partesData[0];
+
+        // Formate a data no formato "dia/mês/ano"
+        var dataFormatada = dia + '/' + mes + '/' + ano;
+
+        console.log(dataFormatada);
+
+        axios.post(`https://parseapi.back4app.com/parse/classes/usuario`,
+            {
+                placa: usuario.placa,
+                codigoChassi: usuario.codigoChassi,
+                marca: usuario.marca,
+               /*  tipoUsuario: "4gl2YylECw", */
+                nomeEmpresa: usuario.nomeEmpresa,
+                cnpj: usuario.cnpj,
+                cidade: usuario.cidade,
+                nomeCompleto: usuario.nomeCompleto,
+                telefone: usuario.telefone,
+                email: usuario.email,
+                cpf: usuario.cpf,
+                senha: usuario.senha,
+                dataNascimento: dataFormatada
+            },
             {
                 headers: {
                     'X-Parse-Application-Id': PARSE_APPLICATION_ID,
                     'X-Parse-REST-API-Key': PARSE_REST_API,
                     'X-Parse-Master-Key': MASTER_KEY,
                 }
-            }) .then((resposta) => {
+            }).then((resposta) => {
                 if (resposta.status === 200) {
                     console.log(resposta)
                 }
@@ -100,6 +140,37 @@ function CadastroGeral() {
         return value
     }
 
+    async function lerUrl() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const cidade = urlParams.get('cidade');
+        const cnpj = urlParams.get('cnpj');
+        const nomeEmpresa = urlParams.get('nomeEmpresa');
+        const tipoUsuario = urlParams.get('tipoUsuario');
+        console.log(tipoUsuario)
+        if (tipoUsuario !== "Motorista" && tipoUsuario !== null && nomeEmpresa !== null && cidade !== null && cnpj !== null) {
+            setUsuario({ ...usuario, tipoUsuario: tipoUsuario, nomeEmpresa: nomeEmpresa, cidade: cidade, cnpj: cnpj });
+            console.log(tipoUsuario);
+        } else {
+            console.log("tipoUsuario não encontrado na URL");
+        }
+
+        const codigoChassi = urlParams.get('codigoChassi');
+        const marca = urlParams.get('marca');
+        const placa = urlParams.get('placa');
+        if (tipoUsuario === "Motorista" && tipoUsuario !== null && nomeEmpresa !== null && cidade !== null && cnpj !== null && marca !== null && placa !== null && codigoChassi !== null) {
+            setUsuario({ ...usuario, tipoUsuario: tipoUsuario, nomeEmpresa: nomeEmpresa, cidade: cidade, cnpj: cnpj, codigoChassi: codigoChassi, marca: marca, placa: placa });
+            console.log(tipoUsuario);
+        }
+
+        return console.log(usuario)
+    }
+
+    useEffect(() => {
+        lerUrl();
+    }, []);
+
+
     return (
         <main id="main_cadastro_geral">
             <Link to={"/cadastro/empresa"} className="voltar">
@@ -134,25 +205,25 @@ function CadastroGeral() {
 
                             <div className="nome">
                                 <label className="nomeInput">CPF</label> <br />
-                                <input {...register("cpf")} onChange={(event) => { setCPF(event.target.value); handleCPF(event) }} maxLength={14} className="nome_input" type="text" />
+                                <input {...register("cpf")} onChange={(event) => { setUsuario({ ...usuario, cpf: event.target.value }); handleCPF(event) }} maxLength={14} className="nome_input" type="text" />
                                 <p className="erro_input">{errors.cpf?.message}</p>
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">Telefone</label> <br />
-                                <input {...register("telefone")} onChange={(event) => { setTelefone(event.target.value); handlePhone(event) }} type="tel" maxLength={15} className="nome_input" />
+                                <input {...register("telefone")} onChange={(event) => { setUsuario({ ...usuario, telefone: event.target.value }); handlePhone(event) }} type="tel" maxLength={15} className="nome_input" />
                                 <p className="erro_input">{errors.telefone?.message}</p>
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">Data de nascimento</label> <br />
-                                <input className="nome_input" type="date" />
+                                <input className="nome_input" type="date" onChange={(event) => setUsuario({ ...usuario, dataNascimento: event.target.value })} />
                                 {/*  <p className="erro_input">{errors.senha?.message}</p> */}
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">Email</label> <br />
-                                <input {...register("email")} onChange={(event) => setEmail(event.target.value)} type="text" minLength={6} className="nome_input" />
+                                <input {...register("email")} onChange={(event) => setUsuario({ ...usuario, email: event.target.value })} type="text" minLength={6} className="nome_input" />
                                 <p className="erro_input">{errors.email?.message}</p>
                             </div>
 
@@ -162,6 +233,7 @@ function CadastroGeral() {
                                     {...register("senha")}
                                     className="nome_input"
                                     type="password"
+                                    onChange={(event) => setUsuario({ ...usuario, senha: event.target.value })}
                                 />
                                 <p className="erro_input">{errors.senha?.message}</p>
                             </div>
