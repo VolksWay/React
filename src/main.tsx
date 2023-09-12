@@ -31,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/cadastro/veiculo' element={<CadastroVeiculo />} />
         <Route path='/login' element={<Login />} />
         <Route path='/privacidade' element={<Privacidade />} /> */}
-        <Route path='/' element={<BotaoEstouInteressado />} />
+        <Route path='/' element={<Produtos />} />
     </Routes>
   </BrowserRouter>
   </React.StrictMode >,
