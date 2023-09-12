@@ -18,6 +18,7 @@ import axios from "axios";
 import Parse from 'parse/dist/parse.min.js';
 import { useEffect, useState } from "react";
 import Banner from "../../components/Banner";
+import CardOfertas from "../../components/CardOfertas";
 const PARSE_APPLICATION_ID = '1QJ5n2ix95flGl0Rt7b1l4CfbqXuYQcj7VU0oKGd';
 const PARSE_JAVASCRIPT_KEY = 'R3yYjaaJbXJNHSCT6NqVjxXZBqZjllwQzTuGUyvi';
 const PARSE_REST_API = 'aTuaHYnGDCCvEXeN4j3eyLfGxBbNnqH7zL5UAfxA';
@@ -31,6 +32,7 @@ Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 
 function Produtos() {
     const [conteudoBanner, setConteudoBanner] = useState<any[]>([]);
+    const [conteudoOfertas, setConteudoOfertas] = useState<any[]>([]);
 
     function listarBanner() {
         // event.preventDefault();
@@ -50,7 +52,33 @@ function Produtos() {
                     //200 pegar / 201 criar
                     //setMensagemAguarde("Enviado")
                     setConteudoBanner(resposta.data.results)
-                    console.log("entrouuu",resposta.data.results)
+                    console.log("entrouuu", resposta.data.results)
+                }
+            })
+            .catch((erro) => {
+                console.log(erro); // Trata erros de solicitação
+            });
+    }
+
+    function listarOfertas() {
+        // event.preventDefault();
+        console.log("teste");
+
+        // /* console.log(cpf) */
+        axios.get(`https://parseapi.back4app.com/parse/classes/ofertas`,
+            {
+                headers: {
+                    'X-Parse-Application-Id': PARSE_APPLICATION_ID,
+                    'X-Parse-REST-API-Key': PARSE_REST_API,
+                    'X-Parse-Master-Key': MASTER_KEY,
+                }
+            }).then((resposta) => {
+                if (resposta.status === 200) {
+                    // Se a resposta for 201, a solicitação foi bem-sucedida
+                    //200 pegar / 201 criar
+                    //setMensagemAguarde("Enviado")
+                    setConteudoOfertas(resposta.data.results)
+                    console.log("entrouuu ofertas", resposta.data.results)
                 }
             })
             .catch((erro) => {
@@ -61,209 +89,24 @@ function Produtos() {
     useEffect(() => {
         //executa ação
         listarBanner();
+        listarOfertas();
 
     }, []);
 
     return (
         <main id="produtos">
-            {/* <h1>Pagina Produtos Volksway</h1> */}
-            {/* <div className="slider-wrapper produtos_posicionamento "> */}
-            {/* <div className="slider">
-                    <div className="banner1">
-                        <div className="produtos_banner_conteudo">
-                            {
-                                conteudoBanner.map((conteudo: any, indice: number) => {
-                                    return <li key={indice}>
-                                        <Banner
-                                            titulo={conteudo.titulo}
-                                            imagem={conteudo.imagem.url}
-                                            descricao={conteudo.descricao} />
-                                    </li>
-                                })
-                            }
-                        </div>
-                    </div>
 
-                </div> */}
-            <div className="container">
-
-                {/* <h1 className="teste">teste</h1> */}
-
-                <Banner conteudo={conteudoBanner} />
+            <Banner conteudo={conteudoBanner} />
 
 
 
-            </div>
-            {/* 
-                <section>
-                {
-                    conteudoBanner.map((conteudo: any, indice: number) => {
-                        return <div key={indice}>
-                            <Banner
-                                titulo={conteudo.titulo}
-                                image={conteudo.image.url}
-                                descricao={conteudo.descricao} />
-                        </div>
-                    })
-                }</section> */}
-
-
-
-
-
-
-            {/* <div className="banner1">
-                        <img id="slide-1" src={imgBanner} />
-                        <div className="produtos_banner_conteudo">
-                            <h2>a semana de ofertas já começou!!!</h2>
-                            <p>
-                                compre lançamentos exclusivos para quem é do clube e desbloqueie
-                                mais das coisas que voce ama.
-                            </p>
-                            <Link to={'/'} style={{ textDecoration: 'none' }}
-                                className="produtos_btn_banner"
-                            >
-                                ver mais
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="banner2">
-                        <img id="slide-2" src={imgBanner} />
-                        <div className="produtos_banner_conteudo">
-                            <h2>a semana de ofertas já começou!!!</h2>
-                            <p>
-                                compre lançamentos exclusivos para quem é do clube e desbloqueie
-                                mais das coisas que voce ama.
-                            </p>
-                            <Link to={'/'} style={{ textDecoration: 'none' }}
-                                className="produtos_btn_banner"
-                            >
-                                ver mais
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="banner3">
-                        <img id="slide-3" src={imgBanner} />
-                        <div className="produtos_banner_conteudo">
-                            <h2>a semana de ofertas já começou!!!</h2>
-                            <p>
-                                compre lançamentos exclusivos para quem é do clube e desbloqueie
-                                mais das coisas que voce ama.
-                            </p>
-                            <Link to={'/'} style={{ textDecoration: 'none' }}
-                                className="produtos_btn_banner"
-                            >
-                                ver mais
-                            </Link>
-                        </div>
-                    </div> */}
-            {/* </div>
-            <div className="slider-nav">
-                <a href="#slide-1" />
-                <a href="#slide-2" />
-                <a href="#slide-3" />
-            </div> */}
-            {/*   <div class="produtos_circulos produtos_posicionamento">
-          <div class="produtos_circle produtos_ativo"></div>
-          <div class="produtos_circle"></div>
-          <div class="produtos_circle"></div>
-          <div class="produtos_circle"></div>
-          <div class="produtos_circle"></div>
-          <div class="produtos_circle"></div>
-          <div class="produtos_circle"></div>
-      </div> */}
             <div className="produtos_ofertas_h2 produtos_posicionamento">
                 {/* <h2 class="h2_ofertas">ofertas</h2>
       <h2 class="h2_especiais">especiais</h2> */}
                 <h2 />
             </div>
-            <section className="produtos_ofertas_especiais produtos_posicionamento">
-                <a href="#offer_slide_5">
-                    <img
-                        className="produtos_setaOfertas"
-                        src={setaEsquerda}
-                        alt="icone de mover cards de ofertas para esquerda"
-                    />
-                </a>
-                <div className="carrossel">
-                    <div id="offer_slide_1" className="prod_card_ofertas1">
-                        <h3>constellation 2023</h3>
-                        <h4>24.280 6x2 no chassis</h4>
-                        <img
-                            src={caminhaoOfertas}
-                            alt="imagem caminhão contstellation 2023 card um"
-                        />
-                        <span>De R$700.000 / Por R$650.000</span>
-                        <h5>Entr. 60% + 24 Parcelas</h5>
-                        <Link to={'/'} style={{ textDecoration: 'none' }} className="prod_btn_card">
-                            estou interessado
-                        </Link>
-                        <h6>oferta válida até 31/05/2023</h6>
-                    </div>
-                    <div id="offer_slide_2" className="prod_card_ofertas2">
-                        <h3>constellation 2023</h3>
-                        <h4>24.280 6x2 no chassis</h4>
-                        <img
-                            src={caminhaoOfertas}
-                            alt="imagem caminhão contstellation 2023 card dois"
-                        />
-                        <span>De R$700.000 / Por R$650.000</span>
-                        <h5>Entr. 60% + 24 Parcelas</h5>
-                        <Link to={'/'} style={{ textDecoration: 'none' }} className="prod_btn_card">
-                            estou interessado
-                        </Link>
-                        <h6>oferta válida até 31/05/2023</h6>
-                    </div>
-                    <div id="offer_slide_3" className="prod_card_ofertas3">
-                        <h3>constellation 2023</h3>
-                        <h4>24.280 6x2 no chassis</h4>
-                        <img
-                            src={caminhaoOfertas}
-                            alt="imagem caminhão contstellation 2023 card tres"
-                        />
-                        <span>De R$700.000 / Por R$650.000</span>
-                        <h5>Entr. 60% + 24 Parcelas</h5>
-                        <Link to={'/'} style={{ textDecoration: 'none' }} className="prod_btn_card">
-                            estou interessado
-                        </Link>
-                        <h6>oferta válida até 31/05/2023</h6>
-                    </div>
-                    <div id="offer_slide_4" className="prod_card_ofertas4">
-                        <h3>constellation 2023</h3>
-                        <h4>24.280 6x2 no chassis</h4>
-                        <img
-                            src={caminhaoOfertas}
-                            alt="imagem caminhão contstellation 2023 card tres"
-                        />
-                        <span>De R$700.000 / Por R$650.000</span>
-                        <h5>Entr. 60% + 24 Parcelas</h5>
-                        <Link to={'/'} style={{ textDecoration: 'none' }} className="prod_btn_card">
-                            estou interessado
-                        </Link>
-                        <h6>oferta válida até 31/05/2023</h6>
-                    </div>
-                    <div id="offer_slide_5" className="prod_card_ofertas5">
-                        <h3>constellation 2023</h3>
-                        <h4>24.280 6x2 no chassis</h4>
-                        <img
-                            src={caminhaoOfertas}
-                            alt="imagem caminhão contstellation 2023 card tres"
-                        />
-                        <span>De R$700.000 / Por R$650.000</span>
-                        <h5>Entr. 60% + 24 Parcelas</h5>
-                        <Link to={'/'} style={{ textDecoration: 'none' }} className="prod_btn_card">
-                            estou interessado
-                        </Link>
-                        <h6>oferta válida até 31/05/2023</h6>
-                    </div>
-                </div>
-                <a href="#offer_slide_1">
-                    <img
-                        className="produtos_setaOfertas"
-                        src={setaDireita}
-                        alt="icone de mover cards de ofertas para direita"
-                    />
-                </a>
+            <section>
+                <CardOfertas conteudo={conteudoOfertas} />
             </section>
 
             <section className="prod_promocoes produtos_posicionamento">

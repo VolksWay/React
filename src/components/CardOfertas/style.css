@@ -17,6 +17,14 @@
 
 }
 
+
+#cardOfertas .container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+
 #cardOfertas .produtos_ofertas_especiais a{
     transition: opacity ease 500ms;
     margin: 140px 5px;

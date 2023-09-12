@@ -8,6 +8,7 @@ import imgCardOfertas from "../../assets/img/caminhao_banner_home.png";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { register } from 'swiper/element/bundle'
@@ -24,44 +25,48 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/effect-fade';
 
 
-function CardOfertas() {
-
-     // const [imgBanner, setImgBanner] = useState<string>("");
-     const [titulo, setTitulo] = useState<string>("");
-     const [descricao, setDescricao] = useState<string>("");
-     const [link, setLink] = useState<string>("");
- 
-
-
-    const data = [
-        { id: "1", image: imgCardOfertas },
-        { id: "2", image: imgCardOfertas },
-        { id: "3", image: imgCardOfertas },
-
-    ]
-
-
-
+function CardOfertas(props: any) {
 
     return (
         <>
             <div id="cardOfertas">
+                <div className="container">
+                    {/* <h1 className="teste">teste</h1> */}
 
-                <div id="offer_slide_1" className="prod_card_ofertas">
-                    <h3>constellation 2023</h3>
-                    <h4>24.280 6x2 no chassis</h4>
-                    <img
-                        src={imgCardOfertas}
-                        alt="imagem caminhão contstellation 2023 card um"
-                    />
-                    <span>De R$700.000 / Por R$650.000</span>
-                    <h5>Entr. 60% + 24 Parcelas</h5>
-                    <a className="prod_btn_card" href="#">
-                        estou interessado
-                    </a>
-                    <h6>oferta válida até 31/05/2023</h6>
+                    <Swiper
+                        // effect={'fade'}
+                        slidesPerView={1}
+                        pagination={{ clickable: true }}
+                        navigation
+                    >
+
+                        {
+                            props.conteudo.map((ofertas: any) => (
+                                <SwiperSlide key={ofertas.objectId}>
+                                    <div className="carrosel">
+                                        <div className="prod_card_ofertas">
+                                            <h3>{ofertas.titulo} teste</h3>
+                                            <h4>{ofertas.subtitulo}</h4>
+                                            <img
+                                                src={ofertas.imagem.url}
+                                                alt="imagem caminhão contstellation 2023 card um"
+                                            />
+                                            <span>{ofertas.preco}</span>
+                                            <h5>{ofertas.descricao}</h5>
+                                            <a className="prod_btn_card" href="#">
+                                                estou interessado
+                                            </a>
+                                            <h6>{ofertas.validade}</h6>
+                                        </div>
+
+                                    </div>
+
+                                </SwiperSlide>
+                            ))
+                        }
+
+                    </Swiper>
                 </div>
-
             </div>
 
         </>
