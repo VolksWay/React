@@ -141,6 +141,9 @@
     width: 400px;
     height: 30px;
     border: 0.5px;
+    cursor: text;
+    padding: 1.2rem;
+    margin: 6px;
 }
 
 #main_cadastro_geral .container_90 {

@@ -119,17 +119,17 @@ function CadastroVeiculo() {
                     </div>
                     <div className="formulario_CadVeiculo">
                         <div>
-                            <p>Código do Chassi</p>
+                            <p>Código do Chassi*</p>
                             <input {...register("codigoChassi")} onChange={(event) => { setUsuario({ ...usuario, codigoChassi: event.target.value }); handleCodigoChassi(event) }} maxLength={20} className="cadVeiculo1" />
                             <p className="erro_input">{errors.codigoChassi?.message}</p>
                         </div>
                         <div>
-                            <p>Placa</p>
+                            <p>Placa*</p>
                             <input {...register("placa")} onChange={(event) => { setUsuario({ ...usuario, placa: event.target.value }); handlePlaca(event) }} maxLength={8} className="cadVeiculo1" />
                             <p className="erro_input">{errors.placa?.message}</p>
                         </div>
                         <div>
-                            <p>Marca</p>
+                            <p>Marca*</p>
                             <input {...register("marca")} className="cadVeiculo1" onChange={(event) => setUsuario({ ...usuario, marca: event.target.value })} />
                             <p className="erro_input">{errors.marca?.message}</p>
                         </div>
