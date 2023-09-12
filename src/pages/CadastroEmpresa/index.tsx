@@ -3,6 +3,9 @@ import Voltar from "../../assets/img/img_setaVoltar-semFundo.png"
 import ImgCadastroVeiculo from "../../assets/img/img_cadastroEmpresa.svg"
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 interface Usuario {
     placa: string,
@@ -14,9 +17,27 @@ interface Usuario {
     cidade: string,
 }
 
+const schema = z.object({
+    nomeEmpresa: z.string().min(3, "Por favor, digite uma empresa válida").max(30, "Por favor, digite uma empresa válida"),
+    cnpj: z.string().min(18, "Por favor, digite um cnpj válido").max(18, "Por favor, digite um cnpj válido"),
+    cidade: z.string().min(4, "Por favor, digite uma cidade válida").max(30, "Por favor, digite uma cidade válida"),
+})
+
+type FormProps = z.infer<typeof schema>
+
 function CadastroEmpresa() {
-    /* const [cnpj, setCNPJ] = useState<string>(""); */
     const [usuario, setUsuario] = useState<Usuario>(Object)
+    const { handleSubmit, register, formState: { errors } } = useForm<FormProps>({
+        mode: "all",
+        reValidateMode: 'onChange',
+        criteriaMode: 'all',
+        resolver: zodResolver(schema),
+        defaultValues: {
+            nomeEmpresa: "",
+            cnpj: "",
+            cidade: "",
+        }
+    });
 
     function validarCNPJ(cnpj: string) {
         return /[0-9]{2}\.?[0-9]{3}\.?[0-9]{3}\/?[0-9]{4}\-?[0-9]{2}/.test(cnpj);
@@ -64,6 +85,12 @@ function CadastroEmpresa() {
         return console.log(usuario)
     }
 
+    const handleForm = () => {
+        if(Object.keys(errors).length === 0) {
+            window.location.href = `/cadastro/geral?cidade=${usuario.cidade}&cnpj=${usuario.cnpj}&codigoChassi=${usuario.codigoChassi}&marca=${usuario.marca}&nomeEmpresa=${usuario.nomeEmpresa}&placa=${usuario.placa}&tipoUsuario=${usuario.tipoUsuario}`
+        }
+    }
+
     useEffect(() => {
         lerUrl();
     }, []);
@@ -92,29 +119,32 @@ function CadastroEmpresa() {
                         <div className="inputs">
                             <div className="nome">
                                 <label className="nomeInput">Nome</label> <br />
-                                <input className="nome_input" onChange={(event) => setUsuario({ ...usuario, nomeEmpresa: event.target.value })} type="text" />
+                                <input className="nome_input" {...register("nomeEmpresa")} onChange={(event) => setUsuario({ ...usuario, nomeEmpresa: event.target.value })} maxLength={30} minLength={3} type="text" />
+                                <p className="erro_input">{errors.nomeEmpresa?.message}</p>
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">CNPJ</label> <br />
-                                <input onChange={(event) => { setUsuario({ ...usuario, cnpj: event.target.value }); handleCNPJ(event) }} maxLength={18} className="nome_input" type="text" />
+                                <input {...register("cnpj")} onChange={(event) => { setUsuario({ ...usuario, cnpj: event.target.value }); handleCNPJ(event) }} maxLength={18} minLength={18} className="nome_input" type="text" />
+                                <p className="erro_input">{errors.cnpj?.message}</p>
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">Cidade</label> <br />
-                                <input className="nome_input" onChange={(event) => setUsuario({ ...usuario, cidade: event.target.value })} type="text" />
+                                <input {...register("cidade")} className="nome_input" onChange={(event) => setUsuario({ ...usuario, cidade: event.target.value })} maxLength={30} minLength={4} type="text" />
+                                <p className="erro_input">{errors.cidade?.message}</p>
                             </div>
                         </div>
 
                         {validarCNPJ(usuario.cnpj) === true &&
                             <div className="btn_proximo habilitado">
-                                <Link to={`/cadastro/geral?cidade=${usuario.cidade}&cnpj=${usuario.cnpj}&codigoChassi=${usuario.codigoChassi}&marca=${usuario.marca}&nomeEmpresa=${usuario.nomeEmpresa}&placa=${usuario.placa}&tipoUsuario=${usuario.tipoUsuario}`} className="btnProximo">Próximo</Link>
+                                <a onClick={handleSubmit(handleForm)} className="btnProximo">Próximo</a>
                             </div>
                         }
 
                         {validarCNPJ(usuario.cnpj) === false &&
                             <div className="btn_proximo desabilitado">
-                                <Link to={"/cadastro/empresa"} className="btnProximo">Próximo</Link>
+                                <a className="btnProximo">Próximo</a>
                             </div>
                         }
                     </div>

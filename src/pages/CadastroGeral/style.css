@@ -181,7 +181,7 @@
     background-color: #ffd1008c;
 }
 
-#main_cadastro_geral .erro_input {
+.erro_input {
     font-family: var(--fonte-primaria);
     font-style: normal;
     font-weight: 400;

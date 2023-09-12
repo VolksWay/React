@@ -28,7 +28,7 @@ function Login() {
                             Não possui cadastro?
                         </Link>
                         <div className="alinhamento_campos_Entrar">
-                            <Link type="button" to={"/"}>
+                            <Link type="button" to={"/produtos"}>
                                 Entrar
                             </Link>
                         </div>
