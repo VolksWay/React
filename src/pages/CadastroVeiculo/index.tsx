@@ -1,6 +1,7 @@
 import "./style.css"
 import Voltar from "../../assets/img/arrow-left-solid 1.png"
 import FundoVeiculo from "../../assets/img/Group 2452.png"
+import { Link } from "react-router-dom";
 /* import { useEffect, useState } from "react";
 import { Link } from "react-router-dom"; */
 
@@ -9,15 +10,15 @@ function CadastroVeiculo() {
         <main id="main_cadastro_veiculo">
             <section className="cadastroVeiculo">
                 <div className="conteudo_cadVeiculo">
-                    <a href="../cadastroTipoUsuario/index.html#"></a>
+                    <Link to={"/cadastro/usuario"}></Link>
                     <div className="div_voltar">
-                        <a href="../cadastroTipoUsuario/index.html#">
+                        <Link to={"/cadastro/usuario"}>
                             <img
                                 className="seta_voltar"
                                 src={Voltar}
                                 alt=""
                             />
-                        </a>
+                        </Link>
                         <a className="spanVoltar">Voltar</a>
                     </div>
                     <div className="chamada">
@@ -39,9 +40,9 @@ function CadastroVeiculo() {
                             <p>Marca</p>
                             <input className="cadVeiculo1" />
                         </div>
-                        <a href="../cadastroEmpresa/index.html#">
+                        <Link to={"/cadastro/empresa"}>
                             <button className="cadVeiculo2">Próximo</button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <img className="fundo" src={FundoVeiculo} alt="" />

@@ -59,10 +59,10 @@ function CadastroOfertas() {
                             <td><input type="checkbox" /></td>
                             <td><a href="#"><img src={PencilDraw} alt="" /></a></td>
                             <td>002</td>
-                            <td>Frete gratis </td>
-                            <td>Cupom</td>
+                            <td>3 por 1 Pneus</td>
+                            <td>Relampago</td>
                             <td>Banner Menu</td>
-                            <td>Clientes volks</td>
+                            <td>Todos</td>
                             <td>Todos os canais</td>
                             <td><img src={Visivel} alt="" /></td>
                         </tr>
