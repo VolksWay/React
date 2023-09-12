@@ -18,6 +18,11 @@
 }
 
 
+#cardOfertas .teste {
+    display: flex;
+}
+
+
 #cardOfertas .container {
     width: 100%;
     max-width: 1440px;
@@ -97,7 +102,7 @@
     overflow-y: hidden;
     scroll-behavior: smooth;
     height: 424px;
-    margin-bottom: -237px;
+    margin-bottom: -7px;
     scroll-snap-align: start;
 
 }

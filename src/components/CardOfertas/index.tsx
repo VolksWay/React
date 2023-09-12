@@ -35,15 +35,15 @@ function CardOfertas(props: any) {
 
                     <Swiper
                         // effect={'fade'}
-                        slidesPerView={1}
-                        pagination={{ clickable: true }}
+                        slidesPerView={4}
+                        // pagination={{ clickable: true }}
                         navigation
                     >
 
                         {
                             props.conteudo.map((ofertas: any) => (
                                 <SwiperSlide key={ofertas.objectId}>
-                                    <div className="carrosel">
+                                    <div className="carrossel">
                                         <div className="prod_card_ofertas">
                                             <h3>{ofertas.titulo} teste</h3>
                                             <h4>{ofertas.subtitulo}</h4>
@@ -51,12 +51,12 @@ function CardOfertas(props: any) {
                                                 src={ofertas.imagem.url}
                                                 alt="imagem caminhão contstellation 2023 card um"
                                             />
-                                            <span>{ofertas.preco}</span>
+                                            <span>R${ofertas.preco}</span>
                                             <h5>{ofertas.descricao}</h5>
                                             <a className="prod_btn_card" href="#">
                                                 estou interessado
                                             </a>
-                                            <h6>{ofertas.validade}</h6>
+                                            <h6>Oferta Válida Até {ofertas.validade}</h6>
                                         </div>
 
                                     </div>
