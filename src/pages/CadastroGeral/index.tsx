@@ -63,20 +63,25 @@ function CadastroGeral() {
         }
     });
 
-    function cadastrarUsuario(event: any) {
-        event.preventDefault();
-
-        var partesData = usuario.dataNascimento.split('-');
-
-        // Extraia o dia, mês e ano da data
-        var dia = partesData[2];
-        var mes = partesData[1];
-        var ano = partesData[0];
-
-        // Formate a data no formato "dia/mês/ano"
-        var dataFormatada = dia + '/' + mes + '/' + ano;
-
+    function cadastrarUsuario() {
+        let partesData
+        let dataFormatada
         let tipoUsuario
+
+        if (usuario.senha !== usuario.confirmarSenha) {
+            return "Senha diferentes"
+        }
+
+        if (usuario.dataNascimento !== "") {
+            partesData = usuario.dataNascimento.split('-');
+
+            // Extraia o dia, mês e ano da data
+            var dia = partesData[2];
+            var mes = partesData[1];
+            var ano = partesData[0];
+            // Formate a data no formato "dia/mês/ano"
+            dataFormatada = dia + '/' + mes + '/' + ano;
+        }
 
         if (usuario.tipoUsuario === "Motorista") {
             tipoUsuario = { __type: "Pointer", className: "tipoUsuario", objectId: "8LE3XQJNLh" }
@@ -113,9 +118,10 @@ function CadastroGeral() {
                     'X-Parse-Master-Key': MASTER_KEY,
                 }
             }).then((resposta) => {
-                if (resposta.status === 200) {
+                if (resposta.status === 201) {
                     //console.log(resposta)
                     setConcluido(true)
+                    return setTimeout(function () { window.location.href = `/produtos`; }, 2000);
                 }
             })
             .catch(() => {
@@ -175,14 +181,6 @@ function CadastroGeral() {
         //return console.log(usuario)
     }
 
-    /* function validarEmail(email: any) {
-        return /\S+@\S+\.\S+/.test(email);
-    }
-
-    function validarCPF(cpf: any) {
-        return /([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\.]?[0-9]{3}[\.]?[0-9]{3}[-]?[0-9]{2})/.test(cpf);
-    } */
-
     useEffect(() => {
         lerUrl();
     }, []);
@@ -197,7 +195,12 @@ function CadastroGeral() {
             </Link>
 
             <section className="section">
-                <form action="" onSubmit={cadastrarUsuario}>
+                <form action="" onSubmit={(event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    void handleSubmit(cadastrarUsuario)(event);
+                }}>
                     <div className="conteudo">
                         <div className="seuCadastro">
                             <p className="seu_cadastro">Seu cadastro está quase pronto!</p>
@@ -254,10 +257,16 @@ function CadastroGeral() {
                                 <label className="nomeInput">Confirmar senha</label> <br />
                                 <input {...register("confirmarSenha")} className="nome_input" type="text" />
                                 <p className="erro_input">{errors.confirmarSenha?.message}</p>
+                                {usuario.senha !== usuario.confirmarSenha &&
+                                    <p className="erro_input">As senhas estão diferentes! Por favor coloque senhas iguais!</p>}
                             </div>
                         </div>
 
-                        <div className="btn_proximo "><button className="btnProximo habilitado" type="submit">cadastrar</button></div>
+                        <div className="btn_proximo"><button className="btnProximo habilitado" type="submit">cadastrar</button></div>
+
+                        {concluido === true &&
+                            <div className="card_cadastrado"><p className="texto_cadastrado">Seu cadastro foi concluído! Você já será redirecionado</p></div>
+                        }
                     </div>
                 </form>
 
