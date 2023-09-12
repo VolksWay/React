@@ -72,21 +72,21 @@ function CadastroEmpresa() {
         const codigoChassi = urlParams.get('codigoChassi');
         console.log(placa)
         if (tipoUsuario !== null) {
-            setUsuario({...usuario, tipoUsuario: tipoUsuario });
+            setUsuario({ ...usuario, tipoUsuario: tipoUsuario });
             console.log(tipoUsuario);
         } else {
             console.log("tipoUsuario não encontrado na URL");
         }
 
         if (tipoUsuario === "Motorista" && marca !== null && placa !== null && codigoChassi !== null) {
-            setUsuario({...usuario, tipoUsuario: tipoUsuario, marca: marca, placa: placa, codigoChassi: codigoChassi });
+            setUsuario({ ...usuario, tipoUsuario: tipoUsuario, marca: marca, placa: placa, codigoChassi: codigoChassi });
         }
 
         return console.log(usuario)
     }
 
     const handleForm = () => {
-        if(Object.keys(errors).length === 0) {
+        if (Object.keys(errors).length === 0) {
             window.location.href = `/cadastro/geral?cidade=${usuario.cidade}&cnpj=${usuario.cnpj}&codigoChassi=${usuario.codigoChassi}&marca=${usuario.marca}&nomeEmpresa=${usuario.nomeEmpresa}&placa=${usuario.placa}&tipoUsuario=${usuario.tipoUsuario}`
         }
     }
