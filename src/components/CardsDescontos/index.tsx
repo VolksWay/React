@@ -1,11 +1,7 @@
-// estitlizacao
-import "./style.css"
-
 //roots
 
 import { Link } from "react-router-dom";
-
-
+import "./style.css"
 
 
 function CardsDescontos() {
