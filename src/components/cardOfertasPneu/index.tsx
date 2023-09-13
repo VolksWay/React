@@ -2,7 +2,7 @@
 //import Style
 import "./style.css";
 
-function Ofertas(props:any) {
+function Ofertas(props: any) {
   return (
     <div id="prod_slide_1" className="prod_card_promo1">
       <img src={props.imagem.url} alt="imagem Pneu" />
@@ -15,4 +15,5 @@ function Ofertas(props:any) {
     </div>
   )
 }
+
 export default Ofertas;
