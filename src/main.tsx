@@ -12,8 +12,6 @@ import CadastroVeiculo from './pages/CadastroVeiculo/index'
 import Login from './pages/Login/index'
 import Privacidade from './pages/Privacidade/index'
 import Produtos from './pages/Produtos/index'
-import CardOfertaPneu from './components/cardOfertasPneu/index'
-import BotaoProximo from './components/BotaoProximo/index'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -31,8 +29,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/login' element={<Login />} />
         <Route path='/privacidade' element={<Privacidade />} />
         <Route path='/produtos' element={<Produtos />} />
-        {/* <Route path='/card-oferta-pneu' element={<CardOfertaPneu />} />  
-        <Route path='/botao-proximo' element={<BotaoProximo />} /> */}
     </Routes>
   </BrowserRouter>
   </React.StrictMode >,

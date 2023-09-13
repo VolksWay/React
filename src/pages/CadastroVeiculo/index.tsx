@@ -17,7 +17,7 @@ interface Usuario {
 const schema = z.object({
     placa: z.string().min(8, "Por favor, digite uma placa válida").max(8, "Por favor, digite uma placa válida"),
     codigoChassi: z.string().min(20, "Por favor, digite um código válido").max(20, "Por favor, digite um código válido"),
-    marca: z.string().min(6, "Por favor, digite uma marca válida"),
+    marca: z.string().min(4, "Por favor, digite uma marca válida"),
 })
 
 type FormProps = z.infer<typeof schema>
