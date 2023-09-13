@@ -17,7 +17,7 @@ import ReactDOM from 'react-dom/client';
 
     return(
         <div id="prod_slide_1" className="prod_card_promo1">
-        <img src= {imgPneu} alt="imagem Pneu" />
+        <img src= {imgPneu} alt="imagem Pneu" /> 
         <div className="prod_card_azul ">
           <div className="prod_preco">R$5000,00</div>
           <h3>pneu triangle 275/80R</h3>

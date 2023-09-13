@@ -3,17 +3,18 @@ import "./style.css"
 import { Link } from "react-router-dom";
 // import BotaoVerMais from "../../components/BotaoVerMais"; 
 
-import imgBanner from "../../assets/img/banner_produto.png";
-import setaEsquerda from "../../assets/img/ofertas-especiais-esquerda.svg"
-import caminhaoOfertas from "../../assets/img/caminhao_banner_home.png"
-import setaDireita from "../../assets/img/ofertas-especiais-direita.svg"
-import caminhaoPromocoes from "../../assets/img/img_produto.png"
-import cardNoticias1 from "../../assets/img/card1_noticias.png"
-import cardNoticias2 from "../../assets/img/card2_noticias.png"
-import cardNoticias3 from "../../assets/img/card3_noticias.png"
-import cardNoticias4 from "../../assets/img/card4_noticias.png"
-import cardNoticias5 from "../../assets/img/card5_noticias.png"
-import cardNoticias6 from "../../assets/img/card6_noticias.png"
+// import imgBanner from "../../assets/img/banner_produto.png";
+// import setaEsquerda from "../../assets/img/ofertas-especiais-esquerda.svg"
+// import caminhaoOfertas from "../../assets/img/caminhao_banner_home.png"
+// import setaDireita from "../../assets/img/ofertas-especiais-direita.svg"
+// import caminhaoPromocoes from "../../assets/img/img_produto.png"
+// import cardNoticias1 from "../../assets/img/card1_noticias.png"
+// import cardNoticias2 from "../../assets/img/card2_noticias.png"
+// import cardNoticias3 from "../../assets/img/card3_noticias.png"
+// import cardNoticias4 from "../../assets/img/card4_noticias.png"
+// import cardNoticias5 from "../../assets/img/card5_noticias.png"
+// import cardNoticias6 from "../../assets/img/card6_noticias.png"
+
 import axios from "axios";
 import Parse from 'parse/dist/parse.min.js';
 import { useEffect, useState } from "react";
@@ -24,6 +25,7 @@ const PARSE_JAVASCRIPT_KEY = 'R3yYjaaJbXJNHSCT6NqVjxXZBqZjllwQzTuGUyvi';
 const PARSE_REST_API = 'aTuaHYnGDCCvEXeN4j3eyLfGxBbNnqH7zL5UAfxA';
 const MASTER_KEY = "F4vFzZm6HASmvFNv9TihqyVvEIPJhxs5uXY9Sebu"
 Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
+
 function Produtos() {
     const [conteudoBanner, setConteudoBanner] = useState<any[]>([]);
     const [conteudoOfertas, setConteudoOfertas] = useState<any[]>([]);
