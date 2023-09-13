@@ -4,14 +4,14 @@ import "./style.css"
 function SetaVoltar() {
     return (
         <>
-            <Link className="div_voltar" to="#"> Voltar
+            <Link className="div_voltar" to="#">  <img
+                        src="..\src\assets\img\img_setaVoltar-semFundo.png"
+                        alt=""
+                        className="seta_voltar"
+                    /> Voltar
 
           
-                    <img
-                        className="seta_voltar"
-                        src="../cadastroTipoUsuario/img/img_setaVoltar-semFundo.png"
-                        alt=""
-                    />
+                  
                
             </Link>
         </>

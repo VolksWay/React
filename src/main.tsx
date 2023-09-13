@@ -17,6 +17,7 @@ import Produtos from './pages/Produtos/index'
 import BotaoEstouInteressado from './components/BotaoEstouInteressado'
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SetaVoltar from './components/SetaVoltar'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -32,7 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/cadastro/veiculo' element={<CadastroVeiculo />} />
         <Route path='/login' element={<Login />} />
         <Route path='/privacidade' element={<Privacidade />} /> */}
-        <Route path='/' element={<Produtos />} />
+        <Route path='/' element={<SetaVoltar />} />
     </Routes>
   </BrowserRouter>
   </React.StrictMode >,

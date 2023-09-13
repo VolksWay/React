@@ -1,17 +1,18 @@
 /*==================================voltar*/
 .div_voltar {
-    /*  background-color: #b19f84; */
+    /* background-color: #b19f84; */
     height: 50px;
     width: 100px;
     display: flex;
     align-items: center;
     margin-top: 20px;
-    margin-left: 26px;
+    margin-left: 28px;
+    gap: 10px;
 }
 
 .seta_voltar {
-    width: 45px;
-    height: 45px;
+    width: 32px;
+    height: 28px;
     color: var(--dark_blue);
 }
 
@@ -20,6 +21,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--poppins300);
+    text-decoration: none;
+    color: var(--dark_blue);
 }
 
 :root {
