@@ -1,0 +1,33 @@
+/*==================================voltar*/
+.div_voltar {
+    /*  background-color: #b19f84; */
+    height: 50px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 26px;
+}
+
+.seta_voltar {
+    width: 45px;
+    height: 45px;
+    color: var(--dark_blue);
+}
+
+.aVoltar {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    text-decoration: none;
+    color: var(--dark_blue);
+
+}
+@media screen and (max-width: 800px) {
+    .seta_voltar {
+        width: 19px;
+        height: 22px;
+    }
+}
