@@ -3,10 +3,10 @@ import "./style.css"
 import { Link } from "react-router-dom";
 // import BotaoVerMais from "../../components/BotaoVerMais"; 
 
-import imgBanner from "../../assets/img/banner_produto.png";
-import setaEsquerda from "../../assets/img/ofertas-especiais-esquerda.svg"
+import imgBanner from "../../assets/img/img_banner_produto.png";
+import setaEsquerda from "../../assets/img/Pencil Drawing.svg"
 import caminhaoOfertas from "../../assets/img/caminhao_banner_home.png"
-import setaDireita from "../../assets/img/ofertas-especiais-direita.svg"
+import setaDireita from "../../assets/img/Pencil Drawing.svg"
 import caminhaoPromocoes from "../../assets/img/img_produto.png"
 import cardNoticias1 from "../../assets/img/card1_noticias.png"
 import cardNoticias2 from "../../assets/img/card2_noticias.png"

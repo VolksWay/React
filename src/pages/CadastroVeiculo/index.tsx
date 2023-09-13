@@ -1,6 +1,6 @@
 import "./style.css"
-import Voltar from "../../assets/img/arrow-left-solid 1.png"
-import FundoVeiculo from "../../assets/img/Group 2452.png"
+import Voltar from "../../assets/img/visivel.svg"
+import FundoVeiculo from "../../assets/img/cadastro_caminhao.png"
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
