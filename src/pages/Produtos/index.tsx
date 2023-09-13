@@ -1,10 +1,9 @@
 import "./style.css"
-// import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import BotaoVerMais from "../../components/BotaoVerMais"; 
 
-import imgBanner from "../../assets/img/banner_produto.png";
-import setaEsquerda from "../../assets/img/ofertas-especiais-esquerda.svg"
+// import BotaoVerMais from "../../components/BotaoVerMais"; 
+import imgBanner from "../../assets/img/img_banner_produto.png";
+import setaEsquerda from "../../assets/img/Pencil Drawing.svg"
 import caminhaoOfertas from "../../assets/img/caminhao_banner_home.png"
 import setaDireita from "../../assets/img/ofertas-especiais-direita.svg"
 import caminhaoPromocoes from "../../assets/img/img_produto.png"
