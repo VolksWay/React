@@ -5,9 +5,9 @@ import "./style.css"
 function BotaoProximo() {
     return (
         <>
-        <Link className="produtos_btn_banner" to="#"> Proximo</Link>
-            </>
-            )
+            <Link className="produtos_btn_banner" to="#"> Proximo</Link>
+        </>
+    )
 
 }
-            export default BotaoProximo;
+export default BotaoProximo;

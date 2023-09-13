@@ -5,9 +5,9 @@ import "./style.css"
 function BotaoVerMais() {
     return (
         <>
-        <Link className="produtos_btn_banner" to="#"> ver mais</Link>
-            </>
-            )
+            <Link className="produtos_btn_banner" to="#"> ver mais</Link>
+        </>
+    )
 
 }
-            export default BotaoVerMais;
+export default BotaoVerMais;
