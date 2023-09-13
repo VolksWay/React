@@ -25,7 +25,7 @@
                     </div>
                     <div className="coluna">
                       <label htmlFor="">Canal</label>
-                      <select name="canal" required="required">
+                      <select name="canal" required>
                         <option value="canais">Todos os canais</option>
                         <option value="Site">Site</option>
                         <option value="Mobile">Mobile</option>
@@ -35,7 +35,7 @@
                   <div className="p1">
                     <div className="coluna">
                       <label htmlFor="">Posição do Banner</label>
-                      <select name="plataforma" required="required">
+                      <select name="plataforma" required>
                         <option value="BannerMenu">Banner Menu</option>
                         <option value="BannerHome">Banner Home</option>
                         <option value="Categorias">Categorias</option>
@@ -46,7 +46,7 @@
                     </div>
                     <div className="coluna">
                       <label htmlFor="">Usuario</label>
-                      <select name="usuarios" required="required">
+                      <select name="usuarios" required>
                         <option value="motorista">Motorista</option>
                         <option value="admFrota">Adm Frota</option>
                         <option value="propietario">Propietario</option>
@@ -55,7 +55,7 @@
                     </div>
                     <div className="coluna">
                       <label htmlFor="">Canal</label>
-                      <select name="canal" required="required">
+                      <select name="canal" required>
                         <option value="canais">Todos os canais</option>
                         <option value="Site">Site</option>
                         <option value="Mobile">Mobile</option>

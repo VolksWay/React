@@ -1,6 +1,6 @@
-import PencilDraw from "../../assets/images/Pencil Drawing.svg"
-import Visivel from "../../assets/images/visivel.svg"
-import Invisivel from "../../assets/images/invisivel.svg"
+import PencilDraw from "../../assets/img/Pencil Drawing.svg"
+import Visivel from "../../assets/img/visivel.svg"
+import Invisivel from "../../assets/img/invisivel.svg"
 
 import { Link/* , useLocation  */ } from "react-router-dom";
 

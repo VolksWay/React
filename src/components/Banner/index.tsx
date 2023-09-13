@@ -9,94 +9,60 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
-import { Swiper, SwiperSlide } from "swiper/react"
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { register } from 'swiper/element/bundle'
+import { EffectFade, Navigation, Pagination } from "swiper";
 
 
-
-import { register } from "swiper/element/bundle";
 
 register();
-import 'swiper/css.min.css';
+// Import Swiper styles
+import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/effect-fade';
 
 
-function Banner() {
-
-    const [imgBanner, setImgBanner] = useState<string>("");
-    const [titulo, setTitulo] = useState<string>("");
-    const [descricao, setDescricao] = useState<string>("");
-    const [link, setLink] = useState<string>("");
-
-
-
-    //array de imagens
-    const data = [
-        { id: "1", image: imgBanner },
-        { id: "2", image: imgBanner },
-        { id: "3", image: imgBanner },
-
-    ]
-
-
-
-
+function Banner(props: any) {
 
     return (
         <>
-            <Swiper>
-                {data.map((item) => (
-                    <SwiperSlide key={item.id}>
-                        <img
-                            src={item.image}
-                            className="slider-wrapper"
-                        />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
+            <div id="banner">
+                <div className="container">
+                    {/* <h1 className="teste">teste</h1> */}
+                    <Swiper
+                        // effect={'fade'}
+                        slidesPerView={1}
+                        pagination={{ clickable: true }}
+                        navigation
+                    >
 
+                        {
+                            props.conteudo.map((banner: any) => (
+                                <SwiperSlide key={banner.objectId}>
+                                        <img
+                                            src={banner.imagem.url}
+                                            className="slide-item"
+                                        />
+                                   <div className="banner_conteudo">
+                                   <div className="produtos_banner_conteudo">
+                                        <h2>{banner.titulo}</h2>
+                                        <p>{banner.descricao}
+                                        </p>
+                                        <a className="produtos_btn_banner" href="">ver mais</a>
+                                    </div>
+                                    
+                                    </div> 
+                                    
+                                </SwiperSlide>
+                            ))
+                        }
 
-
-
-
-
-
-
-
-
-
-
-            {/* <div id="banner">
-
-                <div className="slider-wrapper produtos_posicionamento">
-                    <div className="slider">
-                        <div className="banner1">
-                            <img id="slide-1" src={imgBanner} />
-                            <div className="produtos_banner_conteudo">
-                                <h2>a semana de ofertas já começou!!!</h2>
-                                <p>
-                                    compre lançamentos exclusivos para quem é do clube e desbloqueie
-                                    mais das coisas que voce ama.
-                                </p>
-                                <a
-                                    className="produtos_btn_banner"
-                                    href="#"
-                                >
-                                    ver mais
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="slider-nav">
-                        <Link to="#slide-1"></Link>
-                        <Link to="#slide-2"></Link>
-                        <Link to="#slide-3"></Link>
-                    </div>
+                    </Swiper>
                 </div>
-
-            </div> */}
-
+            </div>
         </>
     )
 

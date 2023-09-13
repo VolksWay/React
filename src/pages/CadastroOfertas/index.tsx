@@ -1,11 +1,11 @@
 import "./style.css"
-import Lupa from "../../assets/images/lupa.png"
-import Refresh from "../../assets/images/Refresh.svg"
-import Play from "../../assets/images/play.png"
-import Play1 from "../../assets/images/play_1.png"
-import Play2 from "../../assets/images/play_2.png"
-import Play3 from "../../assets/images/play_3.png"
-import Logo from "../../assets/images/logo.png"
+import Lupa from "../../assets/img/lupa.png"
+import Refresh from "../../assets/img/Refresh.svg"
+import Play from "../../assets/img/play.png"
+import Play1 from "../../assets/img/play_1.png"
+import Play2 from "../../assets/img/play_2.png"
+import Play3 from "../../assets/img/play_3.png"
+import Logo from "../../assets/img/logo.png"
 
 import Linhas from "../../components/LinhaCadOfertas";
 
