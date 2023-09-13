@@ -3,7 +3,7 @@ import "./style.css"
 import { Link } from "react-router-dom";
 // import BotaoVerMais from "../../components/BotaoVerMais"; 
 
-import imgBanner from "../../assets/img/img_banner_produto.png";
+/* import imgBanner from "../../assets/img/img_banner_produto.png";
 import setaEsquerda from "../../assets/img/Pencil Drawing.svg"
 import caminhaoOfertas from "../../assets/img/caminhao_banner_home.png"
 import setaDireita from "../../assets/img/Pencil Drawing.svg"
@@ -14,7 +14,7 @@ import cardNoticias3 from "../../assets/img/card3_noticias.png"
 import cardNoticias4 from "../../assets/img/card4_noticias.png"
 import cardNoticias5 from "../../assets/img/card5_noticias.png"
 import cardNoticias6 from "../../assets/img/card6_noticias.png"
-
+ */
 
 
 
