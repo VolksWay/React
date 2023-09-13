@@ -1,5 +1,5 @@
 import "./style.css"
-import Voltar from "../../assets/img/Pencil Drawing.svg"
+import Voltar from "../../assets/img/img_setaVoltar-semFundo.png"
 import ImgCadastroGeral from "../../assets/img/cadastro_pessoal.svg"
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";

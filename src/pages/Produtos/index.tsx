@@ -1,12 +1,12 @@
 import "./style.css"
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import BotaoVerMais from "../../components/BotaoVerMais"; 
 
-/* import imgBanner from "../../assets/img/img_banner_produto.png";
+// import BotaoVerMais from "../../components/BotaoVerMais"; 
+import imgBanner from "../../assets/img/img_banner_produto.png";
 import setaEsquerda from "../../assets/img/Pencil Drawing.svg"
 import caminhaoOfertas from "../../assets/img/caminhao_banner_home.png"
-import setaDireita from "../../assets/img/Pencil Drawing.svg"
+import setaDireita from "../../assets/img/ofertas-especiais-direita.svg"
 import caminhaoPromocoes from "../../assets/img/img_produto.png"
 import cardNoticias1 from "../../assets/img/card1_noticias.png"
 import cardNoticias2 from "../../assets/img/card2_noticias.png"
@@ -14,174 +14,91 @@ import cardNoticias3 from "../../assets/img/card3_noticias.png"
 import cardNoticias4 from "../../assets/img/card4_noticias.png"
 import cardNoticias5 from "../../assets/img/card5_noticias.png"
 import cardNoticias6 from "../../assets/img/card6_noticias.png"
- */
+ 
 
 
 
 
 
 function Produtos() {
+    const [conteudoBanner, setConteudoBanner] = useState<any[]>([]);
+    const [conteudoOfertas, setConteudoOfertas] = useState<any[]>([]);
+
+    function listarBanner() {
+        // event.preventDefault();
+        console.log("teste");
+
+        // /* console.log(cpf) */
+        axios.get(`https://parseapi.back4app.com/parse/classes/banner`,
+            {
+                headers: {
+                    'X-Parse-Application-Id': PARSE_APPLICATION_ID,
+                    'X-Parse-REST-API-Key': PARSE_REST_API,
+                    'X-Parse-Master-Key': MASTER_KEY,
+                }
+            }).then((resposta) => {
+                if (resposta.status === 200) {
+                    // Se a resposta for 201, a solicitação foi bem-sucedida
+                    //200 pegar / 201 criar
+                    //setMensagemAguarde("Enviado")
+                    setConteudoBanner(resposta.data.results)
+                    console.log("entrouuu", resposta.data.results)
+                }
+            })
+            .catch((erro) => {
+                console.log(erro); // Trata erros de solicitação
+            });
+    }
+
+    function listarOfertas() {
+        // event.preventDefault();
+        console.log("teste");
+
+        // /* console.log(cpf) */
+        axios.get(`https://parseapi.back4app.com/parse/classes/ofertas`,
+            {
+                headers: {
+                    'X-Parse-Application-Id': PARSE_APPLICATION_ID,
+                    'X-Parse-REST-API-Key': PARSE_REST_API,
+                    'X-Parse-Master-Key': MASTER_KEY,
+                }
+            }).then((resposta) => {
+                if (resposta.status === 200) {
+                    // Se a resposta for 201, a solicitação foi bem-sucedida
+                    //200 pegar / 201 criar
+                    //setMensagemAguarde("Enviado")
+                    setConteudoOfertas(resposta.data.results)
+                    console.log("entrouuu ofertas", resposta.data.results)
+                }
+            })
+            .catch((erro) => {
+                console.log(erro); // Trata erros de solicitação
+            });
+    }
+
+    useEffect(() => {
+        //executa ação
+        listarBanner();
+        listarOfertas();
+
+    }, []);
+
     return (
         <main id="produtos">
-            <h1>Pagina Produtos Volksway</h1>
-            {/*   <section class="produtos_posicionamento">
-    <div class="produtos_banner produtos_posicionamento"> */}
-            <div className="slider-wrapper produtos_posicionamento ">
-                <div className="slider">
-                    <div className="banner1">
-                        <img id="slide-1" src={imgBanner} />
-                        <div className="produtos_banner_conteudo">
-                            <h2>a semana de ofertas já começou!!!</h2>
-                            <p>
-                                compre lançamentos exclusivos para quem é do clube e desbloqueie
-                                mais das coisas que voce ama.
-                            </p>
-                            <Link to={'/'} style={{ textDecoration: 'none' }}
-                                className="produtos_btn_banner"
-                            >
-                                ver mais
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="banner2">
-                        <img id="slide-2" src={imgBanner} />
-                        <div className="produtos_banner_conteudo">
-                            <h2>a semana de ofertas já começou!!!</h2>
-                            <p>
-                                compre lançamentos exclusivos para quem é do clube e desbloqueie
-                                mais das coisas que voce ama.
-                            </p>
-                            <Link to={'/'} style={{ textDecoration: 'none' }}
-                                className="produtos_btn_banner"
-                            >
-                                ver mais
-                            </Link>
-                        </div>
-                    </div>
-                    <div className="banner3">
-                        <img id="slide-3" src={imgBanner} />
-                        <div className="produtos_banner_conteudo">
-                            <h2>a semana de ofertas já começou!!!</h2>
-                            <p>
-                                compre lançamentos exclusivos para quem é do clube e desbloqueie
-                                mais das coisas que voce ama.
-                            </p>
-                            <Link to={'/'} style={{ textDecoration: 'none' }}
-                                className="produtos_btn_banner"
-                            >
-                                ver mais
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-                <div className="slider-nav">
-                    <a href="#slide-1" />
-                    <a href="#slide-2" />
-                    <a href="#slide-3" />
-                </div>
-            </div>
-            {/*   <div class="produtos_circulos produtos_posicionamento">
-          <div class="produtos_circle produtos_ativo"></div>
-          <div class="produtos_circle"></div>
-          <div class="produtos_circle"></div>
-          <div class="produtos_circle"></div>
-          <div class="produtos_circle"></div>
-          <div class="produtos_circle"></div>
-          <div class="produtos_circle"></div>
-      </div> */}
+
+            <Banner conteudo={conteudoBanner} />
+
+
+
             <div className="produtos_ofertas_h2 produtos_posicionamento">
                 {/* <h2 class="h2_ofertas">ofertas</h2>
       <h2 class="h2_especiais">especiais</h2> */}
                 <h2 />
             </div>
-            <section className="produtos_ofertas_especiais produtos_posicionamento">
-                <a href="#offer_slide_5">
-                    <img
-                        className="produtos_setaOfertas"
-                        src={setaEsquerda}
-                        alt="icone de mover cards de ofertas para esquerda"
-                    />
-                </a>
-                <div className="carrossel">
-                    <div id="offer_slide_1" className="prod_card_ofertas1">
-                        <h3>constellation 2023</h3>
-                        <h4>24.280 6x2 no chassis</h4>
-                        <img
-                            src={caminhaoOfertas}
-                            alt="imagem caminhão contstellation 2023 card um"
-                        />
-                        <span>De R$700.000 / Por R$650.000</span>
-                        <h5>Entr. 60% + 24 Parcelas</h5>
-                        <Link to={'/'} style={{ textDecoration: 'none' }} className="prod_btn_card">
-                            estou interessado
-                        </Link>
-                        <h6>oferta válida até 31/05/2023</h6>
-                    </div>
-                    <div id="offer_slide_2" className="prod_card_ofertas2">
-                        <h3>constellation 2023</h3>
-                        <h4>24.280 6x2 no chassis</h4>
-                        <img
-                            src={caminhaoOfertas}
-                            alt="imagem caminhão contstellation 2023 card dois"
-                        />
-                        <span>De R$700.000 / Por R$650.000</span>
-                        <h5>Entr. 60% + 24 Parcelas</h5>
-                        <Link to={'/'} style={{ textDecoration: 'none' }} className="prod_btn_card">
-                            estou interessado
-                        </Link>
-                        <h6>oferta válida até 31/05/2023</h6>
-                    </div>
-                    <div id="offer_slide_3" className="prod_card_ofertas3">
-                        <h3>constellation 2023</h3>
-                        <h4>24.280 6x2 no chassis</h4>
-                        <img
-                            src={caminhaoOfertas}
-                            alt="imagem caminhão contstellation 2023 card tres"
-                        />
-                        <span>De R$700.000 / Por R$650.000</span>
-                        <h5>Entr. 60% + 24 Parcelas</h5>
-                        <Link to={'/'} style={{ textDecoration: 'none' }} className="prod_btn_card">
-                            estou interessado
-                        </Link>
-                        <h6>oferta válida até 31/05/2023</h6>
-                    </div>
-                    <div id="offer_slide_4" className="prod_card_ofertas4">
-                        <h3>constellation 2023</h3>
-                        <h4>24.280 6x2 no chassis</h4>
-                        <img
-                            src={caminhaoOfertas}
-                            alt="imagem caminhão contstellation 2023 card tres"
-                        />
-                        <span>De R$700.000 / Por R$650.000</span>
-                        <h5>Entr. 60% + 24 Parcelas</h5>
-                        <Link to={'/'} style={{ textDecoration: 'none' }} className="prod_btn_card">
-                            estou interessado
-                        </Link>
-                        <h6>oferta válida até 31/05/2023</h6>
-                    </div>
-                    <div id="offer_slide_5" className="prod_card_ofertas5">
-                        <h3>constellation 2023</h3>
-                        <h4>24.280 6x2 no chassis</h4>
-                        <img
-                            src={caminhaoOfertas}
-                            alt="imagem caminhão contstellation 2023 card tres"
-                        />
-                        <span>De R$700.000 / Por R$650.000</span>
-                        <h5>Entr. 60% + 24 Parcelas</h5>
-                        <Link to={'/'} style={{ textDecoration: 'none' }} className="prod_btn_card">
-                            estou interessado
-                        </Link>
-                        <h6>oferta válida até 31/05/2023</h6>
-                    </div>
-                </div>
-                <a href="#offer_slide_1">
-                    <img
-                        className="produtos_setaOfertas"
-                        src={setaDireita}
-                        alt="icone de mover cards de ofertas para direita"
-                    />
-                </a>
+            <section>
+                <CardOfertas conteudo={conteudoOfertas} />
             </section>
+
             <section className="prod_promocoes produtos_posicionamento">
                 <h2>promoções</h2>
                 <p>
@@ -431,7 +348,7 @@ function Produtos() {
                     </div>
                 </div>
             </section>
-        </main>
+        </main >
     )
 }
 
