@@ -1,7 +1,5 @@
 import "./style.css"
-// import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import BotaoVerMais from "../../components/BotaoVerMais"; 
 
 // import imgBanner from "../../assets/img/banner_produto.png";
 // import setaEsquerda from "../../assets/img/ofertas-especiais-esquerda.svg"
@@ -20,6 +18,7 @@ import Parse from 'parse/dist/parse.min.js';
 import { useEffect, useState } from "react";
 import Banner from "../../components/Banner";
 import CardOfertas from "../../components/CardOfertas";
+import api from "../../utils/api";
 const PARSE_APPLICATION_ID = '1QJ5n2ix95flGl0Rt7b1l4CfbqXuYQcj7VU0oKGd';
 const PARSE_JAVASCRIPT_KEY = 'R3yYjaaJbXJNHSCT6NqVjxXZBqZjllwQzTuGUyvi';
 const PARSE_REST_API = 'aTuaHYnGDCCvEXeN4j3eyLfGxBbNnqH7zL5UAfxA';
@@ -35,7 +34,7 @@ function Produtos() {
         console.log("teste");
 
         // /* console.log(cpf) */
-        axios.get(`https://parseapi.back4app.com/parse/classes/banner`,
+        api.get(`/banner`,
             {
                 headers: {
                     'X-Parse-Application-Id': PARSE_APPLICATION_ID,
@@ -61,7 +60,7 @@ function Produtos() {
         console.log("teste");
 
         // /* console.log(cpf) */
-        axios.get(`https://parseapi.back4app.com/parse/classes/ofertas`,
+        api.get(`/ofertas`,
             {
                 headers: {
                     'X-Parse-Application-Id': PARSE_APPLICATION_ID,
