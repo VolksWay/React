@@ -1,7 +1,7 @@
 import "./style.css"
 /* import { useEffect, useState } from "react"; */
 import { Link } from "react-router-dom";
-import imgLogin from "../../assets/img/img_login.png"
+import imgLogin from "../../assets/images/img_login.png"
 
 function Login() {
     return (
