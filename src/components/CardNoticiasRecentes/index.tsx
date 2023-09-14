@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { useEffect, useState } from "react";
+import BotaoAlongadoVerMais from "../BotaoAlongadoVerMais";
 
 function CardNoticiasRecentes(props: any) {
 
@@ -19,9 +20,7 @@ function CardNoticiasRecentes(props: any) {
                     </p>
                 </div>
                 <div>
-                    <a className="prod_btn_noticias" href="#">
-                        ver mais
-                    </a>
+                    <BotaoAlongadoVerMais />
                 </div>
             </div>
         </div>

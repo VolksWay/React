@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import SetaVoltar from "../../components/SetaVoltar";
 
 interface Usuario {
     placa: string,
@@ -100,17 +101,7 @@ function CadastroVeiculo() {
         <main id="main_cadastro_veiculo">
             <section className="cadastroVeiculo">
                 <div className="conteudo_cadVeiculo">
-                    <Link to={"/cadastro/usuario"}></Link>
-                    <div className="div_voltar">
-                        <Link to={"/cadastro/usuario"}>
-                            <img
-                                className="seta_voltar"
-                                src={Voltar}
-                                alt=""
-                            />
-                        </Link>
-                        <a className="spanVoltar">Voltar</a>
-                    </div>
+                <SetaVoltar pagina={"cadastro/usuario"} />
                     <div className="chamada">
                         <h1> Cadastre o seu veículo!</h1>
                         <p className="cad_texto">
