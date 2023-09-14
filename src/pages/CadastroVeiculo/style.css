@@ -64,7 +64,7 @@
 #main_cadastro_veiculo .seta_voltar {
     width: 35px;
     height: 32px;
-    color: var(--dark_blue);
+    color: var(--cor-primaria);
     flex-direction: column;
 }
 
@@ -75,7 +75,7 @@
     font-size: 24px;
     line-height: 36px;
     margin-left: 20%;
-    color: var(--dark_blue);
+    color: var(--cor-primaria_blue);
 
 
 }
@@ -124,8 +124,9 @@
     border-radius: 30px;
     background: #EDEDED;
     border: none;
-
-
+    cursor: text;
+    padding: 1.2rem;
+    margin: 6px;
 
 }
 

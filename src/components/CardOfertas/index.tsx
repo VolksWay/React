@@ -1,4 +1,4 @@
-//estilizacao
+///estilizacao
 import "./style.css"
 
 //imagens

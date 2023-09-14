@@ -141,6 +141,9 @@
     width: 400px;
     height: 30px;
     border: 0.5px;
+    cursor: text;
+    padding: 1.2rem;
+    margin: 6px;
 }
 
 #main_cadastro_geral .container_90 {
@@ -181,7 +184,7 @@
     background-color: #ffd1008c;
 }
 
-#main_cadastro_geral .erro_input {
+.erro_input {
     font-family: var(--fonte-primaria);
     font-style: normal;
     font-weight: 400;
@@ -219,6 +222,20 @@
     width: 500px;
     display: flex;
     align-items: center;
+}
+
+.card_cadastrado {
+    padding: 8px;
+    max-width: 300px;
+    margin-left: auto;
+    background-color: #078903;
+    border-radius: 15px;
+}
+
+.texto_cadastrado {
+    font-family: var(--fonte-primaria);
+    font-size: 18px;
+    color: var(--cor-branco);
 }
 
 @media screen and (max-width: 1700px) {

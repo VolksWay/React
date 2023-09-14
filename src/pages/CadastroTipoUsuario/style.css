@@ -138,6 +138,7 @@
     background-color: var(--blue_card);
     flex-direction: column;
     padding: 7px;
+    cursor: pointer;
 }
 
 #main_cadastro_tipo_usuario .img_motorista {
@@ -155,7 +156,6 @@
     text-decoration: none;
     font-family: var(--fonte-primaria);
 }
-
 /*===============================admFrota*/
 #main_cadastro_tipo_usuario .adm_de_frota {
     display: flex;
@@ -166,6 +166,7 @@
     background-color: var(--blue_card);
     flex-direction: column;
     padding: 7px;
+    cursor: pointer;
 }
 
 #main_cadastro_tipo_usuario .img_adm_de_frota {
@@ -193,6 +194,7 @@
     background-color: var(--blue_card);
     flex-direction: column;
     padding: 7px;
+    cursor: pointer;
 }
 
 #main_cadastro_tipo_usuario .img_proprietario {
@@ -226,14 +228,14 @@
     width: 303px;
     height: 57px;
     color: var(--cor-preto);
-    background: #FFD100;
+    background-color: #FFD100;
     border-radius: 30px;
     margin-left: 65px;
     margin-top: -20px;
 }
 
 #main_cadastro_tipo_usuario .btnProximo {
-    background: #FFD100;
+    background-color: #FFD100;
     border-radius: 30px;
     text-decoration: none;
     font-family: var(--fonte-primaria);
@@ -252,6 +254,14 @@
     margin-left: 62px;
     display: flex;
     align-items: center;
+}
+
+#main_cadastro_tipo_usuario .background_amarelo{
+    background-color: var(--cor-secundaria);
+}
+
+#main_cadastro_tipo_usuario .desabilitado {
+    background-color: #ffd1008c;
 }
 /*main*/
 

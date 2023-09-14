@@ -1,34 +1,36 @@
 import "./style.css"
 // import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
-// import BotaoVerMais from "../../components/BotaoVerMais"; 
+import { Link } from "react-router-dom";
 
+
+import axios from "axios";
 
 import CardNoticiasRecentes from '../../components/CardNoticiasRecentes';
-import axios from "axios";
 import Parse from 'parse/dist/parse.min.js';
 import { useEffect, useState } from "react";
 import Banner from "../../components/Banner";
 import CardOfertas from "../../components/CardOfertas";
+import api from "../../utils/api";
+import CardOfertasPneu from "../../components/CardOfertasPneu";
+
 const PARSE_APPLICATION_ID = '1QJ5n2ix95flGl0Rt7b1l4CfbqXuYQcj7VU0oKGd';
 const PARSE_JAVASCRIPT_KEY = 'R3yYjaaJbXJNHSCT6NqVjxXZBqZjllwQzTuGUyvi';
 const PARSE_REST_API = 'aTuaHYnGDCCvEXeN4j3eyLfGxBbNnqH7zL5UAfxA';
 const MASTER_KEY = "F4vFzZm6HASmvFNv9TihqyVvEIPJhxs5uXY9Sebu"
 Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 
-
 function Produtos() {
     const [conteudoBanner, setConteudoBanner] = useState<any[]>([]);
     const [conteudoOfertas, setConteudoOfertas] = useState<any[]>([]);
-    const [conteudoNoticiasR, setConteudoNoticiasR] = useState<any[]>([]);
     const [conteudoPromocoes, setConteudoPromocoes] = useState<any[]>([]);
+    const [conteudoNoticiasR, setConteudoNoticiasR] = useState<any[]>([]);
 
     function listarBanner() {
         // event.preventDefault();
         console.log("teste");
 
         // /* console.log(cpf) */
-        axios.get(`https://parseapi.back4app.com/parse/classes/banner`,
+        api.get(`/banner`,
             {
                 headers: {
                     'X-Parse-Application-Id': PARSE_APPLICATION_ID,
@@ -54,7 +56,7 @@ function Produtos() {
         console.log("teste");
 
         // /* console.log(cpf) */
-        axios.get(`https://parseapi.back4app.com/parse/classes/ofertas`,
+        api.get(`/ofertas`,
             {
                 headers: {
                     'X-Parse-Application-Id': PARSE_APPLICATION_ID,
@@ -80,7 +82,7 @@ function Produtos() {
         console.log("teste");
 
         // /* console.log(cpf) */
-        axios.get(`https://parseapi.back4app.com/parse/classes/noticias`,
+        api.get(`/noticias`,
             {
                 headers: {
                     'X-Parse-Application-Id': PARSE_APPLICATION_ID,
@@ -127,16 +129,19 @@ function Produtos() {
             });
     }
 
+
+
     useEffect(() => {
         //executa ação
         listarBanner();
         listarOfertas();
-        listarNoticiasR();
         listarPromocoes();
+        listarNoticiasR();
 
     }, []);
 
     return (
+
         <main id="produtos">
             <section>
                 <Banner conteudo={conteudoBanner} />
@@ -151,11 +156,14 @@ function Produtos() {
             </section>
 
 
-            <section>
+            <section className="prod_promocoes produtos_posicionamento">
 
-                <section className="prod_promocoes produtos_posicionamento">
+                <h2>promoções</h2>
+                <p>as promoçoes do mês começaram!!<br />confira as melhores ofertas de peças do mercado feitas pelos
+                    nossos parceiros</p>
 
-                    <div className="carrossel">
+                <div className="carrossel">
+                    <div className="cardPromocoes">
                         {
                             conteudoPromocoes.map((promocoes: any, indice: number) => {
                                 return <div key={indice}>
@@ -167,14 +175,14 @@ function Produtos() {
                                         preco={promocoes.preco}
                                     />
                                 </div>
-
-
                             })
                         }
                     </div>
 
-                </section>
+                </div>
+
             </section>
+
 
 
             <div className="prod_noticias_h2 produtos_posicionamento">
@@ -201,5 +209,4 @@ function Produtos() {
         </main >
     )
 }
-
 export default Produtos;
