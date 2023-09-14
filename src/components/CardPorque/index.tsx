@@ -1,9 +1,4 @@
-
-//estilizacao
-
 import "./style.css"
-
-
 
 function CardPorque() {
     return (

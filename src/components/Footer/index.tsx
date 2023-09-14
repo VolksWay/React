@@ -1,8 +1,8 @@
 //imagens
-import imgLogo from "../../assets/images/logo.png";
-import iconFace from "../../assets/images/face_branco.png";
-import iconInsta from "../../assets/images/instagram.svg";
-import iconLinkedin from "../../assets/images/linkedin.svg";
+import imgLogo from "../../assets/img/logo.png";
+import iconFace from "../../assets/img/face_branco.png";
+import iconInsta from "../../assets/img/instagram.svg";
+import iconLinkedin from "../../assets/img/linkedin.svg";
 //estilização
 import "./style.css";
 

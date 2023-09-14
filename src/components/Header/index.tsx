@@ -2,25 +2,16 @@
 import "./style.css";
 import imgLogo from "../../assets/img/logo.png";
 import { Link } from "react-router-dom";
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-
-
 
 function Header() {
-
-   
-
-
     return (
-
         <header className="direction_row align_center posicionamento_header">
             <img src={imgLogo} alt=""/>
             <Link 
                 to="#" 
                 id="menu_barras"
                 className="menu_barras"
-                onClick="btnMenu()"
+                /* onClick="btnMenu()" */
                 aria-label="Abrir um menu"
                 aria-controls="links"
                 aria-expanded="false"
@@ -32,11 +23,11 @@ function Header() {
             </Link>
             <nav className="space_evenly links" id="links">
                 <div>
-                    <Link to>volks<span>way</span></Link>
+                    <Link to={"/"}>volks<span>way</span></Link>
                     <Link
                         to="menu_barras"
                         className="menu_barras"
-                        onClick="btnMenu()"
+                        /* onClick="btnMenu()" */
                         aria-label="Fechar um menu"
                         aria-controls="links"
                         aria-expanded="true"

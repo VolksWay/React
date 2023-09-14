@@ -1,9 +1,4 @@
-
-// estilizacao
-
 import "./style.css"
-
-// rotas
 
 import { Link } from "react-router-dom";
 
@@ -16,5 +11,3 @@ function BotaoCadastrar() {
 
 }
 export default BotaoCadastrar;
-
-

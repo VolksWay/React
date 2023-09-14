@@ -14,11 +14,14 @@ import Privacidade from './pages/Privacidade/index'
 import Produtos from './pages/Produtos/index'
 import CardOfertasPneu from './components/CardOfertasPneu'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
+      <Header />
       <Routes>
        {/*  <Route path='/' element={<Home />} />
         <Route path='/cadastro/adm_frota' element={<CadastroAdmFrota />} />
@@ -31,7 +34,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/login' element={<Login />} />
         <Route path='/privacidade' element={<Privacidade />} /> */}
         <Route path='/produtos' element={<Produtos />} />
-    </Routes>
-  </BrowserRouter>
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   </React.StrictMode >,
 )
