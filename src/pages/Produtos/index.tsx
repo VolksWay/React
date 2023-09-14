@@ -1,17 +1,18 @@
 import "./style.css"
 import { Link } from "react-router-dom";
 
-// import imgBanner from "../../assets/img/banner_produto.png";
-// import setaEsquerda from "../../assets/img/ofertas-especiais-esquerda.svg"
-// import caminhaoOfertas from "../../assets/img/caminhao_banner_home.png"
-// import setaDireita from "../../assets/img/ofertas-especiais-direita.svg"
-// import caminhaoPromocoes from "../../assets/img/img_produto.png"
-// import cardNoticias1 from "../../assets/img/card1_noticias.png"
-// import cardNoticias2 from "../../assets/img/card2_noticias.png"
-// import cardNoticias3 from "../../assets/img/card3_noticias.png"
-// import cardNoticias4 from "../../assets/img/card4_noticias.png"
-// import cardNoticias5 from "../../assets/img/card5_noticias.png"
-// import cardNoticias6 from "../../assets/img/card6_noticias.png"
+import imgBanner from "../../assets/img/banner_produto.png";
+import setaEsquerda from "../../assets/img/ofertas-especiais-esquerda.svg"
+ import caminhaoOfertas from "../../assets/img/caminhao_banner_home.png"
+ import setaDireita from "../../assets/img/ofertas-especiais-direita.svg"
+ import caminhaoPromocoes from "../../assets/img/img_produto.png"
+import cardNoticias1 from "../../assets/img/card1_noticias.png"
+ import cardNoticias2 from "../../assets/img/card2_noticias.png"
+ import cardNoticias3 from "../../assets/img/card3_noticias.png"
+import cardNoticias4 from "../../assets/img/card4_noticias.png"
+ import cardNoticias5 from "../../assets/img/card5_noticias.png"
+ import cardNoticias6 from "../../assets/img/card6_noticias.png"
+ import CardOfertasPneu from "../../components/CardOfertasPneu";
 
 import axios from "axios";
 import Parse from 'parse/dist/parse.min.js';
@@ -19,6 +20,7 @@ import { useEffect, useState } from "react";
 import Banner from "../../components/Banner";
 import CardOfertas from "../../components/CardOfertas";
 import api from "../../utils/api";
+
 const PARSE_APPLICATION_ID = '1QJ5n2ix95flGl0Rt7b1l4CfbqXuYQcj7VU0oKGd';
 const PARSE_JAVASCRIPT_KEY = 'R3yYjaaJbXJNHSCT6NqVjxXZBqZjllwQzTuGUyvi';
 const PARSE_REST_API = 'aTuaHYnGDCCvEXeN4j3eyLfGxBbNnqH7zL5UAfxA';
@@ -28,6 +30,8 @@ Parse.initialize(PARSE_APPLICATION_ID, PARSE_JAVASCRIPT_KEY);
 function Produtos() {
     const [conteudoBanner, setConteudoBanner] = useState<any[]>([]);
     const [conteudoOfertas, setConteudoOfertas] = useState<any[]>([]);
+    const [conteudoPromocoes, setConteudoPromocoes] = useState<any[]>([]);
+    
 
     function listarBanner() {
         // event.preventDefault();
@@ -55,6 +59,12 @@ function Produtos() {
             });
     }
 
+
+
+
+
+
+
     function listarOfertas() {
         // event.preventDefault();
         console.log("teste");
@@ -81,10 +91,40 @@ function Produtos() {
             });
     }
 
+
+
+
+    function listarPromocoes() {
+        // event.preventDefault();
+        console.log("teste");
+
+        // /* console.log(cpf) */
+        api.get(`/promocoes`,
+            {
+                headers: {
+                    'X-Parse-Application-Id': PARSE_APPLICATION_ID,
+                    'X-Parse-REST-API-Key': PARSE_REST_API,
+                    'X-Parse-Master-Key': MASTER_KEY,
+                }
+            }).then((resposta) => {
+                if (resposta.status === 200) {
+                    // Se a resposta for 201, a solicitação foi bem-sucedida
+                    //200 pegar / 201 criar
+                    //setMensagemAguarde("Enviado")
+                    setConteudoPromocoes(resposta.data.results)
+                    console.log("entrouuu", resposta.data.results)
+                }
+            })
+            .catch((erro) => {
+                console.log(erro); // Trata erros de solicitação
+            });
+    }
+
     useEffect(() => {
         //executa ação
         listarBanner();
         listarOfertas();
+        listarPromocoes();
 
     }, []);
 
@@ -113,15 +153,38 @@ function Produtos() {
                     parceiros
                 </p>
                 <div>
-                    <a href="#prod_slide_10">
+                    {/* <a href="#prod_slide_10">
                         <img
                             className="prod_setaPromos"
                             src={setaEsquerda}
                             alt="Icone de mover cards de ofertas para esquerda"
                         />
-                    </a>
+                    </a> */}
+
+                    
+
+
                     <div className="carrossel">
-                        <div id="prod_slide_1" className="prod_card_promo1">
+                     
+                    {
+                        conteudoPromocoes.map((promocoes:any ,indice :number ) => {
+                            return <div key={indice}>
+                                <CardOfertasPneu
+                                id={promocoes.objectId}
+                                imagem={promocoes.imagem}
+                                titulo={promocoes.titulo}
+                                descricao={promocoes.descricao}
+                                preco={promocoes.preco}
+                                />
+                            </div>
+
+
+                        })
+                    }
+
+
+
+                {/*         <div id="prod_slide_1" className="prod_card_promo1">
                             <img src={caminhaoPromocoes} alt="imagem divulgação caminhão" />
                             <div className="prod_card_azul ">
                                 <div className="prod_preco">R$5000,00</div>
@@ -129,88 +192,10 @@ function Produtos() {
                                 <h4>caminhão</h4>
                                 <span>novidade</span>
                             </div>
-                        </div>
-                        <div id="prod_slide_2" className="prod_card_promo2">
-                            <img src={caminhaoPromocoes} alt="imagem divulgação caminhão" />
-                            <div className="prod_card_azul">
-                                <div className="prod_preco">R$5000,00</div>
-                                <h3>pneu triangle 275/80R</h3>
-                                <h4>caminhão</h4>
-                                <span>novidade</span>
-                            </div>
-                        </div>
-                        <div id="prod_slide_3" className="prod_card_promo3">
-                            <img src={caminhaoPromocoes} alt="imagem divulgação caminhão" />
-                            <div className="prod_card_azul">
-                                <div className="prod_preco">R$5000,00</div>
-                                <h3>pneu triangle 275/80R</h3>
-                                <h4>caminhão</h4>
-                                <span>novidade</span>
-                            </div>
-                        </div>
-                        <div id="prod_slide_4" className="prod_card_promo4">
-                            <img src={caminhaoPromocoes} alt="imagem divulgação caminhão" />
-                            <div className="prod_card_azul">
-                                <div className="prod_preco">R$5000,00</div>
-                                <h3>pneu triangle 275/80R</h3>
-                                <h4>caminhão</h4>
-                                <span>novidade</span>
-                            </div>
-                        </div>
-                        <div id="prod_slide_5" className="prod_card_promo5">
-                            <img src={caminhaoPromocoes} alt="imagem divulgação caminhão" />
-                            <div className="prod_card_azul">
-                                <div className="prod_preco">R$5000,00</div>
-                                <h3>pneu triangle 275/80R</h3>
-                                <h4>caminhão</h4>
-                                <span>novidade</span>
-                            </div>
-                        </div>
-                        <div id="prod_slide_6" className="prod_card_promo6">
-                            <img src={caminhaoPromocoes} alt="imagem divulgação caminhão" />
-                            <div className="prod_card_azul">
-                                <div className="prod_preco">R$5000,00</div>
-                                <h3>pneu triangle 275/80R</h3>
-                                <h4>caminhão</h4>
-                                <span>novidade</span>
-                            </div>
-                        </div>
-                        <div id="prod_slide_7" className="prod_card_promo7">
-                            <img src={caminhaoPromocoes} alt="imagem divulgação caminhão" />
-                            <div className="prod_card_azul">
-                                <div className="prod_preco">R$5000,00</div>
-                                <h3>pneu triangle 275/80R</h3>
-                                <h4>caminhão</h4>
-                                <span>novidade</span>
-                            </div>
-                        </div>
-                        <div id="prod_slide_8" className="prod_card_promo8">
-                            <img src={caminhaoPromocoes} alt="imagem divulgação caminhão" />
-                            <div className="prod_card_azul">
-                                <div className="prod_preco">R$5000,00</div>
-                                <h3>pneu triangle 275/80R</h3>
-                                <h4>caminhão</h4>
-                                <span>novidade</span>
-                            </div>
-                        </div>
-                        <div id="prod_slide_9" className="prod_card_promo9">
-                            <img src={caminhaoPromocoes} alt="imagem divulgação caminhão" />
-                            <div className="prod_card_azul">
-                                <div className="prod_preco">R$5000,00</div>
-                                <h3>pneu triangle 275/80R</h3>
-                                <h4>caminhão</h4>
-                                <span>novidade</span>
-                            </div>
-                        </div>
-                        <div id="prod_slide_10" className="prod_card_promo10">
-                            <img src={caminhaoPromocoes} alt="imagem divulgação caminhão" />
-                            <div className="prod_card_azul">
-                                <div className="prod_preco">R$5000,00</div>
-                                <h3>pneu triangle 275/80R</h3>
-                                <h4>caminhão</h4>
-                                <span>novidade</span>
-                            </div>
-                        </div>
+                        </div> */}
+
+
+                       
                     </div>
                     <a href="#prod_slide_1">
                         <img
