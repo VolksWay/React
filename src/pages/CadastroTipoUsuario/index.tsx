@@ -1,30 +1,18 @@
 import "./style.css"
 import { Link } from "react-router-dom";
-import Voltar from "../../assets/img/img_setaVoltar-semFundo.png"
 import Motorista from "../../assets/img/img_cadastroMotorista_semFundo.png"
 import AdmFrota from "../../assets/img/img_cadastroAdmDeFrota_semFundo.png"
 import Proprietario from "../../assets/img/img_cadastroProprietario_semFundo.png"
 import IlustracaoPessoas from "../../assets/img/img_ilustracaoPessoasComBalao_semFundo.png"
 import { useState } from "react";
+import SetaVoltar from "../../components/SetaVoltar";
 
 function CadastroTipoUsuario() {
     const [tipoUsuario, setTipousuario] = useState<string>("");
 
     return (
         <main id="main_cadastro_tipo_usuario">
-            <Link to={"/"}></Link>
-            <div className="div_voltar">
-                <Link to={"/"}>
-                    <img
-                        className="seta_voltar"
-                        src={Voltar}
-                        alt=""
-                    />
-                </Link>
-                <Link to={"/"} className="aVoltar">
-                    Voltar
-                </Link>
-            </div>
+            <SetaVoltar pagina={""}/>
             <section className="section">
                 <div className="conteudo">
                     <div className="quemEVoce">

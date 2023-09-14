@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Parse from 'parse/dist/parse.min.js';
 import api from "../../utils/api";
+import SetaVoltar from "../../components/SetaVoltar";
 const PARSE_APPLICATION_ID = '1QJ5n2ix95flGl0Rt7b1l4CfbqXuYQcj7VU0oKGd';
 const PARSE_JAVASCRIPT_KEY = 'R3yYjaaJbXJNHSCT6NqVjxXZBqZjllwQzTuGUyvi';
 const PARSE_REST_API = 'aTuaHYnGDCCvEXeN4j3eyLfGxBbNnqH7zL5UAfxA';
@@ -187,12 +188,7 @@ function CadastroGeral() {
 
     return (
         <main id="main_cadastro_geral">
-            <Link to={"/cadastro/empresa"} className="voltar">
-                <div className="div_voltar">
-                    <img className="seta_voltar" src={Voltar} alt="" />
-                    <span className="spanVoltar">Voltar</span>
-                </div>
-            </Link>
+            <SetaVoltar pagina={"cadastro/empresa"}/>
 
             <section className="section">
                 <form action="" onSubmit={(event) => {

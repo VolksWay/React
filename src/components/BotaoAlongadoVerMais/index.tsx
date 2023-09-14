@@ -4,7 +4,7 @@ import "./style.css"
 function BotaoAlongadoVerMais() {
     return (
         <>
-            <Link className="prod_btn_noticias" to="#"> ver mais</Link>
+            <Link className="prod_btn_noticias" to={"/"}>ver mais</Link>
         </>
     )
 }
