@@ -133,6 +133,8 @@ function Produtos() {
             });
     }
 
+
+
     useEffect(() => {
         //executa ação
         listarBanner();
@@ -144,44 +146,50 @@ function Produtos() {
     return (
 
         <main id="produtos">
-
-            <Banner conteudo={conteudoBanner} />
-
+            <section>
+                <Banner conteudo={conteudoBanner} />
+            </section>
 
             <div className="produtos_ofertas_h2 produtos_posicionamento">
 
                 <h2 />
             </div>
+
             <section>
                 <CardOfertas conteudo={conteudoOfertas} />
             </section>
 
 
-            <section className="prod_promocoes produtos_posicionamento">
+            <section>
 
-            <div className="carrossel">
-            {
-                    conteudoPromocoes.map((promocoes: any, indice: number) => {
-                        return <div key={indice}>
-                            <CardOfertasPneu
-                                id={promocoes.objectId}
-                                imagem={promocoes.imagem}
-                                titulo={promocoes.titulo}
-                                descricao={promocoes.descricao}
-                                preco={promocoes.preco}
-                            />
-                        </div>
+                <section className="prod_promocoes produtos_posicionamento">
+                    
+                    <div className="carrossel">
+                        {
+                            conteudoPromocoes.map((promocoes: any, indice: number) => {
+                                return <div key={indice}>
+                                    <CardOfertasPneu
+                                        id={promocoes.objectId}
+                                        imagem={promocoes.imagem}
+                                        titulo={promocoes.titulo}
+                                        descricao={promocoes.descricao}
+                                        preco={promocoes.preco}
+                                    />
+                                </div>
 
 
-                    })
-                }
-            </div>
+                            })
+                        }
+                    </div>
+
+                </section>
             </section>
 
 
             <div className="prod_noticias_h2 produtos_posicionamento">
                 <h2 />
             </div>
+
             <section id="CardNoticiasRecentes" >
                 <section className="prod_noticias_recentes">
                     {
@@ -198,6 +206,7 @@ function Produtos() {
                     }
                 </section>
             </section>
+
         </main >
     )
 }
