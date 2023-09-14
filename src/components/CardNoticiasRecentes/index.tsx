@@ -15,13 +15,9 @@ function CardNoticiasRecentes(props: any) {
             <div className="prod_card_branco">
                 <div className="prod_paragrafo">
                     <h3>{props.titulo}</h3>
-                    <p>
-                        {props.descricao}
-                    </p>
+                    <p>{props.descricao}</p>
                 </div>
-                <div>
-                    <BotaoAlongadoVerMais />
-                </div>
+                <div><BotaoAlongadoVerMais /></div>
             </div>
         </div>
 
