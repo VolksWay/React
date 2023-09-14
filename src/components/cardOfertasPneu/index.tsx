@@ -11,12 +11,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 
-
-
-
 function CardOfertasPneu( props :any) {
-
-
   return (
     <div id="prod_slide_1" className="prod_card_promo1">
       <img src={props.imagem.url} alt="imagem Pneu" />
@@ -29,10 +24,5 @@ function CardOfertasPneu( props :any) {
       </div>
     </div>
   )
-
-  
-
 }
 export default CardOfertasPneu;
-
-

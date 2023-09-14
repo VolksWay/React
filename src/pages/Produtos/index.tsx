@@ -2,7 +2,6 @@ import "./style.css"
 // import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-
 import axios from "axios";
 
 import CardNoticiasRecentes from '../../components/CardNoticiasRecentes';
@@ -11,7 +10,7 @@ import { useEffect, useState } from "react";
 import Banner from "../../components/Banner";
 import CardOfertas from "../../components/CardOfertas";
 import api from "../../utils/api";
-import CardOfertasPneu from "../../components/CardOfertasPneu";
+import CardOfertasPneu from "../../components/cardOfertasPneu";
 
 const PARSE_APPLICATION_ID = '1QJ5n2ix95flGl0Rt7b1l4CfbqXuYQcj7VU0oKGd';
 const PARSE_JAVASCRIPT_KEY = 'R3yYjaaJbXJNHSCT6NqVjxXZBqZjllwQzTuGUyvi';
@@ -137,7 +136,6 @@ function Produtos() {
         listarOfertas();
         listarPromocoes();
         listarNoticiasR();
-
     }, []);
 
     return (
