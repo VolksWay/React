@@ -5,12 +5,13 @@
 } */
 
 
-#produtos .produtos_posicionamento {
+/* #produtos .produtos_posicionamento {
 
+    width: 90%;
     height: 100%;
     max-width: 1920px;
     margin: auto;
-}
+} */
 
 /* header {
     background-color: var(--cor-primaria);
@@ -149,33 +150,46 @@ header a {
 }
 
 #produtos .carrossel {
-    max-width: 1440px;
+    max-width: 1920px;
     width: 100%;
     /* padding: 10px 40px; */
+    /* margin: auto; */
 
-    display: flex;
+    /* display: flex;
     flex-wrap: nowrap;
     overflow: scroll;
     overflow-y: hidden;
     scroll-behavior: smooth;
     height: 424px;
     margin-bottom: -237px;
-    scroll-snap-align: start;
+    scroll-snap-align: start; */
 
 }
 
-#produtos .carrossel::-webkit-scrollbar {
+
+#produtos .cardPromocoes{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    height: 424px;
+    margin-bottom: -300px;
+    scroll-snap-align: start;
+}
+
+/* #produtos .carrossel::-webkit-scrollbar {
     width: 0.1em;
     background-color: transparent;
 }
 
 #produtos .carrossel::-webkit-scrollbar-thumb {
     background-color: transparent;
-}
+} */
 
 
 
-
+/* 
 
 #produtos .prod_card_ofertas1,
 #produtos .prod_card_ofertas2,
@@ -229,10 +243,10 @@ header a {
 #produtos .prod_card_ofertas5 img {
     width: 250px;
     /* position: absolute; */
-    margin-top: 30px;
-    margin-left: 30px;
+    /* margin-top: 30px;
+    margin-left: 30px; */
 
-}
+
 
 #produtos .prod_card_ofertas1 span,
 #produtos .prod_card_ofertas2 span,
@@ -291,7 +305,7 @@ header a {
     margin: 1px auto;
 
 
-}
+} */
 
 
 /*______________________SEÇAO PROMOCOES______________*/
@@ -306,7 +320,7 @@ header a {
     align-items: center;
     flex-direction: column;
 
-    margin-top: 330px;
+    margin-top: 200px;
 
 
     font-size: 40px;
@@ -331,11 +345,12 @@ header a {
 
 #produtos .prod_promocoes>div {
     background-color: var(--cor-primaria);
-    height: 530px;
+    height: 590px;
     margin-top: -190px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 110px;
 }
 
 

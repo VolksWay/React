@@ -19,91 +19,25 @@
 
 }
 
+/* ESTILIZACAO CARROSEL - SWIPER*/
 
-#banner .produtos_posicionamento {
-
-    height: 100%;
+#banner .container {
+    width: 100%;
     max-width: 1920px;
-    margin: auto;
-}
-
-
-
-#banner .produtos_banner {
-    /* background-image: url(./img/banner_produto.png);*/
-
-    background-size: cover;
-    display: flex;
-    position: relative;
-
-}
-
-#banner .slider-wrapper {
-    position: relative;
     margin: 0 auto;
-    display: flex;
+}
+
+
+#banner .slide-item {
+    width:100%;
     height: calc(100vh - 150px);
-
+    object-fit: cover;
 }
 
-#banner .slider {
-    display: flex;
-    /* alinhnado as imagens na horizontal*/
-    /* aspect-ratio: 16/9; /* proporçao das imagens */
-    overflow-x: auto;
-    /**/
-    /* height: calc(100vh - 150px); */
-    scroll-snap-type: x mandatory;
-    /*comportamento do scroll para a horizontal*/
-    scroll-behavior: smooth;
-    overflow: scroll;
-    overflow-y: hidden;
+#banner .banner_conteudo{
+   display: flex;
 }
 
-#banner .slider::-webkit-scrollbar {
-    width: 0.1em;
-    background-color: transparent;
-}
-
-#banner .slider::-webkit-scrollbar-thumb {
-    background-color: transparent;
-}
-
-#banner .slider img {
-    flex: 1 0 100%;
-    /*a imagem ocupara qualquer espaço restante dentro do container*/
-    scroll-snap-align: start;
-    /*mostra a primeira imagem*/
-    height: calc(100vh - 150px);
-}
-
-#banner .slider-nav {
-    display: flex;
-    column-gap: 1rem;
-    /*espaço entre eles*/
-    position: absolute;
-    bottom: 1.25rem;
-    /*espaço abaixo*/
-    left: 50%;
-    transform: translateX(-50%);
-    /*muda a rotaçao de um elemento*/
-    z-index: 1;
-}
-
-#banner .slider-nav a {
-    width: 18px;
-    height: 18.81px;
-    border-radius: 50%;
-    background-color: #FFFFFF;
-    opacity: 0.75;
-    transition: opacity ease 250ms;
-
-}
-
-#banner .slider-nav a:hover {
-    opacity: 1;
-    background-color: var(--light_blue);
-}
 
 #banner .produtos_banner_conteudo {
     color: white;
@@ -111,12 +45,12 @@
     /* background-color: beige; */
     display: flex;
     flex-direction: column;
-    margin: -425px 0 0 100px;
+    margin: -440px 0 0 100px;
     /* position: absolute; */
 
 
     width: 700px;
-    height: 200px;
+    /* height: 400px; */
     z-index: 1;
 
 }
@@ -205,3 +139,5 @@
     opacity: 1;
     background-color: var(--light_blue);
 }
+
+

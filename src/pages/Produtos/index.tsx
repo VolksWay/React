@@ -3,11 +3,7 @@ import "./style.css"
 import { Link } from "react-router-dom";
 
 import axios from "axios";
-import imgBanner from "../../assets/img/banner_produto.png";
-import setaEsquerda from "../../assets/img/ofertas-especiais-esquerda.svg"
-import caminhaoOfertas from "../../assets/img/caminhao_banner_home.png"
-import setaDireita from "../../assets/img/ofertas-especiais-direita.svg"
-import caminhaoPromocoes from "../../assets/img/img_produto.png"
+
 import CardNoticiasRecentes from '../../components/CardNoticiasRecentes';
 import Parse from 'parse/dist/parse.min.js';
 import { useEffect, useState } from "react";
@@ -106,7 +102,6 @@ function Produtos() {
             });
     }
 
-
     function listarPromocoes() {
         // event.preventDefault();
         console.log("teste");
@@ -151,7 +146,6 @@ function Produtos() {
             </section>
 
             <div className="produtos_ofertas_h2 produtos_posicionamento">
-
                 <h2 />
             </div>
 
@@ -160,11 +154,14 @@ function Produtos() {
             </section>
 
 
-            <section>
+            <section className="prod_promocoes produtos_posicionamento">
 
-                <section className="prod_promocoes produtos_posicionamento">
-                    
-                    <div className="carrossel">
+                <h2>promoções</h2>
+                <p>as promoçoes do mês começaram!!<br />confira as melhores ofertas de peças do mercado feitas pelos
+                    nossos parceiros</p>
+
+                <div className="carrossel">
+                    <div className="cardPromocoes">
                         {
                             conteudoPromocoes.map((promocoes: any, indice: number) => {
                                 return <div key={indice}>
@@ -176,14 +173,14 @@ function Produtos() {
                                         preco={promocoes.preco}
                                     />
                                 </div>
-
-
                             })
                         }
                     </div>
 
-                </section>
+                </div>
+
             </section>
+
 
 
             <div className="prod_noticias_h2 produtos_posicionamento">
