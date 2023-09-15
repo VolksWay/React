@@ -12,7 +12,6 @@ import CadastroVeiculo from './pages/CadastroVeiculo/index'
 import Login from './pages/Login/index'
 import Privacidade from './pages/Privacidade/index'
 import Produtos from './pages/Produtos/index'
-import CardOfertasPneu from './components/CardOfertasPneu'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -23,7 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Header />
       <Routes>
-       {/*  <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/cadastro/adm_frota' element={<CadastroAdmFrota />} />
 
         <Route path='/cadastro/empresa' element={<CadastroEmpresa />} />
@@ -32,10 +31,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/cadastro/usuario' element={<CadastroTipoUsuario />} />
         <Route path='/cadastro/veiculo' element={<CadastroVeiculo />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/privacidade' element={<Privacidade />} /> */}
+        <Route path='/privacidade' element={<Privacidade />} />
         <Route path='/produtos' element={<Produtos />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   </React.StrictMode >,
 )

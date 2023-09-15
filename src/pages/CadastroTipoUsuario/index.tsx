@@ -6,13 +6,14 @@ import Proprietario from "../../assets/img/img_cadastroProprietario_semFundo.png
 import IlustracaoPessoas from "../../assets/img/img_ilustracaoPessoasComBalao_semFundo.png"
 import { useState } from "react";
 import SetaVoltar from "../../components/SetaVoltar";
+import BotaoFormulario from "../../components/BotaoFormulario";
 
 function CadastroTipoUsuario() {
     const [tipoUsuario, setTipousuario] = useState<string>("");
 
     return (
         <main id="main_cadastro_tipo_usuario">
-            <SetaVoltar pagina={""}/>
+            <SetaVoltar pagina={""} />
             <section className="section">
                 <div className="conteudo">
                     <div className="quemEVoce">
@@ -111,30 +112,17 @@ function CadastroTipoUsuario() {
                             </div>
                         }
                     </div>
+
                     {tipoUsuario === "Motorista" &&
-                        <div className="btn_proximo">
-                            <Link
-                                className="btnProximo"
-                                to={`/cadastro/veiculo?tipoUsuario=${tipoUsuario}`}>
-                                Próximo
-                            </Link>
-                        </div>
+                        <BotaoFormulario tipo={"link"} texto={"Próximo"} url={`/cadastro/veiculo?tipoUsuario=${tipoUsuario}`} />
                     }
+
                     {tipoUsuario !== "" && tipoUsuario !== "Motorista" &&
-                        <div className="btn_proximo">
-                            <Link
-                                className="btnProximo"
-                                to={`/cadastro/empresa?tipoUsuario=${tipoUsuario}`}>
-                                Próximo
-                            </Link>
-                        </div>
+                        <BotaoFormulario tipo={"link"} texto={"Próximo"} url={`/cadastro/empresa?tipoUsuario=${tipoUsuario}`} />
                     }
+
                     {tipoUsuario === "" &&
-                        <div className="btn_proximo desabilitado">
-                            <a className="btnProximo desabilitado">
-                                Próximo
-                            </a>
-                        </div>
+                        <BotaoFormulario tipo={"link"} texto={"Próximo"} url={`/cadastro/empresa`} />
                     }
                 </div>
                 <div className="imgIlustracao">

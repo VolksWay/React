@@ -5,50 +5,57 @@
     flex-direction: column;
 }
 
-#main_cadastro_empresa .container {
+#main_cadastro_veiculo {
+    display: flex;
+    background: linear-gradient(50deg, #ffffff 70%, var(--camada_geometrica) 30%);
+    height: 600px;
+    flex-direction: column;
+}
+
+.container {
     width: 90%;
     height: 100%;
     max-width: 1920px;
     margin: auto;
 }
 
-#main_cadastro_empresa .direction_column {
+.direction_column {
     display: flex;
     flex-direction: column;
 }
 
-#main_cadastro_empresa .direction_row {
+.direction_row {
     flex-direction: row;
 }
 
-#main_cadastro_empresa .justify_center {
+.justify_center {
     display: flex;
     justify-content: center;
 }
 
-#main_cadastro_empresa .align_center {
+ .align_center {
     display: flex;
     align-items: center;
 }
 
-#main_cadastro_empresa .space_between {
+ .space_between {
     justify-content: space-between;
 }
 
-#main_cadastro_empresa .space_evenly {
+ .space_evenly {
     display: flex;
     justify-content: space-evenly;
 }
 
-#main_cadastro_empresa .space_around {
+ .space_around {
     justify-content: space-around;
 }
 
-#main_cadastro_empresa .menu_barras {
+ .menu_barras {
     display: none;
 }
 
-#main_cadastro_empresa .links>div a {
+ .links>div a {
     display: none;
     color: var(--cor-branco);
     font-weight: 400;
@@ -56,20 +63,20 @@
     backdrop-filter: blur(25px);
 }
 
-#main_cadastro_empresa .links>div span {
+ .links>div span {
     color: var(--cor-secundaria);
     font-size: 40px;
     font-weight: 400;
     backdrop-filter: blur(25px);
 }
 
-#main_cadastro_empresa .logo_vwco_semfundo_branco {
+ .logo_vwco_semfundo_branco {
     width: 100px;
     height: 121px;
 }
 
 /*==================================voltar*/
-#main_cadastro_empresa .div_voltar {
+ .div_voltar {
     height: 50px;
     width: 100px;
     display: flex;
@@ -79,14 +86,14 @@
     margin-bottom: 10px;
 }
 
-#main_cadastro_empresa .seta_voltar {
+ .seta_voltar {
     font-family: var(--fonte-primaria);
     width: 45px;
     height: 45px;
     color: var(--cor-primaria);
 }
 
-#main_cadastro_empresa .aVoltar {
+ .aVoltar {
     font-family: var(--fonte-primaria);
     font-style: normal;
     font-weight: 400;
@@ -98,15 +105,15 @@
 
 }
 
-#main_cadastro_empresa .conteudo {
+ .conteudo {
     flex-direction: column;
     display: flex;
     width: 700px;
     height: 450px;
-   /*  align-items: column; */
+    /*  align-items: column; */
 }
 
-#main_cadastro_empresa .inputs {
+ .inputs, #main_cadastro_veiculo .inputs {
     width: 400px;
     justify-content: space-between;
     align-items: center;
@@ -114,7 +121,7 @@
     margin-bottom: 15px;
 }
 
-#main_cadastro_empresa .seu_cadastro {
+ .seu_cadastro {
     display: flex;
     /*  background-color: #ddb16f; */
     font-family: var(--fonte-primaria);
@@ -128,14 +135,14 @@
 
 }
 
-#main_cadastro_empresa .seDestaca {
+ .seDestaca {
     /*  background-color: cornflowerblue; */
     margin-left: 65px;
     margin-top: 10px;
     width: 600px;
 }
 
-#main_cadastro_empresa .se_destaca {
+ .se_destaca {
     font-family: var(--fonte-primaria);
     font-style: normal;
     font-weight: 400;
@@ -147,13 +154,13 @@
 
 /*===============================nome*/
 
-#main_cadastro_empresa .nome {
+ .nome {
     margin-top: 30px;
     font-family: var(--fonte-primaria);
     color: var(--cor-primaria);
 }
 
-#main_cadastro_empresa .nome_input {
+ .nome_input {
     border-radius: 30px;
     background: #EDEDED;
     width: 400px;
@@ -161,44 +168,45 @@
     border: 0.5px;
     cursor: text;
     padding: 1.2rem;
-    margin: 6px;
+    margin: 6px 0;
 }
 
+.botao {
+    background-color: transparent;
+    border: none;
+}
 
-#main_cadastro_empresa .container_80 {
+ .container_80 {
     width: 80%;
     height: 100%;
     max-width: 1920px;
     margin: auto;
 }
 
-#main_cadastro_empresa .texto_privacidade {
+ .texto_privacidade {
     font-size: 16px;
     color: var(--cor-primaria);
     font-weight: 400;
     font-family: var(--fonte-primaria);
 }
 
-#main_cadastro_empresa .texto_privacidade a {
+ .texto_privacidade a {
     color: var(--cor-primaria);
 }
 
-#main_cadastro_empresa .box_footer {
+ .box_footer {
     background-color: var(--cor-primaria);
     width: 100%;
     height: 20px;
 }
 
-#main_cadastro_empresa section {
+#main_cadastro_veiculo section {
     /*     background-color:rgb(155, 245, 245); */
     display: flex;
     justify-content: left;
 }
 
-#main_cadastro_empresa .btn_proximo {
-    
-    justify-content: center;
-    align-items: center;
+ .btn_proximo {
     display: flex;
     width: 303px;
     height: 57px;
@@ -207,15 +215,15 @@
     margin-top: 36px;
 }
 
-#main_cadastro_empresa .habilitado {
+ .habilitado {
     background-color: #FFD100;
 }
 
-#main_cadastro_empresa .desabilitado {
+ .desabilitado {
     background-color: #ffd1008c;
 }
 
-#main_cadastro_empresa .btnProximo {
+ .btnProximo {
     color: var(--cor-primaria);
     font-family: var(--fonte-primaria);
     border-radius: 30px;
@@ -224,7 +232,7 @@
     font-family: Poppins;
 }
 
-#main_cadastro_empresa .ilustracao {
+ .ilustracao {
     height: 500px;
     width: 520px;
     display: flex;
@@ -233,74 +241,74 @@
 }
 
 @media screen and (max-width: 1700px) {
-    #main_cadastro_empresa .imgs_social_medias {
+     .imgs_social_medias {
         width: 17%;
     }
 }
 
-@media screen and (max-width: 1230px){
-    #main_cadastro_empresa .imgIlustracao {
+@media screen and (max-width: 1230px) {
+     .imgIlustracao {
         display: none;
     }
 }
 
 @media screen and (max-width: 1100px) {
-    #main_cadastro_empresa .imgs_social_medias {
+     .imgs_social_medias {
         width: 20%;
     }
 
-    #main_cadastro_empresa .imgs_social_medias img {
+     .imgs_social_medias img {
         width: 28%;
     }
 }
 
 @media screen and (max-width: 900px) {
-    #main_cadastro_empresa .img_footer {
+     .img_footer {
         margin-left: -16%;
         width: unset;
         height: unset;
     }
 
-    #main_cadastro_empresa .footer_text {
+     .footer_text {
         font-size: 16px;
     }
 
-    #main_cadastro_empresa .alinhamento_footer {
+     .alinhamento_footer {
         flex-wrap: wrap;
     }
 
-    #main_cadastro_empresa .nav_mobile {
+     .nav_mobile {
         display: flex;
         width: 50%;
         justify-content: space-between;
         margin-top: 4%;
     }
 
-    #main_cadastro_empresa .nav_desktop {
+     .nav_desktop {
         display: none;
     }
 }
 
 
 @media screen and (max-width: 800px) {
-    #main_cadastro_empresa .menu_barras svg {
+     .menu_barras svg {
         height: 13vh;
         width: 4vw;
         fill: var(--cor-branco);
     }
 
-    #main_cadastro_empresa .menu_barras {
+     .menu_barras {
         display: block;
     }
 
-    #main_cadastro_empresa .posicionamento_header {
+     .posicionamento_header {
         position: relative;
         display: flex;
         justify-content: space-between;
         padding: 0 50px 0 0;
     }
 
-    #main_cadastro_empresa .posicionamento_header nav {
+     .posicionamento_header nav {
         display: none;
         position: absolute;
         top: 0;
@@ -312,36 +320,36 @@
         border: 1px solid var(--branco);
     }
 
-    #main_cadastro_empresa .primeira_nav {
+     .primeira_nav {
         width: 25vw;
         padding-right: 5%;
     }
 
-    #main_cadastro_empresa .imgs_social_medias {
+     .imgs_social_medias {
         width: 30%;
         padding-right: 3%;
     }
 
-    #main_cadastro_empresa .imgs_social_medias img {
+     .imgs_social_medias img {
         width: 29%;
     }
 
-    #main_cadastro_empresa .links {
+     .links {
         justify-content: initial;
         padding: 0% 5% 0% 5%;
     }
 
-    #main_cadastro_empresa .navegacao_header {
+     .navegacao_header {
         margin-bottom: 3%;
         margin-top: 1%;
     }
 
-    #main_cadastro_empresa .links>div a {
-        display: block;  
+     .links>div a {
+        display: block;
         width: unset;
     }
 
-    #main_cadastro_empresa .links>div {
+     .links>div {
         align-items: center;
         justify-content: space-between;
         display: flex;
@@ -349,73 +357,93 @@
 }
 
 @media screen and (max-width: 750px) {
-    #main_cadastro_empresa .seu_cadastro {
+     .seu_cadastro {
         width: 669px;
-        font-size:x-large;
+        font-size: x-large;
     }
-    #main_cadastro_empresa .seta_voltar {
+
+     .seta_voltar {
         width: 20px;
         height: 20px;
     }
-    #main_cadastro_empresa .aVoltar{
+
+     .aVoltar {
         font-size: 16px;
     }
-    #main_cadastro_empresa .btn_proximo {
+
+     .btn_proximo {
         width: 206px;
         height: 49px;
     }
 
-    #main_cadastro_empresa .texto_privacidade {
+     .texto_privacidade {
         display: none;
     }
 }
+
 @media screen and (max-width: 730px) {
-    #main_cadastro_empresa .seu_cadastro {
+     .seu_cadastro {
         width: 323px;
     }
-    #main_cadastro_empresa .conteudo{
+
+     .conteudo {
         width: 320px;
     }
-    #main_cadastro_empresa  .seDestaca {
-        width: 320px;
-    }  
-}
-@media screen and (max-width: 470px){
-    #main_cadastro_empresa .nome{
+    #main_cadastro_veiculo .conteudo {
         width: 320px;
     }
-    #main_cadastro_empresa .nome_input {
-        width: 320px;
-    }
-    #main_cadastro_empresa .inputs{
+
+     .seDestaca {
         width: 320px;
     }
 }
-@media screen and (max-width: 400px){
-    #main_cadastro_empresa .seu_cadastro{
+
+@media screen and (max-width: 470px) {
+     .nome {
+        width: 320px;
+    }
+
+     .nome_input {
+        width: 320px;
+    }
+
+     .inputs, #main_cadastro_veiculo .inputs {
+        width: 320px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+     .seu_cadastro {
         width: 250px;
     }
-    #main_cadastro_empresa .se_destaca{
+
+     .se_destaca {
         width: 250px;
     }
-    #main_cadastro_empresa .seDestaca{
+
+     .seDestaca {
         width: 250px;
     }
-    #main_cadastro_empresa .nome{
+
+     .nome {
         width: 250px;
     }
-    #main_cadastro_empresa .nome_input{
+
+     .nome_input {
         width: 250px;
     }
-    #main_cadastro_empresa .inputs{
+
+     .inputs, #main_cadastro_veiculo .inputs {
         width: 250px;
     }
 }
-@media screen and (max-width: 330px){
-    #main_cadastro_empresa .conteudo{
+
+@media screen and (max-width: 330px) {
+     .conteudo,  .conteudo {
         align-items: center;
     }
-    #main_cadastro_empresa .nome_input{
+
+     .nome_input {
         width: 230px;
     }
 }
