@@ -143,7 +143,7 @@
     border: 0.5px;
     cursor: text;
     padding: 1.2rem;
-    margin: 6px;
+    margin: 6px 0;
 }
 
 #main_cadastro_geral .container_90 {
@@ -194,8 +194,8 @@
 }
 
 #main_cadastro_geral .btn_proximo {
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     display: flex;
     width: 303px;
     height: 57px;
@@ -236,6 +236,27 @@
     font-family: var(--fonte-primaria);
     font-size: 18px;
     color: var(--cor-branco);
+}
+
+.btn_proximo {
+    justify-content: initial;
+    align-items: center;
+    display: flex;
+    width: 303px;
+    height: 57px;
+    border-radius: 30px;
+    margin-left: 65px;
+    margin-top: 1px;
+}
+
+.btnProximo {
+    border: none;
+    padding: 12px 7vw;
+    background-color: #FFD100;
+    font-family: var(--fonte-primaria);
+    border-radius: 30px;
+    text-decoration: none;
+    text-transform: capitalize;
 }
 
 @media screen and (max-width: 1700px) {

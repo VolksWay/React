@@ -221,20 +221,13 @@
     justify-content: left;
 }
 
-#main_cadastro_tipo_usuario .btn_proximo {
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    width: 303px;
-    height: 57px;
-    color: var(--cor-preto);
-    background-color: #FFD100;
-    border-radius: 30px;
+.btn_proximo {
+    width: 0px;
     margin-left: 65px;
     margin-top: -20px;
 }
 
-#main_cadastro_tipo_usuario .btnProximo {
+.btnProximo {
     background-color: #FFD100;
     border-radius: 30px;
     text-decoration: none;

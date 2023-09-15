@@ -41,6 +41,10 @@
     justify-content: space-around;
 }
 
+#main_cadastro_veiculo .botao{
+    background-color: transparent;
+    border: none;
+}
 
 #main_cadastro_veiculo .chamada {
     width: 400px;
@@ -126,7 +130,7 @@
     border: none;
     cursor: text;
     padding: 1.2rem;
-    margin: 6px;
+    margin: 6px 0;
 
 }
 

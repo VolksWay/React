@@ -1,12 +1,14 @@
 import "./style.css"
 import Voltar from "../../assets/img/arrow-left-solid 1.png"
 import FundoVeiculo from "../../assets/img/Group 2452.png"
+import ImgCaminhao from "../../assets/img/img_cadastro_veiculo.svg"
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import SetaVoltar from "../../components/SetaVoltar";
+import BotaoFormulario from "../../components/BotaoFormulario";
 
 interface Usuario {
     placa: string,
@@ -88,7 +90,7 @@ function CadastroVeiculo() {
 
     const handleForm = (data: FormProps) => {
         /* console.log({ data }) */
-        if(Object.keys(errors).length === 0) {
+        if (Object.keys(errors).length === 0) {
             window.location.href = `/cadastro/empresa?tipoUsuario=${usuario.tipoUsuario}&placa=${usuario.placa}&marca=${usuario.marca}&codigoChassi=${usuario.codigoChassi}`
         }
     }
@@ -99,15 +101,17 @@ function CadastroVeiculo() {
 
     return (
         <main id="main_cadastro_veiculo">
-            <section className="cadastroVeiculo">
+            {/* <section className="cadastroVeiculo">
                 <div className="conteudo_cadVeiculo">
-                <SetaVoltar pagina={"cadastro/usuario"} />
+                    <SetaVoltar pagina={"cadastro/usuario"} />
                     <div className="chamada">
                         <h1> Cadastre o seu veículo!</h1>
                         <p className="cad_texto">
                             Preencha os dados do veículo para conseguir checar a segurança dele
                         </p>
                     </div>
+
+                    
                     <div className="formulario_CadVeiculo">
                         <div>
                             <p>Código do Chassi*</p>
@@ -124,13 +128,56 @@ function CadastroVeiculo() {
                             <input {...register("marca")} className="cadVeiculo1" onChange={(event) => setUsuario({ ...usuario, marca: event.target.value })} />
                             <p className="erro_input">{errors.marca?.message}</p>
                         </div>
-
-                        <a>
-                            <button className="cadVeiculo2" onClick={handleSubmit(handleForm)}>Próximo</button>
-                        </a>
+                        
+                        <button className="botao" onClick={handleSubmit(handleForm)}>
+                            <BotaoFormulario tipo={"formulario"} texto={"Próximo"} />
+                        </button>
                     </div>
                 </div>
                 <img className="fundo" src={FundoVeiculo} alt="" />
+            </section> */}
+            <SetaVoltar pagina={"cadastro/usuario"} />
+            <section className="section">
+                <form action="">
+                    <div className="conteudo">
+                        <div className="seuCadastro">
+                            <p className="seu_cadastro">Cadastre o seu veículo!</p>
+                        </div>
+
+                        <div className="seDestaca">
+                            <span className="se_destaca">Preencha os dados do veículo para conseguir checar a segurança dele
+                            </span>
+                        </div> <br />
+
+                        <div className="inputs">
+                            <div className="nome">
+                                <label className="nomeInput">Código do Chassi*</label> <br />
+                                <input {...register("codigoChassi")} onChange={(event) => { setUsuario({ ...usuario, codigoChassi: event.target.value }); handleCodigoChassi(event) }} maxLength={20} className="nome_input" type="text" />
+                                <p className="erro_input">{errors.codigoChassi?.message}</p>
+                            </div>
+
+                            <div className="nome">
+                                <label className="nomeInput">Placa*</label> <br />
+                                <input {...register("placa")} onChange={(event) => { setUsuario({ ...usuario, placa: event.target.value }); handlePlaca(event) }} maxLength={8} className="nome_input" type="text" />
+                                <p className="erro_input">{errors.placa?.message}</p>
+                            </div>
+
+                            <div className="nome">
+                                <label className="nomeInput">Marca*</label> <br />
+                                <input {...register("marca")} className="nome_input" onChange={(event) => setUsuario({ ...usuario, marca: event.target.value })} type="text" />
+                                <p className="erro_input">{errors.marca?.message}</p>
+                            </div>
+                        </div>
+
+                        <button className="botao" onClick={handleSubmit(handleForm)}>
+                            <BotaoFormulario tipo={"formulario"} texto={"Próximo"} />
+                        </button>
+                    </div>
+                </form>
+
+                <div className="imgIlustracao">
+                    <img className="fundo" src={ImgCaminhao} alt="" />
+                </div>
             </section>
         </main>
     )
