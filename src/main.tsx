@@ -29,7 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Header />
       <Routes>
-        {/* <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/cadastro/adm_frota' element={<CadastroAdmFrota />} />
 
         <Route path='/cadastro/empresa' element={<CadastroEmpresa />} />
@@ -38,9 +38,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/cadastro/usuario' element={<CadastroTipoUsuario />} />
         <Route path='/cadastro/veiculo' element={<CadastroVeiculo />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/privacidade' element={<Privacidade />} /> */}
+        <Route path='/privacidade' element={<Privacidade />} />
         <Route path='/produtos' element={<Produtos />} />
-        {/* <Route path='/card-ofertas' element={<CardOfertas />} /> */}
+  
         {/* <Route path='/banner' element={<Banner />} /> */}
     </Routes>
   </BrowserRouter>

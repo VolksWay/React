@@ -1,11 +1,11 @@
-* {
+#botaoProximo * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--poppins300);
 }
 
-:root {
+#botaoProximo :root {
     --dark_blue: #12264B;
     --light_blue: #00B1EB;
     --yellow: #FFD100;
@@ -17,7 +17,7 @@
 
 }
 /* #BotaoProximo */
-.produtos_btn_banner {
+#botaoProximo .produtos_btn_banner {
     background-color: var(--yellow);
     color: var(--dark_blue);
     text-decoration: none;

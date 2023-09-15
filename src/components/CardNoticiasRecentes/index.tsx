@@ -9,17 +9,19 @@ function CardNoticiasRecentes(props: any) {
 
 
     return (
-
-        <div className="prod_card_noticias">
-            <img src={props.imagem} alt="" />
-            <div className="prod_card_branco">
-                <div className="prod_paragrafo">
-                    <h3>{props.titulo}</h3>
-                    <p>{props.descricao}</p>
+        <div id="CardNoticiasRecentes">
+            <div className="prod_card_noticias">
+                <img src={props.imagem} alt="" />
+                <div className="prod_card_branco">
+                    <div className="prod_paragrafo">
+                        <h3>{props.titulo}</h3>
+                        <p>{props.descricao}</p>
+                    </div>
+                    <div><BotaoAlongadoVerMais /></div>
                 </div>
-                <div><BotaoAlongadoVerMais /></div>
             </div>
         </div>
+
 
 
     );

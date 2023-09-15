@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 
 function Header() {
     return (
-        <header className="direction_row align_center posicionamento_header">
+
+        <div id="header">
+            <header className="direction_row align_center posicionamento_header">
             <img src={imgLogo} alt="Logo da Volkswagen"/>
 
                 <a href="#" id="menu_barras" className="menu_barras" /*onclick="btnMenu()"*/ aria-label="Abrir um menu"
@@ -34,6 +36,8 @@ function Header() {
                     <a className="navegacao_header" href="">Contato</a>
                 </nav>
         </header>
+        </div>
+        
     );
 
 }

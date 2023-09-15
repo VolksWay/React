@@ -3,7 +3,7 @@ import './style.css'
 
 function CardAvaliacao() {
     return (
-        <>
+        <div id="cardAvaliacao">
             <section className="container_80">
                 <div className="secao_faz_diferenca space_evenly align_center direction_column">
                     <div className="direction_column align_center justify_center">
@@ -102,7 +102,7 @@ function CardAvaliacao() {
                 </div>
             </section>
 
-        </>
+        </div>
     )
 }
 

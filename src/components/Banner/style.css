@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Righteous&family=Titillium+Web:wght@400;600&display=swap');
 
-* {
+#banner * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--poppins300);
 }
 
-:root {
+#banner :root {
     --dark_blue: #12264B;
     --light_blue: #00B1EB;
     --yellow: #FFD100;
@@ -69,8 +69,8 @@
 }
 
 #banner .produtos_banner_conteudo .produtos_btn_banner {
-    background-color: var(--yellow);
-    color: var(--dark_blue);
+    /* background-color: var(--yellow); */
+    /* color: var(--dark_blue); */
     text-decoration: none;
     text-transform: capitalize;
     font-size: 16px;
