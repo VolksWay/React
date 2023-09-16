@@ -1,4 +1,5 @@
 // roots
+import Header from "../Header";
 import "./style.css";
 
 // import { Link } from "react-router-dom";
@@ -6,6 +7,7 @@ import "./style.css";
 function IconeDescontos(){
     return(
         <>
+        <Header/>
         <section className="container_75 space_evenly direction_column home_saiba_mais">
   <div className="direction_row space_between align_center">
     <div className="home_card_desconto direction_row space_around align_center">
@@ -87,7 +89,7 @@ function IconeDescontos(){
   </div>
 </section>
   </>
-
+  
     )
 
 } export default IconeDescontos;

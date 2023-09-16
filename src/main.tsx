@@ -16,7 +16,9 @@ import "./index.css"
 
 // import CardsDescontos from './components/CardsDescontos';
 
-import IconeDescontos from './components/IconeDescontos';
+// import IconeDescontos from './components/IconeDescontos';
+
+import CadastroUsuario from './components/CadastroUsuario';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -38,7 +40,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         {/* <Route path='/' element={<VerMais />} /> */}
         {/* <Route path='/' element={<BotaoCadastrar />} />  */}
         {/* <Route path='/' element={<CardsDescontos/>} /> */}
-        <Route path='/' element={<IconeDescontos/>} />
+        {/* <Route path='/' element={<IconeDescontos/>} /> */}
+        <Route path='/' element={<CadastroUsuario/>} />
     </Routes>
   </BrowserRouter>
   </React.StrictMode >,

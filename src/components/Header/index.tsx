@@ -20,7 +20,7 @@ function Header() {
                 to="#" 
                 id="menu_barras"
                 className="menu_barras"
-                onClick="btnMenu()"
+                // onClick="btnMenu()"
                 aria-label="Abrir um menu"
                 aria-controls="links"
                 aria-expanded="false"
@@ -32,11 +32,11 @@ function Header() {
             </Link>
             <nav className="space_evenly links" id="links">
                 <div>
-                    <Link to>volks<span>way</span></Link>
+                    {/* <Link to>volks<span>way</span></Link> */}
                     <Link
                         to="menu_barras"
                         className="menu_barras"
-                        onClick="btnMenu()"
+                        // onClick="btnMenu()"
                         aria-label="Fechar um menu"
                         aria-controls="links"
                         aria-expanded="true"
