@@ -17,16 +17,16 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
+       {/*  <Route path='/' element={<Home />} />
         <Route path='/cadastro/adm_frota' element={<CadastroAdmFrota />} />
         <Route path='/cadastro/empresa' element={<CadastroEmpresa />} />
         <Route path='/cadastro/geral' element={<CadastroGeral />} />
-        <Route path='/cadastro/ofertas' element={<CadastroOfertas />} />
+        <Route path='/cadastro/ofertas' element={<CadastroOfertas />} /> */}
         <Route path='/cadastro/usuario' element={<CadastroTipoUsuario />} />
-        <Route path='/cadastro/veiculo' element={<CadastroVeiculo />} />
+        {/* <Route path='/cadastro/veiculo' element={<CadastroVeiculo />} />
         <Route path='/login' element={<Login />} />
         <Route path='/privacidade' element={<Privacidade />} />
-        <Route path='/produtos' element={<Produtos />} />
+        <Route path='/produtos' element={<Produtos />} /> */}
     </Routes>
   </BrowserRouter>
   </React.StrictMode >,

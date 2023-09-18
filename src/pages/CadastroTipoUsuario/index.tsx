@@ -9,7 +9,7 @@ import IlustracaoPessoas from "../../assets/img/img_ilustracaoPessoasComBalao_se
 function CadastroTipoUsuario() {
     return (
         <>
-            <main>
+            <main id="main_cadastro_tipo_usuario">
                 <a href="../home/index.html#"></a>
 
                 {/* ///////////  componente seta voltar  */}  
