@@ -1,11 +1,11 @@
-* {
+#verMais * {
     margin: 10;
     padding: 10;
     box-sizing: border-box;
     font-family: var(--poppins300);
 }
 
- :root {
+#verMais :root {
     --dark_blue: #12264B;
     --light_blue: #00B1EB;
     --yellow: #FFD100;

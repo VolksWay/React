@@ -259,6 +259,10 @@
     text-transform: capitalize;
 }
 
+#dateNascimento::placeholder {
+    color: #000;
+}
+
 @media screen and (max-width: 1700px) {
     #main_cadastro_geral .imgs_social_medias {
         width: 17%;

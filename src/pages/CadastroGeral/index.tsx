@@ -212,36 +212,37 @@ function CadastroGeral() {
 
                             <div className="nome">
                                 <label className="nomeInput">Nome*</label> <br />
-                                <input {...register("nomeCompleto")} onChange={(event) => setUsuario({ ...usuario, nomeCompleto: event.target.value })} className="nome_input" type="text" />
+                                <input id="nomeCompleto" {...register("nomeCompleto")} onChange={(event) => setUsuario({ ...usuario, nomeCompleto: event.target.value })} className="nome_input" type="text" />
                                 <p className="erro_input">{errors.nomeCompleto?.message}</p>
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">CPF*</label> <br />
-                                <input {...register("cpf")} onChange={(event) => { setUsuario({ ...usuario, cpf: event.target.value }); handleCPF(event) }} maxLength={14} className="nome_input" type="text" />
+                                <input id="cpf" {...register("cpf")} onChange={(event) => { setUsuario({ ...usuario, cpf: event.target.value }); handleCPF(event) }} maxLength={14} className="nome_input" type="text" />
                                 <p className="erro_input">{errors.cpf?.message}</p>
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">Telefone*</label> <br />
-                                <input {...register("telefone")} onChange={(event) => { setUsuario({ ...usuario, telefone: event.target.value }); handlePhone(event) }} type="tel" maxLength={15} className="nome_input" />
+                                <input id="telefone" {...register("telefone")} onChange={(event) => { setUsuario({ ...usuario, telefone: event.target.value }); handlePhone(event) }} type="tel" maxLength={15} className="nome_input" />
                                 <p className="erro_input">{errors.telefone?.message}</p>
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">Data de nascimento*</label> <br />
-                                <input className="nome_input" type="date" onChange={(event) => setUsuario({ ...usuario, dataNascimento: event.target.value })} />
+                                <input id="dataNascimento" className="nome_input" type="date" onChange={(event) => setUsuario({ ...usuario, dataNascimento: event.target.value })} />
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">Email*</label> <br />
-                                <input {...register("email")} onChange={(event) => setUsuario({ ...usuario, email: event.target.value })} type="text" minLength={6} className="nome_input" />
+                                <input id="email" {...register("email")} onChange={(event) => setUsuario({ ...usuario, email: event.target.value })} type="text" minLength={6} className="nome_input" />
                                 <p className="erro_input">{errors.email?.message}</p>
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">Senha*</label> <br />
                                 <input
+                                    id="senha"
                                     {...register("senha")}
                                     className="nome_input"
                                     type="password"
@@ -252,7 +253,7 @@ function CadastroGeral() {
 
                             <div className="nome">
                                 <label className="nomeInput">Confirmar senha*</label> <br />
-                                <input {...register("confirmarSenha")} className="nome_input" type="text" onChange={(event) => setUsuario({ ...usuario, confirmarSenha: event.target.value })}/>
+                                <input id="confirmarSenha" {...register("confirmarSenha")} className="nome_input" type="text" onChange={(event) => setUsuario({ ...usuario, confirmarSenha: event.target.value })} />
                                 <p className="erro_input">{errors.confirmarSenha?.message}</p>
                                 {usuario.senha !== usuario.confirmarSenha &&
                                     <p className="erro_input">As senhas estão diferentes! Por favor coloque senhas iguais!</p>

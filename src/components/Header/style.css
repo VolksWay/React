@@ -135,7 +135,10 @@ footer span {
     display: none;
 }
 
-
+.logo_header{
+    width: 150px;
+    min-width: 160px;
+}
 
 @media screen and (max-width: 1700px) {
     header a {

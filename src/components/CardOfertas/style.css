@@ -1,11 +1,11 @@
-* {
+#cardOfertas * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--poppins300);
 }
 
-:root {
+#cardOfertas :root {
     --dark_blue: #12264B;
     --light_blue: #00B1EB;
     --yellow: #FFD100;

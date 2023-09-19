@@ -1,4 +1,4 @@
-.prod_card_ofertas5 .prod_btn_card{
+#botaoInteressado .prod_card_ofertas5 .prod_btn_card{
     background-color: var(--light_blue);
 
     filter: drop-shadow(8px 8px 8px rgba(0, 0, 0, 0.25));

@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Righteous&family=Titillium+Web:wght@400;600&display=swap');
 
 
-* {
+#CardPorque * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
+#CardPorque :root {
     --cor-branco: #FFFFFF;
     --cor-primaria: #12264B;
     --cor-secundaria: #FFD100;

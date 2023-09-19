@@ -29,7 +29,7 @@ function mostrarMenu() {
 function Header() {
     return (
         <header className="direction_row align_center posicionamento_header">
-            <Link to={"/"} style={{padding: 0}}><img src={imgLogo} alt="Logo da Volkswagen"/></Link>
+            <Link to={"/"} style={{padding: 0}}><img className="logo_header" src={imgLogo} alt="Logo da Volkswagen"/></Link>
 
                 <a id="menu_barras"
                         aria-label="abrir menu"

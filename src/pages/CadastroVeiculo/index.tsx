@@ -152,19 +152,19 @@ function CadastroVeiculo() {
                         <div className="inputs">
                             <div className="nome">
                                 <label className="nomeInput">Código do Chassi*</label> <br />
-                                <input {...register("codigoChassi")} onChange={(event) => { setUsuario({ ...usuario, codigoChassi: event.target.value }); handleCodigoChassi(event) }} maxLength={20} className="nome_input" type="text" />
+                                <input id="codigoChassi" {...register("codigoChassi")} onChange={(event) => { setUsuario({ ...usuario, codigoChassi: event.target.value }); handleCodigoChassi(event) }} maxLength={20} className="nome_input" type="text" />
                                 <p className="erro_input">{errors.codigoChassi?.message}</p>
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">Placa*</label> <br />
-                                <input {...register("placa")} onChange={(event) => { setUsuario({ ...usuario, placa: event.target.value }); handlePlaca(event) }} maxLength={8} className="nome_input" type="text" />
+                                <input id="placa" {...register("placa")} onChange={(event) => { setUsuario({ ...usuario, placa: event.target.value }); handlePlaca(event) }} maxLength={8} className="nome_input" type="text" />
                                 <p className="erro_input">{errors.placa?.message}</p>
                             </div>
 
                             <div className="nome">
                                 <label className="nomeInput">Marca*</label> <br />
-                                <input {...register("marca")} className="nome_input" onChange={(event) => setUsuario({ ...usuario, marca: event.target.value })} type="text" />
+                                <input id="marca" {...register("marca")} className="nome_input" onChange={(event) => setUsuario({ ...usuario, marca: event.target.value })} type="text" />
                                 <p className="erro_input">{errors.marca?.message}</p>
                             </div>
                         </div>

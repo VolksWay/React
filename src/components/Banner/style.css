@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Righteous&family=Titillium+Web:wght@400;600&display=swap');
 
-* {
+#banner * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--poppins300);
 }
 
-:root {
-    --dark_blue: #12264B;
-    --light_blue: #00B1EB;
-    --yellow: #FFD100;
+#banner :root {
+    /* --dark_blue: #12264B; */
+    /* --light_blue: #00B1EB; */
+    /* --yellow: #FFD100; */
     --grey: #EDEDED;
-    --dark_blue2: #252936;
+    /* --dark_blue2: #252936; */
 
     --poppins300: 'Poppins', sans-serif;
     --poppins500: 'Poppins', sans-serif;
@@ -47,6 +47,7 @@
     flex-direction: column;
     margin: -440px 0 0 100px;
     /* position: absolute; */
+    font-family: var(--poppins300);
 
 
     width: 700px;
@@ -69,8 +70,8 @@
 }
 
 #banner .produtos_banner_conteudo .produtos_btn_banner {
-    background-color: var(--yellow);
-    color: var(--dark_blue);
+    background-color: #FFD100;
+    color: #12264B;
     text-decoration: none;
     text-transform: capitalize;
     font-size: 16px;
@@ -137,7 +138,7 @@
 
 #banner .slider-nav a:hover {
     opacity: 1;
-    background-color: var(--light_blue);
+    background-color: #00B1EB;
 }
 
 
