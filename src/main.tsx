@@ -13,7 +13,7 @@ import Login from './pages/Login/index'
 import Privacidade from './pages/Privacidade/index'
 import Produtos from './pages/Produtos/index'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Banner from './components/Banner'
+// import Banner from './components/Banner'
 import Header from './components/Header'
 
 
@@ -30,7 +30,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/cadastro/adm_frota' element={<CadastroAdmFrota />} />
-
         <Route path='/cadastro/empresa' element={<CadastroEmpresa />} />
         <Route path='/cadastro/geral' element={<CadastroGeral />} />
         <Route path='/cadastro/ofertas' element={<CadastroOfertas />} />
@@ -39,15 +38,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/login' element={<Login />} />
         <Route path='/privacidade' element={<Privacidade />} />
         <Route path='/produtos' element={<Produtos />} />
-<<<<<<< HEAD
-  
-        {/* <Route path='/banner' element={<Banner />} /> */}
-    </Routes>
-  </BrowserRouter>
-=======
       </Routes>
       {/* <Footer /> */}
     </BrowserRouter>
->>>>>>> b283e80be360ef4487a9a8dbcee43be35f4a4dd3
-  </React.StrictMode >,
+  </React.StrictMode >
 )
