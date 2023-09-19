@@ -111,53 +111,55 @@ function CadastroEmpresa() {
                 <SetaVoltar pagina="cadastro/usuario" />
             }
             <section className="section">
-                <form action="">
-                    <div className="conteudo">
-                        <div className="seuCadastro">
-                            <p className="seu_cadastro">Cadastre a sua empresa!!</p>
+                <div className="flex">
+                    <form action="">
+                        <div className="conteudo">
+                            <div className="seuCadastro">
+                                <p className="seu_cadastro">Cadastre a sua empresa!!</p>
+                            </div>
+
+                            <div className="seDestaca">
+                                <span className="se_destaca">Preencha os dados do veículo para listarmos ofertas e notícias especiais
+                                </span>
+                            </div> <br />
+
+                            <div className="inputs">
+                                <div className="nome">
+                                    <label className="nomeInput">Nome*</label> <br />
+                                    <input className="nome_input" {...register("nomeEmpresa")} onChange={(event) => setUsuario({ ...usuario, nomeEmpresa: event.target.value })} maxLength={30} minLength={3} type="text" />
+                                    <p className="erro_input">{errors.nomeEmpresa?.message}</p>
+                                </div>
+
+                                <div className="nome">
+                                    <label className="nomeInput">CNPJ*</label> <br />
+                                    <input {...register("cnpj")} onChange={(event) => { setUsuario({ ...usuario, cnpj: event.target.value }); handleCNPJ(event) }} maxLength={18} minLength={18} className="nome_input" type="text" />
+                                    <p className="erro_input">{errors.cnpj?.message}</p>
+                                </div>
+
+                                <div className="nome">
+                                    <label className="nomeInput">Cidade*</label> <br />
+                                    <input {...register("cidade")} className="nome_input" onChange={(event) => setUsuario({ ...usuario, cidade: event.target.value })} maxLength={30} minLength={4} type="text" />
+                                    <p className="erro_input">{errors.cidade?.message}</p>
+                                </div>
+                            </div>
+
+                            {validarCNPJ(usuario.cnpj) === true &&
+                                <button className="botao margin_top" onClick={handleSubmit(handleForm)}>
+                                    <BotaoFormulario tipo={"formulario"} texto={"Próximo"} />
+                                </button>
+                            }
+
+                            {validarCNPJ(usuario.cnpj) === false &&
+                                <button className="botao margin_top" onClick={handleSubmit(handleForm)}>
+                                    <BotaoFormulario tipo={"link"} texto={"Próximo"} url={"/cadastro/empresa"} />
+                                </button>
+                            }
                         </div>
+                    </form>
 
-                        <div className="seDestaca">
-                            <span className="se_destaca">Preencha os dados do veículo para listarmos ofertas e notícias especiais
-                            </span>
-                        </div> <br />
-
-                        <div className="inputs">
-                            <div className="nome">
-                                <label className="nomeInput">Nome*</label> <br />
-                                <input className="nome_input" {...register("nomeEmpresa")} onChange={(event) => setUsuario({ ...usuario, nomeEmpresa: event.target.value })} maxLength={30} minLength={3} type="text" />
-                                <p className="erro_input">{errors.nomeEmpresa?.message}</p>
-                            </div>
-
-                            <div className="nome">
-                                <label className="nomeInput">CNPJ*</label> <br />
-                                <input {...register("cnpj")} onChange={(event) => { setUsuario({ ...usuario, cnpj: event.target.value }); handleCNPJ(event) }} maxLength={18} minLength={18} className="nome_input" type="text" />
-                                <p className="erro_input">{errors.cnpj?.message}</p>
-                            </div>
-
-                            <div className="nome">
-                                <label className="nomeInput">Cidade*</label> <br />
-                                <input {...register("cidade")} className="nome_input" onChange={(event) => setUsuario({ ...usuario, cidade: event.target.value })} maxLength={30} minLength={4} type="text" />
-                                <p className="erro_input">{errors.cidade?.message}</p>
-                            </div>
-                        </div>
-
-                        {validarCNPJ(usuario.cnpj) === true &&
-                            <button className="botao" onClick={handleSubmit(handleForm)}>
-                                <BotaoFormulario tipo={"formulario"} texto={"Próximo"} />
-                            </button>
-                        }
-
-                        {validarCNPJ(usuario.cnpj) === false &&
-                            <button className="botao" onClick={handleSubmit(handleForm)}>
-                                <BotaoFormulario tipo={"link"} texto={"Próximo"} url={"/cadastro/empresa"} />
-                            </button>
-                        }
+                    <div className="imgIlustracao">
+                        <img className="ilustracao" src={ImgCadastroVeiculo} alt="" />
                     </div>
-                </form>
-
-                <div className="imgIlustracao">
-                    <img className="ilustracao" src={ImgCadastroVeiculo} alt="" />
                 </div>
             </section>
 

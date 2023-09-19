@@ -169,7 +169,7 @@ function CadastroVeiculo() {
                             </div>
                         </div>
 
-                        <button className="botao" onClick={handleSubmit(handleForm)}>
+                        <button className="botao margin_top" onClick={handleSubmit(handleForm)}>
                             <BotaoFormulario tipo={"formulario"} texto={"Próximo"} />
                         </button>
                     </div>

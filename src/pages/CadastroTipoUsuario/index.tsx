@@ -35,7 +35,7 @@ function CadastroTipoUsuario() {
                     </div>
                     <div className="tres_opcoes">
                         {tipoUsuario !== "Motorista" &&
-                            <div onClick={() => setTipousuario("Motorista")} className="motorista">
+                            <div id="motorista" onClick={() => setTipousuario("Motorista")} className="motorista">
                                 <img
                                     className="img_motorista"
                                     src={Motorista}

@@ -13,15 +13,7 @@ import Login from './pages/Login/index'
 import Privacidade from './pages/Privacidade/index'
 import Produtos from './pages/Produtos/index'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Banner from './components/Banner'
 import Header from './components/Header'
-
-
-//import swiper
-
-
-
-
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -30,7 +22,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/cadastro/adm_frota' element={<CadastroAdmFrota />} />
-
         <Route path='/cadastro/empresa' element={<CadastroEmpresa />} />
         <Route path='/cadastro/geral' element={<CadastroGeral />} />
         <Route path='/cadastro/ofertas' element={<CadastroOfertas />} />
