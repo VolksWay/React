@@ -16,6 +16,10 @@ import CardOfertasPneu from './components/CardOfertasPneu'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Banner from './components/Banner'
 import Header from './components/Header'
+import PopupTexto from './components/PopupTexto'
+import PopupCad from './components/PopupCad'
+
+
 
 
 //import swiper
@@ -39,7 +43,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/cadastro/veiculo' element={<CadastroVeiculo />} />
         <Route path='/login' element={<Login />} />
         <Route path='/privacidade' element={<Privacidade />} /> */}
-        <Route path='/produtos' element={<Produtos />} />
+        <Route path='/PopupTexto' element={<PopupTexto />} />
         {/* <Route path='/card-ofertas' element={<CardOfertas />} /> */}
         {/* <Route path='/banner' element={<Banner />} /> */}
     </Routes>
