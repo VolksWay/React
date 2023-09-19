@@ -124,7 +124,7 @@ function CadastroGeral() {
                 if (resposta.status === 201) {
                     //console.log(resposta)
                     setConcluido(true)
-                    return setTimeout(function () { window.location.href = `/produtos`; }, 2000);
+                    return setTimeout(function () { window.location.href = `/produtos`; }, 4000);
                 }
             })
             .catch(() => {
