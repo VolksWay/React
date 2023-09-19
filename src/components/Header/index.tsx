@@ -1,7 +1,7 @@
 
 import "./style.css";
 import imgLogo from "../../assets/img/logo_voksway.png";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 import { useState } from 'react'
 
 function mostrarMenu() {
@@ -24,7 +24,7 @@ function mostrarMenu() {
         body.style.overflow = "initial !important";
     }
     menu_barras.classList.toggle("ativo");
-}
+}   
 
 function Header() {
     return (
@@ -55,10 +55,10 @@ function Header() {
                         </Link>
                     </div>
 
-                    <Link className="navegacao_header" to={"#noticias"} style={{padding: 0}}>Noticias</Link>
-                    <Link className="navegacao_header" to={"#quem_somos"} style={{padding: 0}}>Quem somos</Link>
-                    <Link className="navegacao_header" to={"#por_que"} style={{padding: 0}}>Por que a VolksWay?</Link>
-                    <Link className="navegacao_header" to={"#contato"} style={{padding: 0}}>Contato</Link>
+                    <Link className="navegacao_header" smooth to={"/#noticias"} style={{padding: 0}}>Noticias</Link>
+                    <Link className="navegacao_header" smooth to={"/#quem_somos"} style={{padding: 0}}>Quem somos</Link>
+                    <Link className="navegacao_header" smooth to={"/#por_que"} style={{padding: 0}}>Por que a VolksWay?</Link>
+                    <Link className="navegacao_header" smooth to={"/#contato"} style={{padding: 0}}>Contato</Link>
                 </nav>
         </header >
     );

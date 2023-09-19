@@ -13,7 +13,7 @@ import Login from './pages/Login/index'
 import Privacidade from './pages/Privacidade/index'
 import Produtos from './pages/Produtos/index'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from './components/Header'
+import Header from './components/Header';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
