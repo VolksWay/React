@@ -9,6 +9,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import SetaVoltar from "../../components/SetaVoltar";
 import BotaoFormulario from "../../components/BotaoFormulario";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 interface Usuario {
     placa: string,
@@ -100,8 +102,10 @@ function CadastroVeiculo() {
     }, []);
 
     return (
-        <main id="main_cadastro_veiculo">
-            {/* <section className="cadastroVeiculo">
+        <>
+            <Header />
+            <main id="main_cadastro_veiculo">
+                {/* <section className="cadastroVeiculo">
                 <div className="conteudo_cadVeiculo">
                     <SetaVoltar pagina={"cadastro/usuario"} />
                     <div className="chamada">
@@ -136,50 +140,52 @@ function CadastroVeiculo() {
                 </div>
                 <img className="fundo" src={FundoVeiculo} alt="" />
             </section> */}
-            <SetaVoltar pagina={"cadastro/usuario"} />
-            <section className="section">
-                <form action="">
-                    <div className="conteudo">
-                        <div className="seuCadastro">
-                            <p className="seu_cadastro">Cadastre o seu veículo!</p>
+                <SetaVoltar pagina={"cadastro/usuario"} />
+                <section className="section">
+                    <form action="">
+                        <div className="conteudo">
+                            <div className="seuCadastro">
+                                <p className="seu_cadastro">Cadastre o seu veículo!</p>
+                            </div>
+
+                            <div className="seDestaca">
+                                <span className="se_destaca">Preencha os dados do veículo para conseguir checar a segurança dele
+                                </span>
+                            </div> <br />
+
+                            <div className="inputs">
+                                <div className="nome">
+                                    <label className="nomeInput">Código do Chassi*</label> <br />
+                                    <input id="codigoChassi" {...register("codigoChassi")} onChange={(event) => { setUsuario({ ...usuario, codigoChassi: event.target.value }); handleCodigoChassi(event) }} maxLength={20} className="nome_input" type="text" />
+                                    <p className="erro_input">{errors.codigoChassi?.message}</p>
+                                </div>
+
+                                <div className="nome">
+                                    <label className="nomeInput">Placa*</label> <br />
+                                    <input id="placa" {...register("placa")} onChange={(event) => { setUsuario({ ...usuario, placa: event.target.value }); handlePlaca(event) }} maxLength={8} className="nome_input" type="text" />
+                                    <p className="erro_input">{errors.placa?.message}</p>
+                                </div>
+
+                                <div className="nome">
+                                    <label className="nomeInput">Marca*</label> <br />
+                                    <input id="marca" {...register("marca")} className="nome_input" onChange={(event) => setUsuario({ ...usuario, marca: event.target.value })} type="text" />
+                                    <p className="erro_input">{errors.marca?.message}</p>
+                                </div>
+                            </div>
+
+                            <button className="botao margin_top" onClick={handleSubmit(handleForm)}>
+                                <BotaoFormulario tipo={"formulario"} texto={"Próximo"} />
+                            </button>
                         </div>
+                    </form>
 
-                        <div className="seDestaca">
-                            <span className="se_destaca">Preencha os dados do veículo para conseguir checar a segurança dele
-                            </span>
-                        </div> <br />
-
-                        <div className="inputs">
-                            <div className="nome">
-                                <label className="nomeInput">Código do Chassi*</label> <br />
-                                <input id="codigoChassi" {...register("codigoChassi")} onChange={(event) => { setUsuario({ ...usuario, codigoChassi: event.target.value }); handleCodigoChassi(event) }} maxLength={20} className="nome_input" type="text" />
-                                <p className="erro_input">{errors.codigoChassi?.message}</p>
-                            </div>
-
-                            <div className="nome">
-                                <label className="nomeInput">Placa*</label> <br />
-                                <input id="placa" {...register("placa")} onChange={(event) => { setUsuario({ ...usuario, placa: event.target.value }); handlePlaca(event) }} maxLength={8} className="nome_input" type="text" />
-                                <p className="erro_input">{errors.placa?.message}</p>
-                            </div>
-
-                            <div className="nome">
-                                <label className="nomeInput">Marca*</label> <br />
-                                <input id="marca" {...register("marca")} className="nome_input" onChange={(event) => setUsuario({ ...usuario, marca: event.target.value })} type="text" />
-                                <p className="erro_input">{errors.marca?.message}</p>
-                            </div>
-                        </div>
-
-                        <button className="botao margin_top" onClick={handleSubmit(handleForm)}>
-                            <BotaoFormulario tipo={"formulario"} texto={"Próximo"} />
-                        </button>
+                    <div className="imgIlustracao">
+                        <img className="fundo" src={ImgCaminhao} alt="" />
                     </div>
-                </form>
-
-                <div className="imgIlustracao">
-                    <img className="fundo" src={ImgCaminhao} alt="" />
-                </div>
-            </section>
-        </main>
+                </section>
+            </main>
+            <Footer />
+        </>
     )
 }
 
