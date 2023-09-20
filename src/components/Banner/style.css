@@ -29,13 +29,13 @@
 
 
 #banner .slide-item {
-    width:100%;
+    width: 100%;
     height: calc(100vh - 150px);
     object-fit: cover;
 }
 
-#banner .banner_conteudo{
-   display: flex;
+#banner .banner_conteudo {
+    display: flex;
 }
 
 
@@ -142,3 +142,78 @@
 }
 
 
+
+/*___________________SIZE 768 _______________________*/
+
+
+@media screen and (max-width: 768px) {
+
+    #banner .produtos_banner_conteudo {
+        margin: -440px 0 0 65px;
+
+    }
+
+
+
+    #banner .produtos_banner_conteudo h2 {
+        font-size: 25px;
+
+    }
+
+    #banner .produtos_banner_conteudo p {
+        font-size: 12px;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+
+    #banner .produtos_banner_conteudo h2 {
+        font-size: 25px;
+
+    }
+
+    #banner .produtos_banner_conteudo {
+        margin: -440px 0 0 65px;
+
+    }
+
+
+
+
+
+    #banner .produtos_banner_conteudo p {
+        font-size: 12px;
+    }
+
+
+}
+
+
+
+
+@media screen and (max-width: 400px) {
+
+    #banner .produtos_banner_conteudo {
+        margin: -315px 0 0 20px;
+    }
+
+    #banner .slide-item {
+        width: 100%;
+        height: calc(100vh - 325px);
+        object-fit: cover;
+    }
+
+    #banner .produtos_banner_conteudo h2 {
+        font-size: 25px;
+
+    }
+
+    #banner .produtos_banner_conteudo p {
+        font-size: 12px;
+    }
+
+
+}

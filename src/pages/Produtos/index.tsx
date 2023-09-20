@@ -136,6 +136,7 @@ function Produtos() {
         listarOfertas();
         listarPromocoes();
         listarNoticiasR();
+
     }, []);
 
     return (

@@ -170,12 +170,12 @@ header a {
 #produtos .cardPromocoes{
     display: flex;
     flex-wrap: nowrap;
-    overflow: scroll;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
+    /* overflow: scroll;
+    overflow-y: hidden; */
+    /* scroll-behavior: smooth; */
     height: 424px;
     margin-bottom: -300px;
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
 }
 
 /* #produtos .carrossel::-webkit-scrollbar {
@@ -700,8 +700,8 @@ footer .divfooter4 .in {
     }
 
     #produtos .slider {
-        overflow: scroll;
-        overflow-y: hidden;
+        /* overflow: scroll;
+        overflow-y: hidden; */
     }
 
     #produtos .slider img {
@@ -746,13 +746,13 @@ footer .divfooter4 .in {
     }
 
     #produtos .produtos_ofertas_h2 {
-        margin-top: -40px;
+        /* margin-top: -40px; */
 
     }
 
     #produtos .carrossel {
-        overflow: scroll;
-        overflow-y: hidden;
+        /* overflow: scroll;
+        overflow-y: hidden; */
     }
 
     #produtos .prod_noticias_recentes2 {
@@ -1137,7 +1137,7 @@ footer .divfooter4 .in {
                 flex-direction: column;
                 align-items: center;
 
-                background-color: var(--cor-primaria);
+                /* background-color: var(--cor-primaria); */
                 width: 320px;
             }
 
@@ -1152,7 +1152,7 @@ footer .divfooter4 .in {
                 color: white;
 
                 text-shadow: none;
-                margin-top: 40px;
+                /* margin-top: 40px; */
                 /*  margin-left: 10px; */
             }
 
@@ -1179,6 +1179,7 @@ footer .divfooter4 .in {
 
             #produtos .produtos_ofertas_h2 {
                 font-size: 20px;
+                margin-top: 10px;
             }
 
             #produtos .produtos_ofertas_especiais a {
@@ -1191,8 +1192,15 @@ footer .divfooter4 .in {
 
 
             #produtos .prod_promocoes h2 {
-                margin-top: 230px;
+                margin-top: 80px;
                 font-size: 30px;
+            }
+
+            #produtos .prod_noticias_h2 {
+
+                margin-left: 5px;
+          
+            
             }
 
 

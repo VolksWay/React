@@ -202,3 +202,23 @@
 
 
 }
+
+
+
+
+    @media screen and (max-width: 320px) {
+
+        #cardOfertas .prod_card_ofertas{
+            width: 280px;
+    }
+
+    #CardNoticiasRecentes .prod_paragrafo {
+        width: 320px;
+    }
+
+    #CardNoticiasRecentes .prod_card_noticias img {
+        width: 350px;
+        /* border-radius: 10px 10px 0px 0px; */
+    }
+}
+

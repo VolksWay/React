@@ -15,6 +15,7 @@ import Produtos from './pages/Produtos/index'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import Banner from './components/Banner'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 //import swiper
@@ -39,7 +40,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/privacidade' element={<Privacidade />} />
         <Route path='/produtos' element={<Produtos />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </BrowserRouter>
   </React.StrictMode >
 )
