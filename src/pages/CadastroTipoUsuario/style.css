@@ -71,7 +71,7 @@
 }
 
 #main_cadastro_tipo_usuario .tres_opcoes {
-    width: 684px;
+    width: 565px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -139,13 +139,15 @@
     flex-direction: column;
     padding: 7px;
     cursor: pointer;
+    justify-content: space-evenly;
 }
 
 #main_cadastro_tipo_usuario .img_motorista {
     display: flex;
     align-items: center;
-    height: 130px;
-    width: 130px;
+    height: 86px;
+    width: 86px;
+    margin-top: 6%;
 }
 
 #main_cadastro_tipo_usuario .a_motorista {
@@ -156,6 +158,7 @@
     text-decoration: none;
     font-family: var(--fonte-primaria);
 }
+
 /*===============================admFrota*/
 #main_cadastro_tipo_usuario .adm_de_frota {
     display: flex;
@@ -164,14 +167,16 @@
     height: 160px;
     border-radius: 30px;
     background-color: var(--blue_card);
+    justify-content: space-evenly;
     flex-direction: column;
     padding: 7px;
     cursor: pointer;
 }
 
 #main_cadastro_tipo_usuario .img_adm_de_frota {
-    height: 104px;
-    width: 130px;
+    height: 74px;
+    width: 80px;
+    margin-top: 9%;
 }
 
 #main_cadastro_tipo_usuario .a_adm_de_frota {
@@ -182,6 +187,7 @@
     text-decoration: none;
     text-align: center;
     font-family: var(--fonte-primaria);
+    line-height: 20px;
 }
 
 /*===============================proprietario*/
@@ -192,14 +198,15 @@
     height: 160px;
     border-radius: 30px;
     background-color: var(--blue_card);
+    justify-content: space-evenly;
     flex-direction: column;
     padding: 7px;
     cursor: pointer;
 }
 
 #main_cadastro_tipo_usuario .img_proprietario {
-    height: 130px;
-    width: 130px;
+    height: 79px;
+    width: 85px;
 }
 
 #main_cadastro_tipo_usuario .a_proprietario {
@@ -210,15 +217,18 @@
     text-decoration: none;
     text-align: center;
     font-family: var(--fonte-primaria);
+    line-height: 20px;
 }
 
 
 
 
 #main_cadastro_tipo_usuario section {
-    /*     background-color:rgb(155, 245, 245); */
+    padding-bottom: 50px;
     display: flex;
     justify-content: left;
+    justify-content: space-between;
+    width: 90%;
 }
 
 .btn_proximo {
@@ -249,13 +259,14 @@
     align-items: center;
 }
 
-#main_cadastro_tipo_usuario .background_amarelo{
+#main_cadastro_tipo_usuario .background_amarelo {
     background-color: var(--cor-secundaria);
 }
 
 #main_cadastro_tipo_usuario .desabilitado {
     background-color: #ffd1008c;
 }
+
 /*main*/
 
 @media screen and (max-width: 1300px) {
@@ -314,7 +325,7 @@
     }
 }
 
- @media screen and (max-width: 550px) {
+@media screen and (max-width: 550px) {
     #main_cadastro_tipo_usuario .tres_opcoes {
         flex-direction: column;
     }
@@ -323,9 +334,9 @@
         height: 1000px;
     }
 
-} 
+}
 
- @media screen and (max-width: 460px) {
+@media screen and (max-width: 460px) {
     #main_cadastro_tipo_usuario {
         height: 1214px;
     }
@@ -337,8 +348,8 @@
 
     #main_cadastro_tipo_usuario .quemEVoce {
         width: 135px;
-    font-size: 23px;
-}
+        font-size: 23px;
+    }
 
     #main_cadastro_tipo_usuario .seDestaca {
         width: 269px;
@@ -363,9 +374,9 @@
 
     #main_cadastro_tipo_usuario {
         height: 1063px;
-       /*  width: 320px; */
+        /*  width: 320px; */
     }
-} 
+}
 
 @media screen and (max-width: 320px) {
     #main_cadastro_tipo_usuario .quemEVoce {

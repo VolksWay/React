@@ -2,10 +2,13 @@ import "./style.css"
 /* import { useEffect, useState } from "react"; */
 import { Link } from "react-router-dom";
 import imgLogin from "../../assets/img/img_login.png"
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 function Login() {
     return (
         <>
+            <Header />
             <main id="login">
                 {/*Tela de Login(usuario e senha)*/}
                 <div id="login">
@@ -43,7 +46,7 @@ function Login() {
                     </div>
                 </div>
             </main>
-
+            <Footer/>
         </>
     )
 }

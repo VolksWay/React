@@ -11,6 +11,8 @@ import Banner from "../../components/Banner";
 import CardOfertas from "../../components/CardOfertas";
 import api from "../../utils/api";
 import CardOfertasPneu from "../../components/cardOfertasPneu";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const PARSE_APPLICATION_ID = '1QJ5n2ix95flGl0Rt7b1l4CfbqXuYQcj7VU0oKGd';
 const PARSE_JAVASCRIPT_KEY = 'R3yYjaaJbXJNHSCT6NqVjxXZBqZjllwQzTuGUyvi';
@@ -140,72 +142,75 @@ function Produtos() {
     }, []);
 
     return (
+        <>
+            <Header />
+            <main id="produtos">
+                <section>
+                    <Banner conteudo={conteudoBanner} />
+                </section>
 
-        <main id="produtos">
-            <section>
-                <Banner conteudo={conteudoBanner} />
-            </section>
-
-            <div className="produtos_ofertas_h2 produtos_posicionamento">
-                <h2 />
-            </div>
-
-            <section>
-                <CardOfertas conteudo={conteudoOfertas} />
-            </section>
-
-
-            <section className="prod_promocoes produtos_posicionamento">
-
-                <h2>promoções</h2>
-                <p>as promoçoes do mês começaram!!<br />confira as melhores ofertas de peças do mercado feitas pelos
-                    nossos parceiros</p>
-
-                <div className="carrossel">
-                    <div className="cardPromocoes">
-                        {
-                            conteudoPromocoes.map((promocoes: any, indice: number) => {
-                                return <div key={indice}>
-                                    <CardOfertasPneu
-                                        id={promocoes.objectId}
-                                        imagem={promocoes.imagem}
-                                        titulo={promocoes.titulo}
-                                        descricao={promocoes.descricao}
-                                        preco={promocoes.preco}
-                                    />
-                                </div>
-                            })
-                        }
-                    </div>
-
+                <div className="produtos_ofertas_h2 produtos_posicionamento">
+                    <h2 />
                 </div>
 
-            </section>
-
-
-
-            <div className="prod_noticias_h2 produtos_posicionamento">
-                <h2 />
-            </div>
-
-            <section id="CardNoticiasRecentes" >
-                <section className="prod_noticias_recentes">
-                    {
-
-                        conteudoNoticiasR.map((conteudoNoticiasR: any, indice: number) => {
-                            return <>
-                                <CardNoticiasRecentes
-                                    key={indice}
-                                    titulo={conteudoNoticiasR.titulo}
-                                    imagem={conteudoNoticiasR.imagem.url}
-                                    descricao={conteudoNoticiasR.descricao} />
-                            </>
-                        })
-                    }
+                <section>
+                    <CardOfertas conteudo={conteudoOfertas} />
                 </section>
-            </section>
 
-        </main >
+
+                <section className="prod_promocoes produtos_posicionamento">
+
+                    <h2>promoções</h2>
+                    <p>as promoçoes do mês começaram!!<br />confira as melhores ofertas de peças do mercado feitas pelos
+                        nossos parceiros</p>
+
+                    <div className="carrossel">
+                        <div className="cardPromocoes">
+                            {
+                                conteudoPromocoes.map((promocoes: any, indice: number) => {
+                                    return <div key={indice}>
+                                        <CardOfertasPneu
+                                            id={promocoes.objectId}
+                                            imagem={promocoes.imagem}
+                                            titulo={promocoes.titulo}
+                                            descricao={promocoes.descricao}
+                                            preco={promocoes.preco}
+                                        />
+                                    </div>
+                                })
+                            }
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <div className="prod_noticias_h2 produtos_posicionamento">
+                    <h2 />
+                </div>
+
+                <section id="CardNoticiasRecentes" >
+                    <section className="prod_noticias_recentes">
+                        {
+
+                            conteudoNoticiasR.map((conteudoNoticiasR: any, indice: number) => {
+                                return <>
+                                    <CardNoticiasRecentes
+                                        key={indice}
+                                        titulo={conteudoNoticiasR.titulo}
+                                        imagem={conteudoNoticiasR.imagem.url}
+                                        descricao={conteudoNoticiasR.descricao} />
+                                </>
+                            })
+                        }
+                    </section>
+                </section>
+
+            </main >
+            <Footer />
+        </>
     )
 }
 export default Produtos;

@@ -8,6 +8,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import SetaVoltar from "../../components/SetaVoltar";
 import BotaoFormulario from "../../components/BotaoFormulario";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 interface Usuario {
     placa: string,
@@ -22,7 +24,7 @@ interface Usuario {
 const schema = z.object({
     nomeEmpresa: z.string().min(3, "Por favor, digite uma empresa válida").max(30, "Por favor, digite uma empresa válida"),
     cnpj: z.string().min(18, "Por favor, digite um cnpj válido").max(18, "Por favor, digite um cnpj válido"),
-    cidade: z.string().min(4, "Por favor, digite uma cidade válida").max(30, "Por favor, digite uma cidade válida"),
+    cidade: z.string().min(4, "Por favor, digite uma cidade válida").max(15, "Por favor, digite uma cidade válida"),
 })
 
 type FormProps = z.infer<typeof schema>
@@ -98,70 +100,76 @@ function CadastroEmpresa() {
     }, []);
 
     return (
-        <main id="main_cadastro_empresa">
-            {usuario.tipoUsuario === "Motorista" &&
-                <SetaVoltar pagina="cadastro/veiculo" />
-            }
+        <>
+            <Header />
+            <main id="main_cadastro_empresa">
+                {usuario.tipoUsuario === "Motorista" &&
+                    <SetaVoltar pagina="cadastro/veiculo" />
+                }
 
-            {(usuario.tipoUsuario == "AdmFrota" || usuario.tipoUsuario == "Proprietário") &&
-                <SetaVoltar pagina="cadastro/usuario" />
-            }
+                {(usuario.tipoUsuario == "AdmFrota" || usuario.tipoUsuario == "Proprietário") &&
+                    <SetaVoltar pagina="cadastro/usuario" />
+                }
 
-            {(usuario.tipoUsuario === "" || usuario.tipoUsuario == undefined || usuario.tipoUsuario == null) &&
-                <SetaVoltar pagina="cadastro/usuario" />
-            }
-            <section className="section">
-                <form action="">
-                    <div className="conteudo">
-                        <div className="seuCadastro">
-                            <p className="seu_cadastro">Cadastre a sua empresa!!</p>
+                {(usuario.tipoUsuario === "" || usuario.tipoUsuario == undefined || usuario.tipoUsuario == null) &&
+                    <SetaVoltar pagina="cadastro/usuario" />
+                }
+                <section className="section">
+                    <div className="flex">
+                        <form action="">
+                            <div className="conteudo">
+                                <div className="seuCadastro">
+                                    <p className="seu_cadastro">Cadastre a sua empresa!!</p>
+                                </div>
+
+                                <div className="seDestaca">
+                                    <span className="se_destaca">Preencha os dados do veículo para listarmos ofertas e notícias especiais
+                                    </span>
+                                </div> <br />
+
+                                <div className="inputs">
+                                    <div className="nome">
+                                        <label className="nomeInput">Nome*</label> <br />
+                                        <input id="nome" className="nome_input" {...register("nomeEmpresa")} onChange={(event) => setUsuario({ ...usuario, nomeEmpresa: event.target.value })} maxLength={30} minLength={3} type="text" />
+                                        <p className="erro_input">{errors.nomeEmpresa?.message}</p>
+                                    </div>
+
+                                    <div className="nome">
+                                        <label className="nomeInput">CNPJ*</label> <br />
+                                        <input id="cnpj" {...register("cnpj")} onChange={(event) => { setUsuario({ ...usuario, cnpj: event.target.value }); handleCNPJ(event) }} maxLength={18} minLength={18} className="nome_input" type="text" />
+                                        <p className="erro_input">{errors.cnpj?.message}</p>
+                                    </div>
+
+                                    <div className="nome">
+                                        <label className="nomeInput">Cidade*</label> <br />
+                                        <input id="cidade" {...register("cidade")} className="nome_input" onChange={(event) => setUsuario({ ...usuario, cidade: event.target.value })} maxLength={30} minLength={4} type="text" />
+                                        <p className="erro_input">{errors.cidade?.message}</p>
+                                    </div>
+                                </div>
+
+                                {validarCNPJ(usuario.cnpj) === true &&
+                                    <button className="botao margin_top" onClick={handleSubmit(handleForm)}>
+                                        <BotaoFormulario tipo={"formulario"} texto={"Próximo"} />
+                                    </button>
+                                }
+
+                                {validarCNPJ(usuario.cnpj) === false &&
+                                    <button className="botao margin_top" onClick={handleSubmit(handleForm)}>
+                                        <BotaoFormulario tipo={"link"} texto={"Próximo"} url={"/cadastro/empresa"} />
+                                    </button>
+                                }
+                            </div>
+                        </form>
+
+                        <div className="imgIlustracao">
+                            <img className="ilustracao" src={ImgCadastroVeiculo} alt="" />
                         </div>
-
-                        <div className="seDestaca">
-                            <span className="se_destaca">Preencha os dados do veículo para listarmos ofertas e notícias especiais
-                            </span>
-                        </div> <br />
-
-                        <div className="inputs">
-                            <div className="nome">
-                                <label className="nomeInput">Nome*</label> <br />
-                                <input className="nome_input" {...register("nomeEmpresa")} onChange={(event) => setUsuario({ ...usuario, nomeEmpresa: event.target.value })} maxLength={30} minLength={3} type="text" />
-                                <p className="erro_input">{errors.nomeEmpresa?.message}</p>
-                            </div>
-
-                            <div className="nome">
-                                <label className="nomeInput">CNPJ*</label> <br />
-                                <input {...register("cnpj")} onChange={(event) => { setUsuario({ ...usuario, cnpj: event.target.value }); handleCNPJ(event) }} maxLength={18} minLength={18} className="nome_input" type="text" />
-                                <p className="erro_input">{errors.cnpj?.message}</p>
-                            </div>
-
-                            <div className="nome">
-                                <label className="nomeInput">Cidade*</label> <br />
-                                <input {...register("cidade")} className="nome_input" onChange={(event) => setUsuario({ ...usuario, cidade: event.target.value })} maxLength={30} minLength={4} type="text" />
-                                <p className="erro_input">{errors.cidade?.message}</p>
-                            </div>
-                        </div>
-
-                        {validarCNPJ(usuario.cnpj) === true &&
-                            <button className="botao" onClick={handleSubmit(handleForm)}>
-                                <BotaoFormulario tipo={"formulario"} texto={"Próximo"} />
-                            </button>
-                        }
-
-                        {validarCNPJ(usuario.cnpj) === false &&
-                            <button className="botao" onClick={handleSubmit(handleForm)}>
-                                <BotaoFormulario tipo={"link"} texto={"Próximo"} url={"/cadastro/empresa"} />
-                            </button>
-                        }
                     </div>
-                </form>
+                </section>
 
-                <div className="imgIlustracao">
-                    <img className="ilustracao" src={ImgCadastroVeiculo} alt="" />
-                </div>
-            </section>
-
-        </main>
+            </main>
+            <Footer />
+        </>
     )
 }
 

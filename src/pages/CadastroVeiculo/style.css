@@ -41,7 +41,7 @@
     justify-content: space-around;
 }
 
-#main_cadastro_veiculo .botao{
+#main_cadastro_veiculo .botao {
     background-color: transparent;
     border: none;
 }
@@ -53,6 +53,10 @@
     font-size: var(--cor-primaria);
     font-family: var(--fonte-tamanho);
     margin-top: 25px;
+}
+
+.btnProximo {
+    cursor: pointer;
 }
 
 #main_cadastro_veiculo .div_voltar {
