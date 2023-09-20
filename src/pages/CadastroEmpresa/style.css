@@ -113,7 +113,7 @@
 
 }
 
-.conteudo {
+#main_cadastro_veiculo .conteudo {
     flex-direction: column;
     display: flex;
     width: 700px;
