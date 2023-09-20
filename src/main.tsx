@@ -12,20 +12,9 @@ import CadastroVeiculo from './pages/CadastroVeiculo/index'
 import Login from './pages/Login/index'
 import Privacidade from './pages/Privacidade/index'
 import Produtos from './pages/Produtos/index'
+// import Footer from 'components/Footer/'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-<<<<<<< HEAD
-// import Banner from './components/Banner'
-import Header from './components/Header'
-import Footer from './components/Footer'
 
-
-//import swiper
-
-
-
-
-=======
->>>>>>> f040d87dcc7b86809c71c7b034887ee3a18f3261
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -42,7 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path='/privacidade' element={<Privacidade />} />
         <Route path='/produtos' element={<Produtos />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   </React.StrictMode >
 )
