@@ -10,11 +10,4 @@ function BotaoVerMais() {
     )
 
 }
-<<<<<<< HEAD
-            export default BotaoVerMais;
-
-
-            
-=======
 export default BotaoVerMais;
->>>>>>> develop
