@@ -21,6 +21,11 @@ function Login() {
                             <label htmlFor="password">Senha</label>
                             <input type="password" id="password" />
                         </div>
+                        <span className="checkPrivacidade">
+                            <input type="checkbox" id="" className="" />
+                            "Li e estou de acordo com a"
+                            <Link id="checkboxPrivacidade" to={"/privacidade"} > Política de Privacidade </Link>
+                        </span>
                         <div>
                             <input type="checkbox" name="" id="lembre_me" />
                             <label htmlFor="">Lembre-me</label>
@@ -34,6 +39,11 @@ function Login() {
                             <Link type="button" to={"/produtos"}>
                                 Entrar
                             </Link>
+                            <>
+
+
+                            </>
+
                         </div>
                         {/*  <div class="alinhamento_texto_opcao">
               <hr>
@@ -46,7 +56,7 @@ function Login() {
                     </div>
                 </div>
             </main>
-            <Footer/>
+            <Footer />
         </>
     )
 }
