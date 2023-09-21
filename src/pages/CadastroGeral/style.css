@@ -1,7 +1,7 @@
 #main_cadastro_geral {
     display: flex;
     background: linear-gradient(50deg, #ffffff 70%, var(--camada_geometrica) 30%);
-    height: 600px;
+    height: 900px;
     flex-direction: column;
 
 }
@@ -54,12 +54,6 @@
     margin-top: 20px;
     margin-left: 26px;
     margin-bottom: 29px;
-}
-
-#main_cadastro_geral .seta_voltar {
-    width: 45px;
-    height: 45px;
-    color: var(--cor-primaria);
 }
 
 #main_cadastro_geral .spanVoltar {

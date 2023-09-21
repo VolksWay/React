@@ -51,9 +51,9 @@ function CardOfertas(props: any) {
                                                 src={ofertas.imagem.url}
                                                 alt="imagem caminhão contstellation 2023 card um"
                                             />
-                                            <span>R${ofertas.preco}</span>
+                                            <span>R$ {ofertas.preco},00</span>
                                             <h5>{ofertas.descricao}</h5>
-                                            <a className="prod_btn_card" href="#">
+                                            <a className="prod_btn_card" href={ofertas.url}>
                                                 estou interessado
                                             </a>
                                             <h6>Oferta Válida Até {ofertas.validade}</h6>

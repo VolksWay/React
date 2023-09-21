@@ -174,6 +174,7 @@ function Produtos() {
                                             titulo={promocoes.titulo}
                                             descricao={promocoes.descricao}
                                             preco={promocoes.preco}
+                                            url={promocoes.url}
                                         />
                                     </div>
                                 })
@@ -200,7 +201,8 @@ function Produtos() {
                                         key={indice}
                                         titulo={conteudoNoticiasR.titulo}
                                         imagem={conteudoNoticiasR.imagem.url}
-                                        descricao={conteudoNoticiasR.descricao} />
+                                        descricao={conteudoNoticiasR.descricao}
+                                        url={conteudoNoticiasR.url} />
                                 </>
                             })
                         }
