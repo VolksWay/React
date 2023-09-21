@@ -20,7 +20,7 @@
 #main_cadastro_ofertas header>div>h1 {
     width: 80vw;
     text-align: center;
-    color: var(--branco);
+    color: var(--cor-branco);
     font-size: 40px;
 }
 
