@@ -12,7 +12,9 @@ import CadastroVeiculo from './pages/CadastroVeiculo/index'
 import Login from './pages/Login/index'
 import Privacidade from './pages/Privacidade/index'
 import Produtos from './pages/Produtos/index'
+// import Footer from 'components/Footer/'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

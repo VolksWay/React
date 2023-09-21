@@ -164,7 +164,7 @@
 
 
     #CardNoticiasRecentes .prod_noticias_recentes {
-        display: none;
+        /* display: none; */
     }
 
     #CardNoticiasRecentes .produtos_ofertas_h2 {

@@ -27,6 +27,19 @@ import 'swiper/css/effect-fade';
 
 function CardOfertas(props: any) {
 
+    // useEffect(() => {
+    //     function handleResize(){
+    //         if(window.innerWidth < 720){
+    //           setSlidesPerView(1);
+    //         }
+    //     }
+
+    //     handleResize();
+
+    // }, []);
+
+
+
     return (
         <>
             <div id="cardOfertas">
@@ -36,6 +49,25 @@ function CardOfertas(props: any) {
                     <Swiper
                         // effect={'fade'}
                         slidesPerView={4}
+                        breakpoints={{
+                            1920: {
+                                slidesPerView: 4,
+                            },
+                            1040:{
+                                slidesPerView: 4,
+                            },
+                            768: {
+                                slidesPerView: 2,
+                            },
+                            600: {
+                                slidesPerView: 2,
+                            },
+                            320: {
+                                slidesPerView:1
+                            }
+
+
+                        }}
                         // pagination={{ clickable: true }}
                         navigation
                     >
