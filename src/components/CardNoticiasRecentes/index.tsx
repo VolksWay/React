@@ -17,7 +17,7 @@ function CardNoticiasRecentes(props: any) {
                         <h3>{props.titulo}</h3>
                         <p>{props.descricao}</p>
                     </div>
-                    <div><BotaoAlongadoVerMais /></div>
+                    <div><BotaoAlongadoVerMais redirect={props.url}/></div>
                 </div>
             </div>
         </div>

@@ -69,13 +69,13 @@
     margin-bottom: 10px;
 }
 
-#main_cadastro_veiculo .seta_voltar {
+/* #main_cadastro_veiculo .seta_voltar {
     width: 35px;
     height: 32px;
     color: var(--cor-primaria);
     flex-direction: column;
 }
-
+ */
 #main_cadastro_veiculo .spanVoltar {
     font-family: 'Poppins';
     font-style: normal;
