@@ -47,7 +47,7 @@ function Banner(props: any) {
                                         <h2>{banner.titulo}</h2>
                                         <p>{banner.descricao}
                                         </p>
-                                        <a className="produtos_btn_banner" href="">ver mais</a>
+                                        <a className="produtos_btn_banner" href={banner.url}>ver mais</a>
                                     </div>
                                     
                                     </div> 

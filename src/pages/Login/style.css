@@ -83,7 +83,8 @@
     background-color: var(--blue_card);
     color: var(--cor-branco);
     font-weight: bolder;
-    text-decoration: none
+    text-decoration: none;
+    font-size: 24px;
 }
 
 #login .botao_entrar {
@@ -91,10 +92,8 @@
     background-color: var(--blue_card);
 }
 
-
 #login .alinhamento_texto_opcao {
     display: flex;
-
 }
 
 #login main img {
