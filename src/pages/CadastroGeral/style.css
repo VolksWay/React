@@ -1,7 +1,7 @@
 #main_cadastro_geral {
     display: flex;
     background: linear-gradient(50deg, #ffffff 70%, var(--camada_geometrica) 30%);
-    height: 600px;
+    height: 900px;
     flex-direction: column;
 
 }
@@ -54,12 +54,6 @@
     margin-top: 20px;
     margin-left: 26px;
     margin-bottom: 29px;
-}
-
-#main_cadastro_geral .seta_voltar {
-    width: 45px;
-    height: 45px;
-    color: var(--cor-primaria);
 }
 
 #main_cadastro_geral .spanVoltar {
@@ -141,6 +135,9 @@
     width: 400px;
     height: 30px;
     border: 0.5px;
+    cursor: text;
+    padding: 1.2rem;
+    margin: 6px 0;
 }
 
 #main_cadastro_geral .container_90 {
@@ -181,7 +178,7 @@
     background-color: #ffd1008c;
 }
 
-#main_cadastro_geral .erro_input {
+.erro_input {
     font-family: var(--fonte-primaria);
     font-style: normal;
     font-weight: 400;
@@ -191,8 +188,8 @@
 }
 
 #main_cadastro_geral .btn_proximo {
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
     display: flex;
     width: 303px;
     height: 57px;
@@ -219,6 +216,45 @@
     width: 500px;
     display: flex;
     align-items: center;
+}
+
+.card_cadastrado {
+    padding: 8px;
+    max-width: 300px;
+    margin-left: auto;
+    background-color: #078903;
+    border-radius: 15px;
+}
+
+.texto_cadastrado {
+    font-family: var(--fonte-primaria);
+    font-size: 18px;
+    color: var(--cor-branco);
+}
+
+.btn_proximo {
+    justify-content: initial;
+    align-items: center;
+    display: flex;
+    width: 303px;
+    height: 57px;
+    border-radius: 30px;
+    margin-left: 65px;
+    margin-top: 1px;
+}
+
+.btnProximo {
+    border: none;
+    padding: 12px 7vw;
+    background-color: #FFD100;
+    font-family: var(--fonte-primaria);
+    border-radius: 30px;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+#dateNascimento::placeholder {
+    color: #000;
 }
 
 @media screen and (max-width: 1700px) {

@@ -83,7 +83,8 @@
     background-color: var(--blue_card);
     color: var(--cor-branco);
     font-weight: bolder;
-    text-decoration: none
+    text-decoration: none;
+    font-size: 24px;
 }
 
 #login .botao_entrar {
@@ -91,10 +92,8 @@
     background-color: var(--blue_card);
 }
 
-
 #login .alinhamento_texto_opcao {
     display: flex;
-
 }
 
 #login main img {
@@ -115,9 +114,35 @@
 
 }
 
-#login #lembre_me:checked {
+#lembre_me:checked {
     background-color: gray;
 }
+
+
+#login .checkPrivacidade {
+    font-size: 15px;
+    display: flex;
+    /* align-items: center; */
+    gap: 5px;
+}
+
+#login .checkPrivacidade input {
+    margin-right: 10px;
+}
+
+#login #checkboxPrivacidade {
+    background-color: white;
+    text-decoration: none;
+    color: var(--fonte-primaria);
+    height: 0px;
+    /* width: 0px; */
+    /* margin-top: 11px; */
+    text-decoration: underline;
+    gap: 1px;
+
+
+}
+
 
 
 

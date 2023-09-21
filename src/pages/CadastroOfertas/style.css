@@ -2,9 +2,26 @@
     font-family: var(--fonte-primaria);
 }
 
+#main_cadastro_ofertas header {
+    background-color: var(--cor-primaria);
+    height: 113px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid var(--amarelo);
+ 
+}
+
 #main_cadastro_ofertas .logo img {
     width: 150px;
     height: 108px;
+}
+
+#main_cadastro_ofertas header>div>h1 {
+    width: 80vw;
+    text-align: center;
+    color: var(--cor-branco);
+    font-size: 40px;
 }
 
 #main_cadastro_ofertas .cad_ofertas {
@@ -197,15 +214,13 @@
     justify-content: space-around;
 }
 
-/* input */
-
 #main_cadastro_ofertas .cad_ofertas_bluer{
     width: calc(100% - 99px);
     display: flex;
     align-items: center;
     position: absolute;
     background: radial-gradient(45.97% 45.97% at 49.12% 54.03%, rgba(21, 14, 14, 0) 0%, rgba(21, 14, 14, 0.6) 68.23%);
-    backdrop-filter: blur(10px);
+    /* backdrop-filter: blur(10px); */
     height: calc(100% - 134px);
     top: 113px;
     justify-content: center;
@@ -224,7 +239,7 @@
     flex-direction: column;
     align-items: center;
 }
-form{
+#main_cadastro_ofertas form{
     width: 100%;
 }
 #main_cadastro_ofertas .p1{
@@ -276,7 +291,7 @@ form{
     display: flex;
     justify-content: center;
 }
-#main_cadastro_ofertas .cad_ofertas_input #main_cadastro_ofertas .btns{
+#main_cadastro_ofertas .cad_ofertas_input .btns{
     display: flex;
     justify-content: flex-end;
     margin: 0 0 20px 0 ;
@@ -314,11 +329,18 @@ form{
     }
 }
 @media screen and (max-width: 1100px) {
-    #main_cadastro_ofertas .imgs_social_medias {
+    #main_cadastro_ofertas  *{
+        font-size: 14px;
+    }
+    #main_cadastro_ofertas   header nav {
+        width: 70vw;
+    }
+
+    #main_cadastro_ofertas   .imgs_social_medias {
         width: 20%;
     }
 
-    #main_cadastro_ofertas .imgs_social_medias img {
+    #main_cadastro_ofertas  .imgs_social_medias img {
         width: 28%;
     }
 }
@@ -339,9 +361,13 @@ form{
         font-size: 16px;
     }
     
+    #main_cadastro_ofertas  header nav {
+        width: 70vw;
+    }
     #main_cadastro_ofertas .cad_ofertas_btn {
         width: 50%;
         }
+
 }
 @media screen and (max-width: 810px) {
     #main_cadastro_ofertas .cad_ofertas_inpcad label {
@@ -359,7 +385,7 @@ form{
         width: 70%;
         } 
 
-    #main_cadastro_ofertas  table tr :nth-child(6){
+    #main_cadastro_ofertas table tr :nth-child(6){
         display: none;
 
     }  
@@ -429,6 +455,10 @@ form{
     }
 }
 @media screen and (max-width: 600px) {
+    #main_cadastro_ofertas header>div>h1 {
+        width: 50vw;
+        font-size: 24px;
+    }
     #main_cadastro_ofertas .cad_ofertas_btn {
         min-width: 320px;
     }
@@ -507,6 +537,10 @@ form{
     }
 }
 @media screen and (max-width: 450px) {
+    #main_cadastro_ofertas header>div>h1 {
+        font-size: 20px;
+        text-align: start;
+    }
     #main_cadastro_ofertas .cad_ofertas_inpcad span {
         font-size: 14px;
     }

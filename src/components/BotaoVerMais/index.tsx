@@ -4,13 +4,17 @@ import "./style.css"
 
 function BotaoVerMais() {
     return (
-        <>
-        <Link className="produtos_btn_banner" to="#"> ver mais</Link>
-            </>
-            )
+        <div id="botaoVerMais">
+            <Link className="produtos_btn_banner" to="#"> ver mais</Link>
+        </div>
+    )
 
 }
+<<<<<<< HEAD
             export default BotaoVerMais;
 
 
             
+=======
+export default BotaoVerMais;
+>>>>>>> develop

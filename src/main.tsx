@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import "./index.css"
+
 import Home from './pages/Home/index'
 import CadastroAdmFrota from './pages/CadastroAdmFrota/index'
 import CadastroEmpresa from './pages/CadastroEmpresa/index'
@@ -11,30 +12,26 @@ import CadastroVeiculo from './pages/CadastroVeiculo/index'
 import Login from './pages/Login/index'
 import Privacidade from './pages/Privacidade/index'
 import Produtos from './pages/Produtos/index'
-
-/* import CardsAvaliacao from './components/CardsAvaliacao' */
-/* import BotaoAlongadoVerMais from './components/BotaoAlongadoVerMais' */
-import BotaoEstouInteressado from './components/BotaoEstouInteressado'
-
+// import Footer from 'components/Footer/'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import SetaVoltar from './components/SetaVoltar'
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-      {/*   <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home />} />
         <Route path='/cadastro/adm_frota' element={<CadastroAdmFrota />} />
         <Route path='/cadastro/empresa' element={<CadastroEmpresa />} />
         <Route path='/cadastro/geral' element={<CadastroGeral />} />
-
         <Route path='/cadastro/ofertas' element={<CadastroOfertas />} />
         <Route path='/cadastro/usuario' element={<CadastroTipoUsuario />} />
         <Route path='/cadastro/veiculo' element={<CadastroVeiculo />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/privacidade' element={<Privacidade />} /> */}
-        <Route path='/' element={<SetaVoltar />} />
-    </Routes>
-  </BrowserRouter>
-  </React.StrictMode >,
+        <Route path='/privacidade' element={<Privacidade />} />
+        <Route path='/produtos' element={<Produtos />} />
+      </Routes>
+      {/* <Footer /> */}
+    </BrowserRouter>
+  </React.StrictMode >
 )

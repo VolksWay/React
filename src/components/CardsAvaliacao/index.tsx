@@ -1,4 +1,3 @@
-
 import "./style.css"
 
 import caminhoneiro from "../../assets/img/caminhoneiro_home.png"
