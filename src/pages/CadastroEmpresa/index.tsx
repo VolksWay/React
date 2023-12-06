@@ -22,7 +22,7 @@ interface Usuario {
 }
 
 const schema = z.object({
-    nomeEmpresa: z.string().min(3, "Por favor, digite uma empresa válida").max(30, "Por favor, digite uma empresa válida"),
+    nomeEmpresa: z.string().min(1, "Por favor, digite uma empresa válida").max(30, "Por favor, digite uma empresa válida"),
     cnpj: z.string().min(18, "Por favor, digite um cnpj válido").max(18, "Por favor, digite um cnpj válido"),
     cidade: z.string().min(4, "Por favor, digite uma cidade válida").max(15, "Por favor, digite uma cidade válida"),
 })
@@ -130,7 +130,7 @@ function CadastroEmpresa() {
                                 <div className="inputs">
                                     <div className="nome">
                                         <label className="nomeInput">Nome*</label> <br />
-                                        <input id="nome" className="nome_input" {...register("nomeEmpresa")} onChange={(event) => setUsuario({ ...usuario, nomeEmpresa: event.target.value })} maxLength={30} minLength={3} type="text" />
+                                        <input id="nome" className="nome_input" {...register("nomeEmpresa")} onChange={(event) => setUsuario({ ...usuario, nomeEmpresa: event.target.value })} maxLength={30} minLength={1} type="text" />
                                         <p className="erro_input">{errors.nomeEmpresa?.message}</p>
                                     </div>
 

@@ -87,6 +87,22 @@
     font-size: 24px;
 }
 
+#login .alinhamento_campos_Entrar button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--fonte-primaria);
+    height: 57px;
+    width: 203px;
+    border-radius: 30px;
+    border: none;
+    background-color: var(--blue_card);
+    color: var(--cor-branco);
+    font-weight: bolder;
+    text-decoration: none;
+    font-size: 24px;
+}
+
 #login .botao_entrar {
     display: flex;
     background-color: var(--blue_card);

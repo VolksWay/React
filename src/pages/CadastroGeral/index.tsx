@@ -84,53 +84,36 @@ function CadastroGeral() {
             var dia = partesData[2];
             var mes = partesData[1];
             var ano = partesData[0];
-            // Formate a data no formato "dia/mês/ano"
-            dataFormatada = dia + '/' + mes + '/' + ano;
+            // Formate a data no formato "ano-mês-dia"
+            dataFormatada = ano + '-' + mes + '-' + dia;
         }
-
-        if (usuario.tipoUsuario === "Motorista") {
-            tipoUsuario = { __type: "Pointer", className: "tipoUsuario", objectId: "8LE3XQJNLh" }
-        }
-
-        if (usuario.tipoUsuario === "Proprietário") {
-            tipoUsuario = { __type: "Pointer", className: "tipoUsuario", objectId: "3H59tvzWK9" }
-        }
-
-        if (usuario.tipoUsuario === "AdmFrota") {
-            tipoUsuario = { __type: "Pointer", className: "tipoUsuario", objectId: "4gl2YylECw" }
-        }
-
+console.log(usuario)
         api.post(`usuario`,
             {
                 placa: usuario.placa,
                 codigoChassi: usuario.codigoChassi,
                 marca: usuario.marca,
-                tipoUsuario: tipoUsuario,
-                nomeEmpresa: usuario.nomeEmpresa,
-                cnpj: usuario.cnpj,
+                tipo_usuario: tipoUsuario,
+                razao_social: usuario.nomeEmpresa,
+                cnpj_empresa: usuario.cnpj,
                 cidade: usuario.cidade,
-                nomeCompleto: usuario.nomeCompleto,
+                nome: usuario.nomeCompleto,
                 telefone: usuario.telefone,
                 email: usuario.email,
                 cpf: usuario.cpf,
                 senha: usuario.senha,
-                dataNascimento: dataFormatada
-            },
-            {
-                headers: {
-                    'X-Parse-Application-Id': PARSE_APPLICATION_ID,
-                    'X-Parse-REST-API-Key': PARSE_REST_API,
-                    'X-Parse-Master-Key': MASTER_KEY,
-                }
+                data_nascimento: dataFormatada,
+                cidade_empresa: usuario.cidade
             }).then((resposta) => {
+                console.log(resposta)
                 if (resposta.status === 201) {
-                    //console.log(resposta)
-                    setConcluido(true)
-                    return setTimeout(function () { window.location.href = `/produtos`; }, 4000);
+                    console.log(resposta)
+                    //setConcluido(true)
+                    //return setTimeout(function () { window.location.href = `/produtos`; }, 4000);
                 }
             })
-            .catch(() => {
-                //console.log(erro); // Trata erros de solicitação
+            .catch((erro: any) => {
+                console.log(erro);
             });
     }
 

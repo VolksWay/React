@@ -38,8 +38,8 @@ function CadastroTipoUsuario() {
                             </p>
                         </div>
                         <div className="tres_opcoes">
-                            {tipoUsuario !== "Motorista" &&
-                                <div id="motorista" onClick={() => setTipousuario("Motorista")} className="motorista">
+                            {tipoUsuario !== "MOTORISTA" &&
+                                <div id="motorista" onClick={() => setTipousuario("MOTORISTA")} className="motorista">
                                     <img
                                         className="img_motorista"
                                         src={Motorista}
@@ -51,8 +51,8 @@ function CadastroTipoUsuario() {
                                 </div>
                             }
 
-                            {tipoUsuario === "Motorista" &&
-                                <div onClick={() => setTipousuario("Motorista")} className="motorista background_amarelo">
+                            {tipoUsuario === "MOTORISTA" &&
+                                <div onClick={() => setTipousuario("MOTORISTA")} className="motorista background_amarelo">
                                     <img
                                         className="img_motorista"
                                         src={Motorista}
@@ -64,8 +64,8 @@ function CadastroTipoUsuario() {
                                 </div>
                             }
 
-                            {tipoUsuario !== "AdmFrota" &&
-                                <div onClick={() => setTipousuario("AdmFrota")} className="adm_de_frota">
+                            {tipoUsuario !== "ADM_FROTA" &&
+                                <div onClick={() => setTipousuario("ADM_FROTA")} className="adm_de_frota">
                                     <img
                                         className="img_adm_de_frota"
                                         src={AdmFrota}
@@ -77,8 +77,8 @@ function CadastroTipoUsuario() {
                                 </div>
                             }
 
-                            {tipoUsuario === "AdmFrota" &&
-                                <div onClick={() => setTipousuario("AdmFrota")} className="adm_de_frota background_amarelo">
+                            {tipoUsuario === "ADM_FROTA" &&
+                                <div onClick={() => setTipousuario("ADM_FROTA")} className="adm_de_frota background_amarelo">
                                     <img
                                         className="img_adm_de_frota"
                                         src={AdmFrota}
@@ -90,8 +90,8 @@ function CadastroTipoUsuario() {
                                 </div>
                             }
 
-                            {tipoUsuario !== "Proprietário" &&
-                                <div onClick={() => setTipousuario("Proprietário")} className="proprietario">
+                            {tipoUsuario !== "PROPRIETARIO" &&
+                                <div onClick={() => setTipousuario("PROPRIETARIO")} className="proprietario">
                                     <img
                                         className="img_proprietario"
                                         src={Proprietario}
@@ -103,8 +103,8 @@ function CadastroTipoUsuario() {
                                 </div>
                             }
 
-                            {tipoUsuario === "Proprietário" &&
-                                <div onClick={() => setTipousuario("Proprietário")} className="proprietario background_amarelo">
+                            {tipoUsuario === "PROPRIETARIO" &&
+                                <div onClick={() => setTipousuario("PROPRIETARIO")} className="proprietario background_amarelo">
                                     <img
                                         className="img_proprietario"
                                         src={Proprietario}
@@ -117,11 +117,11 @@ function CadastroTipoUsuario() {
                             }
                         </div>
 
-                        {tipoUsuario === "Motorista" &&
+                        {tipoUsuario === "MOTORISTA" &&
                             <BotaoFormulario tipo={"link"} texto={"Próximo"} url={`/cadastro/veiculo?tipoUsuario=${tipoUsuario}`} />
                         }
 
-                        {tipoUsuario !== "" && tipoUsuario !== "Motorista" &&
+                        {tipoUsuario !== "" && tipoUsuario !== "MOTORISTA" &&
                             <BotaoFormulario tipo={"link"} texto={"Próximo"} url={`/cadastro/empresa?tipoUsuario=${tipoUsuario}`} />
                         }
 
