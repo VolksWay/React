@@ -31,20 +31,13 @@ function Produtos() {
         console.log("teste");
 
         // /* console.log(cpf) */
-        api.get(`/banner`,
-            {
-                headers: {
-                    'X-Parse-Application-Id': PARSE_APPLICATION_ID,
-                    'X-Parse-REST-API-Key': PARSE_REST_API,
-                    'X-Parse-Master-Key': MASTER_KEY,
-                }
-            }).then((resposta) => {
+        api.get(`/propagandas`).then((resposta) => {
                 if (resposta.status === 200) {
                     // Se a resposta for 201, a solicitação foi bem-sucedida
                     //200 pegar / 201 criar
                     //setMensagemAguarde("Enviado")
-                    setConteudoBanner(resposta.data.results)
-                    console.log("entrouuu", resposta.data.results)
+                    setConteudoBanner(resposta.data)
+                    console.log("entrouuu", resposta.data)
                 }
             })
             .catch((erro) => {
@@ -135,9 +128,9 @@ function Produtos() {
     useEffect(() => {
         //executa ação
         listarBanner();
-        listarOfertas();
-        listarPromocoes();
-        listarNoticiasR();
+        //listarOfertas();
+        //listarPromocoes();
+        //listarNoticiasR();
 
     }, []);
 

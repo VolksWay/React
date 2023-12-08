@@ -24,7 +24,7 @@ interface Usuario {
 const schema = z.object({
     nomeEmpresa: z.string().min(1, "Por favor, digite uma empresa válida").max(30, "Por favor, digite uma empresa válida"),
     cnpj: z.string().min(18, "Por favor, digite um cnpj válido").max(18, "Por favor, digite um cnpj válido"),
-    cidade: z.string().min(4, "Por favor, digite uma cidade válida").max(15, "Por favor, digite uma cidade válida"),
+    cidade: z.string().min(4, "Por favor, digite uma cidade válida").max(30, "Por favor, digite uma cidade válida"),
 })
 
 type FormProps = z.infer<typeof schema>
@@ -82,7 +82,7 @@ function CadastroEmpresa() {
             console.log("tipoUsuario não encontrado na URL");
         }
 
-        if (tipoUsuario === "Motorista" && marca !== null && placa !== null && codigoChassi !== null) {
+        if (tipoUsuario === "MOTORISTA" && marca !== null && placa !== null && codigoChassi !== null) {
             setUsuario({ ...usuario, tipoUsuario: tipoUsuario, marca: marca, placa: placa, codigoChassi: codigoChassi });
         }
 

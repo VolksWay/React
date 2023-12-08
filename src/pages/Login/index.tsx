@@ -23,7 +23,7 @@ function Login() {
         // event.preventDefault();
         event.preventDefault();
 
-        api.post('login', {
+        api.post('/login', {
             email: email,
             senha: senha
         }).then((resposta: any) => {
@@ -61,7 +61,7 @@ function Login() {
                         break;
 
                     case 'ADMIN':
-                        setTimeout(function () { window.location.href = `/cadastro/ofertas`; }, 1000);
+                       /*  setTimeout(function () { window.location.href = `/cadastro/ofertas`; }, 1000); */
                         console.log(usuarioAutenticado())
                         break;
 

@@ -88,7 +88,7 @@ function CadastroGeral() {
             dataFormatada = ano + '-' + mes + '-' + dia;
         }
 console.log(usuario)
-        api.post(`usuario`,
+        api.post(`/usuarios`,
             {
                 placa: usuario.placa,
                 codigoChassi: usuario.codigoChassi,
