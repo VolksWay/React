@@ -87,24 +87,22 @@ function CadastroGeral() {
             // Formate a data no formato "ano-mês-dia"
             dataFormatada = ano + '-' + mes + '-' + dia;
         }
-console.log(usuario)
-        api.post(`/usuarios`,
-            {
-                placa: usuario.placa,
-                codigoChassi: usuario.codigoChassi,
-                marca: usuario.marca,
-                tipo_usuario: tipoUsuario,
-                razao_social: usuario.nomeEmpresa,
-                cnpj_empresa: usuario.cnpj,
-                cidade: usuario.cidade,
-                nome: usuario.nomeCompleto,
-                telefone: usuario.telefone,
-                email: usuario.email,
-                cpf: usuario.cpf,
-                senha: usuario.senha,
-                data_nascimento: dataFormatada,
-                cidade_empresa: usuario.cidade
-            }).then((resposta) => {
+        console.log(usuario)
+
+        const formData = new FormData();
+        formData.append("nome", usuario.nomeCompleto);
+        formData.append("telefone", usuario.telefone);
+        formData.append("email", usuario.email);
+        formData.append("data_nascimento", usuario.dataNascimento);
+        formData.append("cidade", usuario.cidade);
+        formData.append("cpf", usuario.cpf);
+        formData.append("tipo_usuario", usuario.tipoUsuario);
+        formData.append("senha", usuario.senha);
+        formData.append("cnpj_empresa", usuario.cnpj);
+        formData.append("razao_social", usuario.nomeEmpresa);
+        formData.append("cidade_empresa", usuario.cidade);
+
+        api.post(`/usuarios`, formData).then((resposta) => {
                 console.log(resposta)
                 if (resposta.status === 201) {
                     console.log(resposta)

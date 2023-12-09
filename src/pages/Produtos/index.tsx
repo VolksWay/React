@@ -25,113 +25,57 @@ function Produtos() {
     const [conteudoOfertas, setConteudoOfertas] = useState<any[]>([]);
     const [conteudoPromocoes, setConteudoPromocoes] = useState<any[]>([]);
     const [conteudoNoticiasR, setConteudoNoticiasR] = useState<any[]>([]);
+    const [listarConteudo, setListarConteudo] = useState<Boolean>(false);
 
-    function listarBanner() {
+    function listarPropagandas() {
         // event.preventDefault();
         console.log("teste");
 
         // /* console.log(cpf) */
         api.get(`/propagandas`).then((resposta) => {
-                if (resposta.status === 200) {
-                    // Se a resposta for 201, a solicitação foi bem-sucedida
-                    //200 pegar / 201 criar
-                    //setMensagemAguarde("Enviado")
-                    setConteudoBanner(resposta.data)
-                    console.log("entrouuu", resposta.data)
+            if (resposta.status === 200) {
+                let produtos = resposta.data;
+                console.log(produtos)
+                for (let i = 0; i < produtos.length; i++) {
+
+
+                    if (produtos[i].nome_tipo_propaganda == "Banner") {
+                       // setConteudoBanner([...conteudoBanner, { id: produtos[i].id, url: produtos[i].url, titulo: produtos[i].titulo, descricao: produtos[i].descricao, img: produtos[i].img}])
+                        conteudoBanner.push({ id: produtos[i].id, url: produtos[i].url, titulo: produtos[i].titulo, descricao: produtos[i].descricao, img: produtos[i].img })
+                    }
+
+                    if (produtos[i].nome_tipo_propaganda == "Noticia") {
+                    //setConteudoNoticiasR([...conteudoNoticiasR, { id: produtos[i].id, url: produtos[i].url, titulo: produtos[i].titulo, descricao: produtos[i].descricao, img: produtos[i].img}])
+                       conteudoNoticiasR.push({ id: produtos[i].id, url: produtos[i].url, titulo: produtos[i].titulo, descricao: produtos[i].descricao, img: produtos[i].img })
+                    }
+
+                    if (produtos[i].nome_tipo_propaganda == "Promocao") {
+                        //setConteudoPromocoes([...conteudoPromocoes, { id: produtos[i].id, url: produtos[i].url, titulo: produtos[i].titulo, descricao: produtos[i].descricao, img: produtos[i].img, preco: produtos[i].preco, dataLimite: produtos[i].data_limite }])
+                        conteudoPromocoes.push({ id: produtos[i].id, url: produtos[i].url, titulo: produtos[i].titulo, descricao: produtos[i].descricao, img: produtos[i].img, preco: produtos[i].preco, dataLimite: produtos[i].data_limite })
+                    }
+
+                    if (produtos[i].nome_tipo_propaganda == "Oferta") {
+                        //setConteudoOfertas([...conteudoOfertas, { id: produtos[i].id, url: produtos[i].url, titulo: produtos[i].titulo, descricao: produtos[i].descricao, img: produtos[i].img, preco: produtos[i].preco, dataLimite: produtos[i].data_limite }])
+                        conteudoOfertas.push({ id: produtos[i].id, url: produtos[i].url, titulo: produtos[i].titulo, descricao: produtos[i].descricao, img: produtos[i].img, preco: produtos[i].preco, dataLimite: produtos[i].data_limite })
+                    }
                 }
-            })
+
+                setListarConteudo(true)
+                console.log(conteudoBanner)
+                console.log(conteudoNoticiasR)
+                console.log(conteudoPromocoes)
+                console.log(conteudoOfertas)
+
+            }
+        })
             .catch((erro) => {
                 console.log(erro); // Trata erros de solicitação
             });
     }
-
-    function listarOfertas() {
-        // event.preventDefault();
-        console.log("teste");
-
-        // /* console.log(cpf) */
-        api.get(`/ofertas`,
-            {
-                headers: {
-                    'X-Parse-Application-Id': PARSE_APPLICATION_ID,
-                    'X-Parse-REST-API-Key': PARSE_REST_API,
-                    'X-Parse-Master-Key': MASTER_KEY,
-                }
-            }).then((resposta) => {
-                if (resposta.status === 200) {
-                    // Se a resposta for 201, a solicitação foi bem-sucedida
-                    //200 pegar / 201 criar
-                    //setMensagemAguarde("Enviado")
-                    setConteudoOfertas(resposta.data.results)
-                    console.log("entrouuu ofertas", resposta.data.results)
-                }
-            })
-            .catch((erro) => {
-                console.log(erro); // Trata erros de solicitação
-            });
-    }
-
-    function listarNoticiasR() {
-        // event.preventDefault();
-        console.log("teste");
-
-        // /* console.log(cpf) */
-        api.get(`/noticias`,
-            {
-                headers: {
-                    'X-Parse-Application-Id': PARSE_APPLICATION_ID,
-                    'X-Parse-REST-API-Key': PARSE_REST_API,
-                    'X-Parse-Master-Key': MASTER_KEY,
-                }
-            }).then((resposta) => {
-                if (resposta.status === 200) {
-                    // Se a resposta for 201, a solicitação foi bem-sucedida
-                    //200 pegar / 201 criar
-                    //setMensagemAguarde("Enviado")
-                    setConteudoNoticiasR(resposta.data.results)
-                    console.log("entrouuu", resposta)
-                }
-            })
-            .catch((erro) => {
-                console.log(erro); // Trata erros de solicitação
-            });
-    }
-
-    function listarPromocoes() {
-        // event.preventDefault();
-        console.log("teste");
-
-        // /* console.log(cpf) */
-        api.get(`/promocoes`,
-            {
-                headers: {
-                    'X-Parse-Application-Id': PARSE_APPLICATION_ID,
-                    'X-Parse-REST-API-Key': PARSE_REST_API,
-                    'X-Parse-Master-Key': MASTER_KEY,
-                }
-            }).then((resposta) => {
-                if (resposta.status === 200) {
-                    // Se a resposta for 201, a solicitação foi bem-sucedida
-                    //200 pegar / 201 criar
-                    //setMensagemAguarde("Enviado")
-                    setConteudoPromocoes(resposta.data.results)
-                    console.log("entrouuu", resposta.data.results)
-                }
-            })
-            .catch((erro) => {
-                console.log(erro); // Trata erros de solicitação
-            });
-    }
-
 
 
     useEffect(() => {
-        //executa ação
-        listarBanner();
-        //listarOfertas();
-        //listarPromocoes();
-        //listarNoticiasR();
-
+        listarPropagandas();
     }, []);
 
     return (
@@ -139,7 +83,7 @@ function Produtos() {
             <Header />
             <main id="produtos">
                 <section>
-                    <Banner conteudo={conteudoBanner} />
+                    {listarConteudo === true && <Banner conteudo={conteudoBanner} />}
                 </section>
 
                 <div className="produtos_ofertas_h2 produtos_posicionamento">
@@ -147,7 +91,7 @@ function Produtos() {
                 </div>
 
                 <section>
-                    <CardOfertas conteudo={conteudoOfertas} />
+                {listarConteudo === true && <CardOfertas conteudo={conteudoOfertas} />}
                 </section>
 
 
@@ -159,16 +103,16 @@ function Produtos() {
 
                     <div className="carrossel">
                         <div className="cardPromocoes">
-                            {
-                                conteudoPromocoes.map((promocoes: any, indice: number) => {
+                            {listarConteudo === true &&
+                                conteudoPromocoes.map((conteudoPromocoes: any, indice: number) => {
                                     return <div key={indice}>
                                         <CardOfertasPneu
-                                            id={promocoes.objectId}
-                                            imagem={promocoes.imagem}
-                                            titulo={promocoes.titulo}
-                                            descricao={promocoes.descricao}
-                                            preco={promocoes.preco}
-                                            url={promocoes.url}
+                                            id={conteudoPromocoes.id}
+                                            imagem={conteudoPromocoes.img}
+                                            titulo={conteudoPromocoes.titulo}
+                                            descricao={conteudoPromocoes.descricao}
+                                            preco={conteudoPromocoes.preco}
+                                            url={conteudoPromocoes.url}
                                         />
                                     </div>
                                 })
@@ -187,14 +131,13 @@ function Produtos() {
 
                 <section id="CardNoticiasRecentes" >
                     <section className="prod_noticias_recentes">
-                        {
-
+                        {listarConteudo === true &&
                             conteudoNoticiasR.map((conteudoNoticiasR: any, indice: number) => {
                                 return <>
                                     <CardNoticiasRecentes
-                                        key={indice}
+                                        key={conteudoNoticiasR.id}
                                         titulo={conteudoNoticiasR.titulo}
-                                        imagem={conteudoNoticiasR.imagem.url}
+                                        imagem={conteudoNoticiasR.img}
                                         descricao={conteudoNoticiasR.descricao}
                                         url={conteudoNoticiasR.url} />
                                 </>

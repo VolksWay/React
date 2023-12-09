@@ -74,13 +74,13 @@ function CardOfertas(props: any) {
 
                         {
                             props.conteudo.map((ofertas: any) => (
-                                <SwiperSlide key={ofertas.objectId}>
+                                <SwiperSlide key={ofertas.id}>
                                     <div className="carrossel">
                                         <div className="prod_card_ofertas">
                                             <h3>{ofertas.titulo} teste</h3>
-                                            <h4>{ofertas.subtitulo}</h4>
+                                            <h4>Teste</h4>
                                             <img
-                                                src={ofertas.imagem.url}
+                                                src={ofertas.img}
                                                 alt="imagem caminhão contstellation 2023 card um"
                                             />
                                             <span>R$ {ofertas.preco},00</span>
@@ -88,7 +88,7 @@ function CardOfertas(props: any) {
                                             <a className="prod_btn_card" href={ofertas.url}>
                                                 estou interessado
                                             </a>
-                                            <h6>Oferta Válida Até {ofertas.validade}</h6>
+                                            <h6>Oferta Válida Até {ofertas.dataLimite}</h6>
                                         </div>
 
                                     </div>

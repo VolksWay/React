@@ -37,9 +37,9 @@ function Banner(props: any) {
 
                         {
                             props.conteudo.map((banner: any) => (
-                                <SwiperSlide key={banner.objectId}>
+                                <SwiperSlide key={banner.id}>
                                         <img
-                                            src={banner.imagem.url}
+                                            src={banner.img}
                                             className="slide-item"
                                         />
                                    <div className="banner_conteudo">
