@@ -77,18 +77,18 @@ function CardOfertas(props: any) {
                                 <SwiperSlide key={ofertas.id}>
                                     <div className="carrossel">
                                         <div className="prod_card_ofertas">
-                                            <h3>{ofertas.titulo} teste</h3>
+                                            <h3>{ofertas.titulo}</h3>
                                             <h4>Teste</h4>
                                             <img
                                                 src={ofertas.img}
                                                 alt="imagem caminhão contstellation 2023 card um"
                                             />
                                             <span>R$ {ofertas.preco},00</span>
-                                            <h5>{ofertas.descricao}</h5>
+                                            <h5 className="descricao_card_oferta_especial">{ofertas.descricao}</h5>
                                             <a className="prod_btn_card" href={ofertas.url}>
                                                 estou interessado
                                             </a>
-                                            <h6>Oferta Válida Até {ofertas.dataLimite}</h6>
+                                            <h6>Oferta Válida Até {new Date(ofertas.dataLimite).getUTCDate()}/{new Date(ofertas.dataLimite).getUTCMonth() + 1}/{new Date(ofertas.dataLimite).getUTCFullYear()}</h6>
                                         </div>
 
                                     </div>

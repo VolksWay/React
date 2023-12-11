@@ -40,7 +40,7 @@ const schema = z.object({
     nomeCompleto: z.string().min(4, "Por favor, digite seu nome completo"),
     telefone: z.string().min(4, "Por favor, digite um telefone válido"),
     /*  dataNascimento: z.date(), */
-    email: z.string().min(6, "Por favor, digite um email válido").max(25).email({
+    email: z.string().min(6, "Por favor, digite um email válido").max(35).email({
         message: "Por favor, digite um email válido",
     }),
     cpf: z.string().min(14, "Por favor, informe um CPF válido"),
