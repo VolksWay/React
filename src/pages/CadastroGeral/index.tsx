@@ -106,8 +106,8 @@ function CadastroGeral() {
                 console.log(resposta)
                 if (resposta.status === 201) {
                     console.log(resposta)
-                    //setConcluido(true)
-                    //return setTimeout(function () { window.location.href = `/produtos`; }, 4000);
+                    setConcluido(true)
+                    return setTimeout(function () { window.location.href = `/produtos`; }, 4000);
                 }
             })
             .catch((erro: any) => {

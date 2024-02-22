@@ -274,10 +274,26 @@
   font-size: 40px;
 }
 
+#main_home .primeira_noticia { 
+  background: url("../../assets/img/primeira-noticia.svg");
+}
+
+#main_home .segunda_noticia { 
+  background: url("../../assets/img/segunda-noticia.svg");
+}
+
+#main_home .terceira_noticia { 
+  background: url("../../assets/img/terceira-noticia.svg");
+}
+
+#main_home .quarta_noticia { 
+  background: url("../../assets/img/quarta-noticia.svg");
+}
+
 #main_home .home_card_saiba {
   height: 61.5vh;
   width: 23.7%;
-  background: url("../../assets/img/img_home_card_saiba_mais.svg");
+  /* background: url("../../assets/img/img_home_card_saiba_mais.svg"); */
   border-radius: 20px;
   background-position: center;
   background-size: cover;
@@ -512,7 +528,7 @@
 
 #main_home .faz_diferenca_card {
   width: 25.5vw;
-  height: 22vh;
+  height: 20vh;
   border-radius: 30px;
   padding: 30px;
   background-color: var(--cor-quartenaria);
@@ -540,7 +556,7 @@
 }
 
 #main_home .faz_diferenca_cards {
-  height: 52%;
+  height: 46%;
   width: 100%;
 }
 
@@ -700,12 +716,12 @@
   }
 
   #main_home .faz_diferenca_cards {
-    height: 62%;
+    height: 46%;
     width: 100%;
   }
 
   #main_home .faz_diferenca_card {
-    height: 28vh;
+    height: 19vh;
   }
 
   #main_home .secao_nosso_objetivo {
@@ -811,13 +827,13 @@
   }
 
   #main_home .faz_diferenca_card {
-    height: 38vh;
+    height: 29vh;
     width: 24.5vw;
     flex-direction: column;
   }
 
   #main_home .faz_diferenca_cards {
-    height: 59%;
+    height: 49%;
     width: 100%;
   }
 

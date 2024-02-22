@@ -54,6 +54,7 @@
     margin-top: 20px;
     margin-left: 26px;
     margin-bottom: 29px;
+    color: var(--dark_blue);
 }
 
 #main_cadastro_geral .spanVoltar {

@@ -219,9 +219,9 @@ footer span {
         width: 16%;
     }
 
-    .menu_barras svg {
+    .icon_svg_menu {
         height: 13vh;
-        width: 4vw;
+        width: 7vw;
         fill: var(--cor-branco);
     }
 
